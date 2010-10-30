@@ -1,0 +1,2413 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2010 iceScrum Technologies.
+  ~
+  ~ This file is part of iceScrum.
+  ~
+  ~ iceScrum is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License.
+  ~
+  ~ iceScrum is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<product id="8a5ef3b12679ce6301269e4299230001">
+<isVersion>R2#15</isVersion>
+<productName>TEC</productName>
+<productIsHidden>false</productIsHidden>
+<productDescription>Megha Tropiques</productDescription>
+<productPlanningPoker>0</productPlanningPoker>
+<productStartDate>2010-01-24</productStartDate>
+<productDisableJoin>false</productDisableJoin>
+<productEnableRole>true</productEnableRole>
+<productEnableResetTest>false</productEnableResetTest>
+<productEnableAutoCloseStory>false</productEnableAutoCloseStory>
+<release id="1">
+<releaseName>R1</releaseName>
+<releaseState>2</releaseState>
+<releaseType>2</releaseType>
+<releaseStartDate>2010-01-26 01:00:00.0</releaseStartDate>
+<releasePublishDate>2010-07-15 02:00:00.0</releasePublishDate>
+<releaseVelocity>0</releaseVelocity>
+<releaseEstimatedSprintDuration>14</releaseEstimatedSprintDuration>
+<releaseDefaultEstimatedVelocity>35.0</releaseDefaultEstimatedVelocity>
+<releaseVision>null</releaseVision>
+<sprint id="1">
+<sprintNbPointBacklog>67</sprintNbPointBacklog>
+<finalRemainingEstimations>20100215-0:20100216-0:20100217-0:20100218-0:20100219-0:20100220-0:20100221-0:20100222-0:20100223-0:20100224-0:20100225-0:20100226-0:20100227-0:20100228-0</finalRemainingEstimations>
+<sprintActivationDate>2010-02-23 10:40:12.318</sprintActivationDate>
+<sprintNumber>1</sprintNumber>
+<sprintState>3</sprintState>
+<sprintNbUserStory>165</sprintNbUserStory>
+<sprintNbTechnical>20</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-02-15 01:00:00.0</sprintStartDate>
+<sprintEndDate>2010-03-01 01:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>17.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<story id="1">
+<storyLabel>*Sprint 1*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:43:40.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+<task id="1">
+<taskLabel>Produire indicateurs</taskLabel>
+<taskNotes/>
+<taskCreator>2</taskCreator>
+<taskState>0</taskState>
+<taskRemainingTime>20100209-0:20100301-0</taskRemainingTime>
+</task>
+</story>
+<story id="224">
+<storyLabel>CatOAT</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux déposer un fichier OAT Afin de cataloguer et de voir ses caractéristiques</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-01 17:56:27.357</storyCreationDate>
+<storyEstimationDate>2010-03-01 17:57:04.342</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>6</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="223">
+<storyLabel>ProdN0OAT</storyLabel>
+<storyDescription>En tant que CNES, Je peux fournir le jeu de données N0 OAT </storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-01 17:55:44.627</storyCreationDate>
+<storyEstimationDate>2010-03-01 17:56:27.355</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>7</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="220">
+<storyLabel>CatrapportExpSansAide</storyLabel>
+<storyDescription>En tant que Expert, Je peux cataloguer et visualiser un rapport d'expertise Afin de le diffuser aux scientifiques</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-01 17:51:03.658</storyCreationDate>
+<storyEstimationDate>2010-03-01 17:53:16.441</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>8</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="221">
+<storyLabel>ProdN0OrbiteScaNominal</storyLabel>
+<storyDescription>En tant que CNES, Je peux fournir un jeu de données N0 une orbite Scarab </storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-01 17:53:35.642</storyCreationDate>
+<storyEstimationDate>2010-03-01 17:54:45.397</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>9</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="222">
+<storyLabel>CatN0ScaNomLoc</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux déposer un fichier N0 Scarab  Afin de le cataloguer et d"e voir ses caractéristiques</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-01 17:54:45.398</storyCreationDate>
+<storyEstimationDate>2010-03-01 17:55:44.623</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>10</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+</sprint>
+<sprint id="2">
+<sprintNbPointBacklog>360</sprintNbPointBacklog>
+<finalRemainingEstimations>20100302-0:20100303-0:20100304-0:20100305-0:20100306-0:20100307-0:20100308-0:20100309-0:20100310-0:20100311-0:20100312-0:20100313-0:20100314-0</finalRemainingEstimations>
+<sprintActivationDate>2010-03-02 10:55:17.517</sprintActivationDate>
+<sprintNumber>2</sprintNumber>
+<sprintState>3</sprintState>
+<sprintGoal>Insertion N0 autres instruments + début performance</sprintGoal>
+<sprintNbUserStory>303</sprintNbUserStory>
+<sprintNbTechnical>28</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-03-02 01:00:00.0</sprintStartDate>
+<sprintEndDate>2010-03-15 01:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>27.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<SprintMeasure>
+<SprintMeasure_jour>5:2:2010</SprintMeasure_jour>
+<SprintMeasure_NBTasks>0</SprintMeasure_NBTasks>
+<SprintMeasure_NBTasksDone>0</SprintMeasure_NBTasksDone>
+</SprintMeasure>
+<story id="2">
+<storyLabel>*Sprint 2*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:44:14.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="50">
+<storyLabel>OutilsPosteUtilisateur</storyLabel>
+<storyDescription>En tant que Expert, Je peux utiliser OpenOffice, KDE, Konqueror, ... Afin de travailler en local</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 15:11:55.607</storyCreationDate>
+<storyEstimationDate>2010-03-02 10:02:44.432</storyEstimationDate>
+<storyEstimatedPoints>4</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>10</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>3</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="227">
+<storyLabel>Prise en main SAG</storyLabel>
+<storyDescription>lire la doc
+installer le wiki (xwiki)</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-02 09:23:52.205</storyCreationDate>
+<storyEstimationDate>2010-03-02 09:28:23.986</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>11</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>21</storyTheme>
+</story>
+<story id="249">
+<storyLabel>CalculScanIncompletsN0Sca</storyLabel>
+<storyDescription/>
+<storyOwner>4</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-15 16:34:34.735</storyCreationDate>
+<storyEstimationDate>2010-03-15 16:39:26.675</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>13</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="218">
+<storyLabel>ProdN0OrbiteSapNominale</storyLabel>
+<storyDescription>idem Scarab</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-25 11:02:04.15</storyCreationDate>
+<storyEstimationDate>2010-03-02 09:53:36.521</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>15</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="228">
+<storyLabel>CatN0Sap</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux cataloguer  un produit N0 Saphir Afin de voir ses caracteristiques</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-02 09:54:35.082</storyCreationDate>
+<storyEstimationDate>2010-03-02 09:56:32.351</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>16</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="99">
+<storyLabel>VisuN0ScaQL</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser le QL d'une image Scarab
+ Afin de vérifier rapidement son aspect</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;plut&amp;ocirc;t canaux 1 et 2 (visible)&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:09:22.018</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:09:48.965</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>18</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="229">
+<storyLabel>CalculLocN0Sca</storyLabel>
+<storyDescription>En tant que opérateur, Je peux sélectionner des produits N0 par zone géographique pour Scarab </storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-02 10:09:22.806</storyCreationDate>
+<storyEstimationDate>2010-03-02 10:10:06.307</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>82</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+</sprint>
+<sprint id="3">
+<sprintNbPointBacklog>364</sprintNbPointBacklog>
+<finalRemainingEstimations>20100316-0:20100317-0:20100318-0:20100319-0:20100320-0:20100321-0:20100322-0:20100323-0:20100324-0:20100325-0:20100326-0:20100327-0:20100328-0</finalRemainingEstimations>
+<sprintActivationDate>2010-03-15 17:52:09.352</sprintActivationDate>
+<sprintNumber>3</sprintNumber>
+<sprintState>3</sprintState>
+<sprintGoal>Prépa revue 1 et automatisation insertion OAT N0</sprintGoal>
+<sprintNbUserStory>259</sprintNbUserStory>
+<sprintNbTechnical>28</sprintNbTechnical>
+<sprintNbDefect>3</sprintNbDefect>
+<sprintStartDate>2010-03-16 01:00:00.0</sprintStartDate>
+<sprintEndDate>2010-03-29 02:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>45.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<SprintMeasure>
+<SprintMeasure_jour>15:2:2010</SprintMeasure_jour>
+<SprintMeasure_NBTasks>0</SprintMeasure_NBTasks>
+<SprintMeasure_NBTasksDone>0</SprintMeasure_NBTasksDone>
+</SprintMeasure>
+<sprintResource>57</sprintResource>
+<story id="3">
+<storyLabel>*Sprint 3*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:45:01.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="39">
+<storyLabel>VisuInfoTechnoN0Sca</storyLabel>
+<storyDescription>En tant que Expert, Je peux voir les informations technologiques d'un produit N0 scarab Afin de investiguer, faire la corrélation avec des alarmes</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote>&lt;p&gt;DA10, page 12 &amp;sect;4.4.2 (science header)&lt;/p&gt;
+&lt;p&gt;v&amp;eacute;rification manuelle&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-09 10:58:32.399</storyCreationDate>
+<storyEstimationDate>2010-02-09 11:20:23.093</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>4</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="214">
+<storyLabel>DocArchLogRevue 1</storyLabel>
+<storyDescription>Dossier d'architecture du logiciel</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-23 10:46:42.156</storyCreationDate>
+<storyEstimationDate>2010-02-23 10:48:55.501</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>8</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>20</storyTheme>
+</story>
+<story id="215">
+<storyLabel>DocInterfacesRevue1</storyLabel>
+<storyDescription>décrire les interfaces internes et externes</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-23 10:48:55.504</storyCreationDate>
+<storyEstimationDate>2010-02-23 10:49:14.288</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>9</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>20</storyTheme>
+</story>
+<story id="216">
+<storyLabel>PlanDevRevue1</storyLabel>
+<storyDescription>maj du plan de développement fourni dans la  réponse</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-23 10:49:14.292</storyCreationDate>
+<storyEstimationDate>2010-02-23 10:49:55.075</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>10</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>20</storyTheme>
+</story>
+<story id="217">
+<storyLabel>DocPlanGestionConf</storyLabel>
+<storyDescription>Décrire gestion de la documentation et gestion de la configuration</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-23 10:49:55.078</storyCreationDate>
+<storyEstimationDate>2010-02-23 10:50:23.385</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>11</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>20</storyTheme>
+</story>
+<story id="51">
+<storyLabel>VisuN0SapHorsMesures</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les données technologiques Saphir Afin de investiguer sur des problèmes</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 15:13:23.446</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:03:24.138</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>11</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="243">
+<storyLabel>AutoCatOAT</storyLabel>
+<storyDescription>cataloguer auto un OAT
+Calcul localisation N0 Saphir
+</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 16:03:23.382</storyCreationDate>
+<storyEstimationDate>2010-03-15 17:42:44.834</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>15</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="234">
+<storyLabel>Doc Manuel install</storyLabel>
+<storyDescription/>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:47:42.417</storyCreationDate>
+<storyEstimationDate>2010-03-15 17:46:05.034</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>16</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>20</storyTheme>
+</story>
+<story id="250">
+<storyLabel>DocArchiMateriel</storyLabel>
+<storyDescription>justif infra</storyDescription>
+<storyOwner>10</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-15 17:44:08.639</storyCreationDate>
+<storyEstimationDate>2010-03-15 17:44:48.582</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>17</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="251">
+<storyLabel>Packaging doc pour CNES</storyLabel>
+<storyDescription/>
+<storyOwner>10</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-15 17:48:05.011</storyCreationDate>
+<storyEstimationDate>2010-03-15 17:48:28.87</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>18</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="101">
+<storyLabel>VisuN0SapQL</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser le QL d'un produit N0 Saphir Afin de vérifier rapidement son aspect</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:22.023</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:52:15.498</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>20</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="237">
+<storyLabel>AutoCatN0Sca</storyLabel>
+<storyDescription>Déclenchement automatique du catalogage N0 depuis l'espace de dépôt</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:51:16.037</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:31:52.377</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>90</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="238">
+<storyLabel>AutoCatN0Sap</storyLabel>
+<storyDescription>Déclenchement automatique du catalogage N0 depuis l'espace de dépôt</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:52:15.901</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:31:56.093</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>91</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="252">
+<storyLabel>FabN0ScaImage</storyLabel>
+<storyDescription>Fabrication du .tiff</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-30 11:21:12.734</storyCreationDate>
+<storyEstimationDate>2010-03-30 11:21:49.453</storyEstimationDate>
+<storyEstimatedPoints>7</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>101</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="253">
+<storyLabel>DefLocSca</storyLabel>
+<storyDescription>Défaut trouvé sur la Loc Sca avec un jeu de données différent</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-30 11:24:25.495</storyCreationDate>
+<storyEstimationDate>2010-03-30 11:25:30.81</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>2</storyType>
+<storyRank>102</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+</sprint>
+<sprint id="4">
+<sprintNbPointBacklog>367</sprintNbPointBacklog>
+<finalRemainingEstimations>20100330-0:20100331-0:20100401-0:20100402-0:20100403-0:20100404-0:20100405-0:20100406-0:20100407-0:20100408-0:20100409-0:20100410-0:20100411-0:20100412-0</finalRemainingEstimations>
+<sprintActivationDate>2010-03-30 11:49:33.116</sprintActivationDate>
+<sprintNumber>4</sprintNumber>
+<sprintState>3</sprintState>
+<sprintGoal>Appréhender la surv techno, le suiv de perf et savoir reconstituer des orbites</sprintGoal>
+<sprintNbUserStory>246</sprintNbUserStory>
+<sprintNbTechnical>23</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-03-30 02:00:00.0</sprintStartDate>
+<sprintEndDate>2010-04-13 02:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>24.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<SprintMeasure>
+<SprintMeasure_jour>30:2:2010</SprintMeasure_jour>
+<SprintMeasure_NBTasks>0</SprintMeasure_NBTasks>
+<SprintMeasure_NBTasksDone>0</SprintMeasure_NBTasksDone>
+</SprintMeasure>
+<SprintMeasure>
+<SprintMeasure_jour>8:3:2010</SprintMeasure_jour>
+<SprintMeasure_NBTasks>0</SprintMeasure_NBTasks>
+<SprintMeasure_NBTasksDone>0</SprintMeasure_NBTasksDone>
+</SprintMeasure>
+<story id="4">
+<storyLabel>*Sprint 4*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:45:13.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="42">
+<storyLabel>ReconstitutionN0OrbiteSca</storyLabel>
+<storyDescription>En tant que opérateur, Je peux voir au catalogue les produits par orbite issus des produits dumpwise Scarab de l'ISRO Afin de m'assurer que la surveillance technologique peut se faire</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote>&lt;p&gt;traitement automatique et p&amp;eacute;riodique&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-09 11:55:13.328</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:04:34.249</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>5</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="225">
+<storyLabel>Intégration continue</storyLabel>
+<storyDescription>La mettre en place</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-02 09:20:38.171</storyCreationDate>
+<storyEstimationDate>2010-03-02 09:28:33.583</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>13</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>21</storyTheme>
+<test id="5">
+<testName>vérifier la mise en place</testName>
+<testDescription>Etant donné , Quand  Alors </testDescription>
+<testState>0</testState>
+</test>
+</story>
+<story id="254">
+<storyLabel>DecoupageN0Sca</storyLabel>
+<storyDescription>En tant que , Je peux  </storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-30 11:30:59.046</storyCreationDate>
+<storyEstimationDate>2010-03-30 11:31:19.297</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>103</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="255">
+<storyLabel>DefInsertN0</storyLabel>
+<storyDescription>Prise en compte de la requête de sélection OAT pour insertion</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-30 11:31:49.333</storyCreationDate>
+<storyEstimationDate>2010-03-30 11:32:40.392</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>2</storyType>
+<storyRank>104</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="257">
+<storyLabel>DefCalcScanInvalides</storyLabel>
+<storyDescription>Correction du calcul des scans invalides sur un N0 Scarab ou Saphir</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-04-14 10:24:34.749</storyCreationDate>
+<storyEstimationDate>2010-04-14 10:25:34.612</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>2</storyType>
+<storyRank>106</storyRank>
+<storyState>7</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+</sprint>
+<sprint id="5">
+<sprintNbPointBacklog>0</sprintNbPointBacklog>
+<sprintActivationDate>2010-04-14 10:42:51.101</sprintActivationDate>
+<sprintNumber>5</sprintNumber>
+<sprintState>2</sprintState>
+<sprintGoal>Prendre en compte la SAG V2 et la surveillance, calculer les indicateurs de suivi performances Scarab et Saphir</sprintGoal>
+<sprintNbUserStory>0</sprintNbUserStory>
+<sprintNbTechnical>0</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-04-14 02:00:00.0</sprintStartDate>
+<sprintEndDate>2010-04-27 02:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>0.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<SprintMeasure>
+<SprintMeasure_jour>14:3:2010</SprintMeasure_jour>
+<SprintMeasure_NBTasks>0</SprintMeasure_NBTasks>
+<SprintMeasure_NBTasksDone>0</SprintMeasure_NBTasksDone>
+</SprintMeasure>
+<story id="5">
+<storyLabel>*Sprint 5*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:45:28.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="90">
+<storyLabel>PriseEnCpteSagV2Surv</storyLabel>
+<storyDescription>Migrer de la SAG V1.3 à la V2 afin de bénéficier des nouveaux services (surveillance)</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:12.227</storyCreationDate>
+<storyEstimationDate>2010-02-23 11:17:57.773</storyEstimationDate>
+<storyEstimatedPoints>15</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>12</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>21</storyTheme>
+</story>
+<story id="94">
+<storyLabel>DefConfSurvTechnoSca</storyLabel>
+<storyDescription>En tant que Développeur, Je peux définir les paramètres à surveiller et les conditions de surveillance pour Scarab Afin de pouvoir surveiller ensuite ces paramètres</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;objets g&amp;eacute;n&amp;eacute;riques en BD via SAG V2&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:09:12.238</storyCreationDate>
+<storyEstimationDate>2010-03-08 17:23:32.534</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>13</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>5</storyTheme>
+<storyCustomRole>4</storyCustomRole>
+</story>
+<story id="95">
+<storyLabel>SurvTechnoN0SCARAB</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter le TdB et vérifier s'il y a des anomalies sur SCARAB Afin de prévenir les experts concernés</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;partie surveillance automatique (lev&amp;eacute;e d'alarmes, d&amp;eacute;tection de chgt d'&amp;eacute;tat, historique de valeurs ...&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:09:12.241</storyCreationDate>
+<storyEstimationDate>2010-04-14 10:52:21.42</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>14</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>5</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="16">
+<storyLabel>CatN0Mad</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux   mettre au catalogue un produit N0 dumpwise Madras Afin de vérifier ses caractéristiques </storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-01-26 17:58:46.0</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:25:41.232</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>19</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="156">
+<storyLabel>CalculsSuiviPerfSap</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les indicateurs de suivi Afin de vérifier les performances de l'instrument</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.376</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:23:00.127</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>36</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="219">
+<storyLabel>ProdN0OrbiteMadNominale</storyLabel>
+<storyDescription>idem Scarab</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-25 11:02:53.207</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:29:27.825</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>46</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="55">
+<storyLabel>GestParamTech</storyLabel>
+<storyDescription>En tant que Expert, Je peux gérer mes jeux de paramètres par instrument Afin de enregistrer des jeux de paramètres techniques, sélectionner des jeux, en dupliquer, éditer un jeu, modifier le statut</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 15:16:26.149</storyCreationDate>
+<storyEstimationDate>2010-02-23 10:59:15.612</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>49</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>9</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="239">
+<storyLabel>AutoCatN0Mad</storyLabel>
+<storyDescription>Déclenchement automatique du catalogage N0 depuis l'espace de dépôt</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:52:29.852</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:32:00.074</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>52</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="245">
+<storyLabel>ReconstitutionN0OrbiteSap</storyLabel>
+<storyDescription>voir au catalogue les produits par orbite issus des produits dumpwise Saphir de l'ISRO</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 16:08:48.717</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:11:02.131</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>57</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="155">
+<storyLabel>CalculsSuiviPerfSca</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les indicateurs de suivi Afin de vérifier les performances de l'instrument</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;ex: facteur de bruit, gain, sensibilit&amp;eacute; radiom&amp;eacute;trique&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.373</storyCreationDate>
+<storyEstimationDate>2010-02-23 11:01:18.251</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>81</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="256">
+<storyLabel>Installation SAG V2</storyLabel>
+<storyDescription/>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-31 10:08:42.877</storyCreationDate>
+<storyEstimationDate>2010-03-31 10:09:25.155</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>105</storyRank>
+<storyState>5</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+</sprint>
+<sprint id="6">
+<sprintNbPointBacklog>0</sprintNbPointBacklog>
+<sprintActivationDate>2010-04-28 02:00:00.0</sprintActivationDate>
+<sprintNumber>6</sprintNumber>
+<sprintState>1</sprintState>
+<sprintNbUserStory>0</sprintNbUserStory>
+<sprintNbTechnical>0</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-04-28 02:00:00.0</sprintStartDate>
+<sprintEndDate>2010-05-17 02:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>0.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<story id="6">
+<storyLabel>*Sprint 6*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:45:39.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="43">
+<storyLabel>AcqN0etOAT</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux importer des données brutes issues de l'ISRO pour les 3 CUs (transfert FTP, décompression/détarage,antivirus)  Afin de les déposer dans l'espace d'échange pour catalogage et traitement</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote>&lt;p&gt;automatique et p&amp;eacute;riodique&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 14:18:57.1</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:04:56.922</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>7</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="44">
+<storyLabel>AcqN1STDouNRT</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux importer des produits N1 pour les 3 CUs issus de l'ISRO (transfert FTP, decompression/détarage, antivirus) Afin de les déposer dans l'espace d'échange pour le catalogage et le traitement</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote>&lt;p&gt;STD=orbite, NRT=dumpwise&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 14:53:07.275</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:05:55.203</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>8</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="52">
+<storyLabel>VisuN0MadHorsMesures</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les données technologiques de Madras Afin de investiguer sur un problème</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 15:15:31.354</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:03:54.511</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>12</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="96">
+<storyLabel>SurvTechnoN0SAPHIR</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter le TdB et vérifier s'il y a des anomalies sur Saphir Afin de prévenir les experts concernés</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:12.244</storyCreationDate>
+<storyEstimationDate>2010-04-14 10:52:43.184</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>15</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>5</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="98">
+<storyLabel>VisuN0ScaImage</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser ou extraire les diverses mesures brutes du N0 Scarab  Afin de expertiser leur qualité ou investiguer sur un problème</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;canaux 1 et 2 : image significatives (domaine visible)&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:09:22.016</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:09:29.632</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>17</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="100">
+<storyLabel>VisuN0SapImage</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les diverses mesures brutes du N0 Saphir par canal Afin de expertiser leur qualité ou investiguer sur un problème</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:22.02</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:51:58.88</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>19</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="146">
+<storyLabel>ExtractAnomalies</storyLabel>
+<storyDescription>En tant que Expert, Je peux connaître les anomalies (divers critères de sélection) pour un instrument donné et une période donnée Afin de investiguer sur un problème instrument</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.326</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:32.145</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>22</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="97">
+<storyLabel>SurvTechnoN0MADRAS</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter le TdB et vérifier s'il y a des anomalies sur Madras Afin de prévenir les experts concernés</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:12.247</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:42:51.436</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>23</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>5</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="147">
+<storyLabel>ExtractHistoParamSuivi</storyLabel>
+<storyDescription>En tant que Expert, Je peux extraire un tableau des valeurs d'un paramètre historisé Afin de tracer des  courbes, calculer des statistiques</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.348</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:38.064</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>24</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="148">
+<storyLabel>GraphesParamSuivis</storyLabel>
+<storyDescription>En tant que Expert, Je peux demander des graphes prédéfinis de synthèse Afin de analyser le comportement d'un instrument dans le temps</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;superposition de param&amp;egrave;tres, mat&amp;eacute;rialisation des orbites, des changements de mode &lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.351</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:43.261</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>25</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="157">
+<storyLabel>CalculsSuiviPerfMad</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les indicateurs de suivi Afin de vérifier les performances de l'instrument</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.379</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:23:39.431</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>37</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="235">
+<storyLabel>DocMUinitialRevue2</storyLabel>
+<storyDescription>Produire le MU dans l'état initial (fonction des strories terminées)</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:48:21.556</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:31:03.99</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>50</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>20</storyTheme>
+</story>
+<story id="240">
+<storyLabel>SurvIndicPerfSca</storyLabel>
+<storyDescription>surveiller les indicateurs de suivi des performances de Scarab</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:52:41.227</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:32:21.251</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>53</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+</story>
+<story id="241">
+<storyLabel>SurvIndicPerfSap</storyLabel>
+<storyDescription>surveiller les indicateurs de suivi des performances Saphir</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:53:35.103</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:32:29.359</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>54</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+</story>
+<story id="242">
+<storyLabel>SurvIndicPerfMad</storyLabel>
+<storyDescription>surveiller les indicateurs de suivi des performances Madras</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:53:55.741</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:32:32.767</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>55</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+</story>
+<story id="244">
+<storyLabel>CalculLocN0Mad</storyLabel>
+<storyDescription>Calculer localisation N0 Madras</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 16:04:13.224</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:04:36.955</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>56</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="246">
+<storyLabel>ReconstitutionN0OrbiteMad</storyLabel>
+<storyDescription>voir au catalogue les produits par orbite issus des produits dumpwise Madras de l'ISRO</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 16:11:02.15</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:16:16.49</storyEstimationDate>
+<storyEstimatedPoints>13</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>58</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+</story>
+<story id="248">
+<storyLabel>DefConfSurvTechnoMad</storyLabel>
+<storyDescription>idem Scarab</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 17:24:12.483</storyCreationDate>
+<storyEstimationDate>2010-03-08 17:24:38.887</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>59</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>5</storyTheme>
+</story>
+<story id="247">
+<storyLabel>DefConfSurvTechnoSap</storyLabel>
+<storyDescription>idem Scarab</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 17:23:43.687</storyCreationDate>
+<storyEstimationDate>2010-03-08 17:24:12.474</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>100</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>5</storyTheme>
+</story>
+<story id="258">
+<storyLabel>RapMensuelSurvSca</storyLabel>
+<storyDescription>Elaborer les donnees du rapport mensuel de surveillance Scarab et les graphes associes</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-04-14 10:43:18.687</storyCreationDate>
+<storyEstimationDate>2010-04-14 10:47:57.154</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>107</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="259">
+<storyLabel>RapMensuelSurvSap</storyLabel>
+<storyDescription>Elaborer les donnees du rapport mensuel de surveillance Saphir et les graphes associes</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-04-14 10:44:52.584</storyCreationDate>
+<storyEstimationDate>2010-04-14 10:48:07.419</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>108</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+</sprint>
+<sprint id="7">
+<sprintNbPointBacklog>0</sprintNbPointBacklog>
+<sprintActivationDate>2010-05-18 02:00:00.0</sprintActivationDate>
+<sprintNumber>7</sprintNumber>
+<sprintState>1</sprintState>
+<sprintNbUserStory>0</sprintNbUserStory>
+<sprintNbTechnical>0</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-05-18 02:00:00.0</sprintStartDate>
+<sprintEndDate>2010-06-01 02:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>0.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<story id="7">
+<storyLabel>*Sprint 7*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:45:47.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="145">
+<storyLabel>ProdEtatHebdoAcqN0</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter le rapport hebdomadaire des acquisitions N0 Afin de voir s'il y a eu des trous ou autres problèmes à signaler  à l'ISRO</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.324</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:26.599</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>21</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>16</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="141">
+<storyLabel>CatN1Sca</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter des produits N1 de Scarab au catalogue Afin de vérifier leurs caractéristiques</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;tous types (L1A1 ...)&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.314</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:10:20.13</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>23</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="142">
+<storyLabel>CatN1Sap</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter des produits N1 Saphir au catalogue Afin de vérifier leurs caractéristiques</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.317</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:57:14.529</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>24</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="143">
+<storyLabel>CatN1Mad</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux consulter au catalogue des produits N1 Madras Afin de vérifier leurs caractéristiques</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.319</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:58:49.758</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>25</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="102">
+<storyLabel>VisuN0MadImage</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser les diverses mesures brutes du N0 Madras par canal  Afin de vérifier leur qualité ou d'investiguer</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:22.025</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:52:59.439</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>29</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="103">
+<storyLabel>VisuN0MadQL</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser le QL d'un produit N0 Madras Afin de vérifier rapidement son aspect</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:09:22.028</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:53:57.165</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>31</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="152">
+<storyLabel>ControleN1Sca</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer des contrôles sur un produit N1 Scarab Afin de contrôler la qualité du produit</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.363</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:19:03.413</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>33</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="153">
+<storyLabel>ControleN1Sap</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer des contrôles sur un produit N1 Saphir Afin de contrôler  la qualité du produit</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.366</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:20:43.549</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>34</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="154">
+<storyLabel>ControleN1Mad</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer des contrôles sur un produit N1 Madras Afin de contrôler la qualité du produit</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.369</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:20:44.931</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>35</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>7</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="158">
+<storyLabel>VisuN1ScaImage</storyLabel>
+<storyDescription>En tant que Expert, Je peux visualiser une image Scarab Afin de l'analyser</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;ENVI&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.383</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:25:06.762</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>38</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="159">
+<storyLabel>VisuN1ScaQL</storyLabel>
+<storyDescription>visualiser QL Scarab</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.387</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:25:43.746</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>39</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="160">
+<storyLabel>VisuN1ScaHorsMesures</storyLabel>
+<storyDescription>visualiser le contenu d'un N1 Scarab (données hors mesures)</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.39</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:27:06.903</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>40</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="161">
+<storyLabel>VisuN1SapImage</storyLabel>
+<storyDescription>Visualiser N1 Saphir (mesures)</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.394</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:27:50.792</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>41</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="162">
+<storyLabel>VisuN1SapQL</storyLabel>
+<storyDescription>visualiser QL d'un N1 Saphir</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.398</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:28:26.217</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>42</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="163">
+<storyLabel>VisuN1SapHorsMesures</storyLabel>
+<storyDescription>visualiser données N1 Saphir hors mesures</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.402</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:29:14.979</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>43</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="164">
+<storyLabel>VisuN1MadImage</storyLabel>
+<storyDescription>visualiser N1 Madras (mesures)</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.406</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:30:16.11</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>44</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="165">
+<storyLabel>VisuN1MadQL</storyLabel>
+<storyDescription>visualiser QL N1 Madras</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.41</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:30:44.594</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>45</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="166">
+<storyLabel>VisuN1MadHorsMesures</storyLabel>
+<storyDescription>visualiser N1 Madras (données hors mesures)</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.414</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:31:28.363</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>46</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>4</storyTheme>
+</story>
+<story id="230">
+<storyLabel>ProdN1Sca</storyLabel>
+<storyDescription>En tant que CNES, Je peux fournir un N1 Scarab de chaque type  </storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:18:50.204</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:29:38.548</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>47</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+</story>
+<story id="231">
+<storyLabel>ProdN1Sap</storyLabel>
+<storyDescription>En tant que CNES, Je peux fournir un N1 Saphir de chaque type  </storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:19:34.071</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:29:42.441</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>48</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+</story>
+<story id="232">
+<storyLabel>ProdN1Mad</storyLabel>
+<storyDescription>En tant que CNES, Je peux fournir un produit N1 Madras de chaque type  </storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:20:05.793</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:29:47.259</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>49</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>17</storyTheme>
+</story>
+<story id="193">
+<storyLabel>IntegrationAtelierSherPA</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer l'atelier SherPA </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.216</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:41:49.439</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>50</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>10</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="194">
+<storyLabel>IntegrationAtelierSCAPIN</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer l'atelier SCAPIN </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.218</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:42:18.847</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>51</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>10</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="195">
+<storyLabel>TraitementN1Ref</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer un traitement N1 de référence (CNES) à partir de produits N0 Afin de fabriquer des N1</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;en choisissant un jeu de param&amp;egrave;tres techniques, et aussi une version de chaine N1&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.22</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:44:04.08</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>52</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>8</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="196">
+<storyLabel>TraitementN1ISRO</storyLabel>
+<storyDescription>En tant que Expert, Je peux lancer un traitement N1 ISRO sur des produits N0 Afin de fabriquer des N1</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;avec param&amp;egrave;tres officiels par d&amp;eacute;faut, ou choix de param&amp;egrave;tres, ...&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.222</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:45:16.707</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>53</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>8</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="260">
+<storyLabel>RapMensuelSurvMad</storyLabel>
+<storyDescription>Elaborer les donnees du rapport mensuel de surveillance Madras et les graphes associes</storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-04-14 10:45:06.36</storyCreationDate>
+<storyEstimationDate>2010-04-14 10:47:47.841</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>109</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="261">
+<storyLabel>SurvTechnoChgtSca</storyLabel>
+<storyDescription>En tant que , Je peux  </storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote>&lt;p&gt;avec correction SAG&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-04-14 10:53:47.733</storyCreationDate>
+<storyEstimationDate>2010-04-14 11:01:13.026</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>110</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="262">
+<storyLabel>SurvTechChgtSap</storyLabel>
+<storyDescription>En tant que , Je peux  </storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote>&lt;p&gt;avec correction SAG&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-04-14 11:01:13.027</storyCreationDate>
+<storyEstimationDate>2010-04-14 11:01:58.53</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>111</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+<story id="263">
+<storyLabel>SurvTechChgtMad</storyLabel>
+<storyDescription>En tant que , Je peux  </storyDescription>
+<storyOwner>7</storyOwner>
+<storyNote>&lt;p&gt;avec correction SAG&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-04-14 11:01:58.531</storyCreationDate>
+<storyEstimationDate>2010-04-14 11:02:22.067</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>112</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+</story>
+</sprint>
+<sprint id="8">
+<sprintNbPointBacklog>0</sprintNbPointBacklog>
+<sprintActivationDate>2010-06-02 02:00:00.0</sprintActivationDate>
+<sprintNumber>8</sprintNumber>
+<sprintState>1</sprintState>
+<sprintNbUserStory>0</sprintNbUserStory>
+<sprintNbTechnical>0</sprintNbTechnical>
+<sprintNbDefect>0</sprintNbDefect>
+<sprintStartDate>2010-06-02 02:00:00.0</sprintStartDate>
+<sprintEndDate>2010-06-15 02:00:00.0</sprintEndDate>
+<sprintFinishDefinition/>
+<sprintRetrospective/>
+<sprintVelocity>0.0</sprintVelocity>
+<sprintEstimatedVelocity>35.0</sprintEstimatedVelocity>
+<sprintDailyWorkTime>8.0</sprintDailyWorkTime>
+<story id="8">
+<storyLabel>*Sprint 8*</storyLabel>
+<storyDescription>null</storyDescription>
+<storyCreationDate>2010-01-26 11:45:56.0</storyCreationDate>
+<storyEstimatedPoints>-999</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>-999</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+</story>
+<story id="46">
+<storyLabel>AcqCatParamTechISRO</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux mémoriser les jeux de paramètres techniques issus de l'ISRO via e-mail Afin de mettre à jour les valeurs et le  statut du jeu de paramètres TEC</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 15:03:21.344</storyCreationDate>
+<storyEstimationDate>2010-02-23 16:02:35.448</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>9</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>12</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="226">
+<storyLabel>Outils de débug Python</storyLabel>
+<storyDescription/>
+<storyOwner>7</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-02 09:23:27.671</storyCreationDate>
+<storyEstimationDate>2010-03-02 09:26:12.884</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>3</storyType>
+<storyRank>12</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>21</storyTheme>
+<test id="4">
+<testName>vérifier la mise en place</testName>
+<testDescription>Etant donné , Quand  Alors </testDescription>
+<testState>0</testState>
+</test>
+</story>
+<story id="56">
+<storyLabel>SupervisionSystèmeNagios</storyLabel>
+<storyDescription>En tant que Administrateur, Je peux superviser le système Afin de détecter les saturations d'espace, le dépassement des quota d'un utilisateur, les surcharges CPU ...</storyDescription>
+<storyOwner>2</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 15:27:21.854</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:16.998</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>20</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>3</storyTheme>
+<storyCustomRole>1</storyCustomRole>
+</story>
+<story id="149">
+<storyLabel>TraitAnoEvtISRO</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux voir dans le TdB l'arrivée d'anomalies ou chgts importants émis par l'ISRO Afin de prévenir les experts concernés</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;anomalies g&amp;eacute;r&amp;eacute;es au catalogue via surveillance SAG&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.354</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:51.453</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>26</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>12</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="150">
+<storyLabel>AideRapportTechno</storyLabel>
+<storyDescription>En tant que Expert, Je peux demander assistance pour extraire des synthèses du TEC Afin de compléter un rapport technologique par instrument</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;anomalies, changements de configuration, graphes, ...&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.357</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:26:56.392</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>27</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="151">
+<storyLabel>AideRapportPerfo</storyLabel>
+<storyDescription>En tant que Expert, Je peux demander assistance pour extraire des synthèses du TEC Afin de compléter un rapport sur les performances d'un instrument</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;indicateurs de suivi des perfo (facteur de bruit, sensibilit&amp;eacute;, ...)&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:21:32.36</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:03.433</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>28</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="167">
+<storyLabel>OutilScilab</storyLabel>
+<storyDescription>En tant que Expert, Je peux utiliser Scilab sur des mesures issues de produits de N0  Afin de expertiser le produit</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:21:32.418</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:08.6</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>30</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>11</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="191">
+<storyLabel>AcqCatHKTMSatellite</storyLabel>
+<storyDescription>En tant que Expert, Je peux consulter au catalogue la télémesure servitude satellite Afin de investiguer sur problème</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.212</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:14.688</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>32</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>11</storyTheme>
+<storyCustomRole>2</storyCustomRole>
+</story>
+<story id="197">
+<storyLabel>ImportVersionChaineN1ISRO</storyLabel>
+<storyDescription>En tant que Administrateur, Je peux installer une nouvelle version de chaine ISRO Afin de prendre en compte un upgrade ISRO</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;y compris g&amp;eacute;n&amp;eacute;ration si n&amp;eacute;cessaire&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.224</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:21.458</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>33</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>8</storyTheme>
+<storyCustomRole>1</storyCustomRole>
+</story>
+<story id="198">
+<storyLabel>OfficialisationVersionChaineISRO</storyLabel>
+<storyDescription>En tant que Administrateur, Je peux mettre en opérationnel une nouvelle version de cahine ISRO précédemment installée Afin de la rendre utilisable pour tous</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.226</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:27.574</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>34</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>8</storyTheme>
+<storyCustomRole>1</storyCustomRole>
+</story>
+<story id="201">
+<storyLabel>ProdBilanExploitation</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux extraire des informations de synthèse Afin de produire un bilan d'exploitation</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;par ex nb N0 re&amp;ccedil;us, trait&amp;eacute;s, N1 re&amp;ccedil;us, N1 produits, ...&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.232</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:33.04</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>35</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>14</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="203">
+<storyLabel>PrepaMailsExportParamTech</storyLabel>
+<storyDescription>assister l'utilisateur pour émettre un mail d'export de paramètres techniques vers l'ISRO</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;adresses mail, listes &lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.237</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:40.08</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>36</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>15</storyTheme>
+</story>
+<story id="204">
+<storyLabel>PrepaMailsExportRapport</storyLabel>
+<storyDescription>Assister l'utilisateur pour envoyer ses rapports vers les destinataires habituels prévus</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;adresses,&amp;nbsp; listes&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.239</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:46.36</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>37</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>15</storyTheme>
+</story>
+<story id="205">
+<storyLabel>PrepaMailISRO</storyLabel>
+<storyDescription>assister l'utilisateur  pour envoyer un mail quelconque à l'ISRO</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;adresses, listes pr&amp;eacute;d&amp;eacute;finies suivant th&amp;egrave;me&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.241</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:27:53.966</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>38</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>15</storyTheme>
+</story>
+<story id="206">
+<storyLabel>ExportGrosFichier</storyLabel>
+<storyDescription>Assister l'utilisateur pour envoyer un gros fichier par mail (via Postfile)</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.244</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:28:16.072</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>39</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>15</storyTheme>
+</story>
+<story id="207">
+<storyLabel>PurgeDonnees</storyLabel>
+<storyDescription>En tant que Administrateur, Je peux configurer les purges automatiques Afin de maîtriser l'espace de l'archive en ligne</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.246</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:28:21.259</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>40</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>3</storyTheme>
+<storyCustomRole>1</storyCustomRole>
+</story>
+<story id="208">
+<storyLabel>ConfigurationTINA</storyLabel>
+<storyDescription>En tant que admin, Je peux configurer TINA Afin de définir les sauvegardes incrémentales, totales</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;sur site&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.249</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:28:27.877</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>41</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>3</storyTheme>
+</story>
+<story id="209">
+<storyLabel>ArchivageSTAF</storyLabel>
+<storyDescription>En tant que Administrateur, Je peux configurer l'archivage STAF  </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;sur site&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.251</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:28:33.457</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>42</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>19</storyTheme>
+<storyCustomRole>1</storyCustomRole>
+</story>
+<story id="192">
+<storyLabel>AcqCatTMInstrument</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux cataloguer des fichiers de TM instruments demandés à l'ISRO </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.214</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:36:18.712</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>49</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>11</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="236">
+<storyLabel>TestPerformancesN0</storyLabel>
+<storyDescription>Mesurer la durée de traitement de tous les fichiers N0 d'une journée pour les 3 instruments (acquisition, catalogage, surveillance et calculs de suivi des performances)</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:49:41.498</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:31:25.68</storyEstimationDate>
+<storyEstimatedPoints>5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>51</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>21</storyTheme>
+</story>
+<story id="199">
+<storyLabel>CommandeN1ICARE</storyLabel>
+<storyDescription>En tant que Opérateur, Je peux rechercher et commander des produits N1 au pôle ICARE Afin de pallier des manques de N1 issus de l'ISRO</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.228</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:13:59.77</storyEstimationDate>
+<storyEstimatedPoints>1</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>56</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>18</storyTheme>
+<storyCustomRole>3</storyCustomRole>
+</story>
+<story id="200">
+<storyLabel>RestaurationN1ICARE</storyLabel>
+<storyDescription>En tant que Administrateur, Je peux restaurer des produits N1 à partir d'ICARE Afin de pallier un problème au STAF </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;pb archive au STAF (ou &amp;agrave; l'ISRO)&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.23</storyCreationDate>
+<storyEstimationDate>2010-02-25 11:14:08.163</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>57</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>18</storyTheme>
+<storyCustomRole>1</storyCustomRole>
+</story>
+<story id="202">
+<storyLabel>ComparProduitsN1</storyLabel>
+<storyDescription>En tant que exper, Je peux comparer 2 produits N1 Afin de vérifier les chaines ISRO ou de référence</storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.235</storyCreationDate>
+<storyEstimationDate>2010-02-23 17:53:08.36</storyEstimationDate>
+<storyEstimatedPoints>8</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>59</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>11</storyTheme>
+</story>
+<story id="210">
+<storyLabel>RestaurationSTAF</storyLabel>
+<storyDescription>En tant que admin, Je peux restaurer des données perdues qui ont  été archivées au STAF  </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote>&lt;p&gt;par ex produits&lt;/p&gt;</storyNote>
+<storyCreationDate>2010-02-22 16:23:11.253</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:28:38.687</storyEstimationDate>
+<storyEstimatedPoints>2</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>61</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>19</storyTheme>
+</story>
+<story id="233">
+<storyLabel>AcqMailISRO</storyLabel>
+<storyDescription>acquérir e-mails ISRO et si objets prédéfinis, dépôt dans un espace pour traitement (signalisation opérateur ...)</storyDescription>
+<storyOwner>3</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-03-08 15:31:07.298</storyCreationDate>
+<storyEstimationDate>2010-03-08 16:30:15.387</storyEstimationDate>
+<storyEstimatedPoints>3</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>86</storyRank>
+<storyState>4</storyState>
+<storyActiveRelease>true</storyActiveRelease>
+<storyTheme>12</storyTheme>
+</story>
+</sprint>
+</release>
+<theme id="3">
+<themeName>Supervision et administration</themeName>
+<themeColor>#B1FF14</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="4">
+<themeName>Visuallisation par produit</themeName>
+<themeColor>#0DFF35</themeColor>
+<themeTextColor>#000000</themeTextColor>
+</theme>
+<theme id="5">
+<themeName>Surveillance technologique</themeName>
+<themeColor>#0FFF9F</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="7">
+<themeName>Surveillance performances et produit</themeName>
+<themeColor>#5382E0</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="8">
+<themeName>Chaines N1</themeName>
+<themeColor>#FF14FF</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription>2 catégories : ISRO et CNES</themeDescription>
+</theme>
+<theme id="9">
+<themeName>Gestion paramètres techniques</themeName>
+<themeColor>#FF0A85</themeColor>
+<themeTextColor>#000000</themeTextColor>
+</theme>
+<theme id="10">
+<themeName>Ateliers expertise</themeName>
+<themeColor>#FF0F3F</themeColor>
+<themeTextColor>#000000</themeTextColor>
+</theme>
+<theme id="11">
+<themeName>Outils expertise</themeName>
+<themeColor>#FF69B4</themeColor>
+<themeTextColor>#000000</themeTextColor>
+</theme>
+<theme id="12">
+<themeName>Prise en compte infos ISRO</themeName>
+<themeColor>#B366FF</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="14">
+<themeName>Rapports</themeName>
+<themeColor>#80FFF2</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="15">
+<themeName>Assistance messages</themeName>
+<themeColor>#A0FF99</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="16">
+<themeName>Acquisition et inventaire N0</themeName>
+<themeColor>#FFF5B3</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="17">
+<themeName>Acquisition etinventaire N1</themeName>
+<themeColor>#BFFFB3</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="18">
+<themeName>Acquisition ICARE</themeName>
+<themeColor>#DAFF82</themeColor>
+<themeTextColor>#000000</themeTextColor>
+</theme>
+<theme id="19">
+<themeName>Archivage STAF</themeName>
+<themeColor>#9466FF</themeColor>
+<themeTextColor>#000000</themeTextColor>
+</theme>
+<theme id="20">
+<themeName>Documents contrat</themeName>
+<themeColor>#FF623B</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription>documents demandés par le CNES</themeDescription>
+</theme>
+<theme id="21">
+<themeName>Technique</themeName>
+<themeColor>#FFE014</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<theme id="22">
+<themeName>Gestion de configuration</themeName>
+<themeColor>#1919FF</themeColor>
+<themeTextColor>#000000</themeTextColor>
+<themeDescription/>
+</theme>
+<customRole id="1">
+<customRoleName>Administrateur</customRoleName>
+<customRoleSatisfactionCriteria/>
+<customRoleExpertnessLevel>2</customRoleExpertnessLevel>
+<customRoleUserFrequency>3</customRoleUserFrequency>
+<customRoleInstances>0</customRoleInstances>
+<customRoleDescription/>
+</customRole>
+<customRole id="4">
+<customRoleName>Développeur</customRoleName>
+<customRoleSatisfactionCriteria/>
+<customRoleExpertnessLevel>1</customRoleExpertnessLevel>
+<customRoleUserFrequency>2</customRoleUserFrequency>
+<customRoleInstances>0</customRoleInstances>
+<customRoleDescription/>
+</customRole>
+<customRole id="2">
+<customRoleName>Expert</customRoleName>
+<customRoleSatisfactionCriteria/>
+<customRoleExpertnessLevel>0</customRoleExpertnessLevel>
+<customRoleUserFrequency>2</customRoleUserFrequency>
+<customRoleInstances>1</customRoleInstances>
+<customRoleDescription/>
+</customRole>
+<customRole id="3">
+<customRoleName>Opérateur</customRoleName>
+<customRoleSatisfactionCriteria/>
+<customRoleExpertnessLevel>1</customRoleExpertnessLevel>
+<customRoleUserFrequency>1</customRoleUserFrequency>
+<customRoleInstances>1</customRoleInstances>
+<customRoleDescription/>
+</customRole>
+<story id="211">
+<storyLabel>InstallTECSite</storyLabel>
+<storyDescription>En tant que admin, Je peux configurer sur site l'espace validation, l'espace opérationnel et procéder à l'installation  </storyDescription>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.256</storyCreationDate>
+<storyEstimatedPoints>-5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>43</storyRank>
+<storyState>1</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+<storyTheme>22</storyTheme>
+</story>
+<story id="212">
+<storyLabel>LivraisonTECInitiale</storyLabel>
+<storyDescription/>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.259</storyCreationDate>
+<storyEstimatedPoints>-5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>44</storyRank>
+<storyState>1</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+<storyTheme>22</storyTheme>
+</story>
+<story id="213">
+<storyLabel>LivraisonNouvelleVersionTEC</storyLabel>
+<storyDescription/>
+<storyOwner>6</storyOwner>
+<storyNote/>
+<storyCreationDate>2010-02-22 16:23:11.261</storyCreationDate>
+<storyEstimatedPoints>-5</storyEstimatedPoints>
+<storyType>0</storyType>
+<storyRank>45</storyRank>
+<storyState>1</storyState>
+<storyActiveRelease>false</storyActiveRelease>
+<storyTheme>22</storyTheme>
+</story>
+<cliche id="1">
+<clicheFonctionalStoryEstimatedVelocity>26</clicheFonctionalStoryEstimatedVelocity>
+<clicheDefectEstimatedVelocity>0</clicheDefectEstimatedVelocity>
+<clicheTechnicalStoryEstimatedVelocity>0</clicheTechnicalStoryEstimatedVelocity>
+<clicheFonctionalStoryBacklogPoints>39</clicheFonctionalStoryBacklogPoints>
+<clicheDefectBacklogPoints>0</clicheDefectBacklogPoints>
+<clicheTechnicalStoryBacklogPoints>0</clicheTechnicalStoryBacklogPoints>
+<clicheFonctionalStoryProductRemainingPoints>39</clicheFonctionalStoryProductRemainingPoints>
+<clicheDefectProductRemainingPoints>0</clicheDefectProductRemainingPoints>
+<clicheTechnicalStoryProductRemainingPoints>0</clicheTechnicalStoryProductRemainingPoints>
+<clicheFonctionalStoryReleaseRemainingPoints>26</clicheFonctionalStoryReleaseRemainingPoints>
+<clicheDefectReleaseRemainingPoints>0</clicheDefectReleaseRemainingPoints>
+<clicheTechnicalStoryReleaseRemainingPoints>0</clicheTechnicalStoryReleaseRemainingPoints>
+<clicheFinishedStories>0</clicheFinishedStories>
+<clicheLockedStories>7</clicheLockedStories>
+<clichePlannedStories>0</clichePlannedStories>
+<clicheEstimatedStories>1</clicheEstimatedStories>
+<clicheValidatedStories>32</clicheValidatedStories>
+<clicheIdentifiedStories>72</clicheIdentifiedStories>
+<clicheWrittenTests>1</clicheWrittenTests>
+<clicheProblems>0</clicheProblems>
+<clicheDate>2010-02-23 10:40:12.318</clicheDate>
+<clicheResource>null</clicheResource>
+</cliche>
+<cliche id="2">
+<clicheFonctionalStoryEstimatedVelocity>32</clicheFonctionalStoryEstimatedVelocity>
+<clicheDefectEstimatedVelocity>0</clicheDefectEstimatedVelocity>
+<clicheTechnicalStoryEstimatedVelocity>11</clicheTechnicalStoryEstimatedVelocity>
+<clicheFonctionalStoryBacklogPoints>198</clicheFonctionalStoryBacklogPoints>
+<clicheDefectBacklogPoints>0</clicheDefectBacklogPoints>
+<clicheTechnicalStoryBacklogPoints>31</clicheTechnicalStoryBacklogPoints>
+<clicheFonctionalStoryProductRemainingPoints>181</clicheFonctionalStoryProductRemainingPoints>
+<clicheDefectProductRemainingPoints>0</clicheDefectProductRemainingPoints>
+<clicheTechnicalStoryProductRemainingPoints>31</clicheTechnicalStoryProductRemainingPoints>
+<clicheFonctionalStoryReleaseRemainingPoints>164</clicheFonctionalStoryReleaseRemainingPoints>
+<clicheDefectReleaseRemainingPoints>0</clicheDefectReleaseRemainingPoints>
+<clicheTechnicalStoryReleaseRemainingPoints>31</clicheTechnicalStoryReleaseRemainingPoints>
+<clicheFinishedStories>5</clicheFinishedStories>
+<clicheLockedStories>10</clicheLockedStories>
+<clichePlannedStories>41</clichePlannedStories>
+<clicheEstimatedStories>5</clicheEstimatedStories>
+<clicheValidatedStories>1</clicheValidatedStories>
+<clicheIdentifiedStories>25</clicheIdentifiedStories>
+<clicheWrittenTests>2</clicheWrittenTests>
+<clicheProblems>0</clicheProblems>
+<clicheDate>2010-03-02 10:55:17.517</clicheDate>
+<clicheResource>null</clicheResource>
+</cliche>
+<cliche id="3">
+<clicheFonctionalStoryEstimatedVelocity>31</clicheFonctionalStoryEstimatedVelocity>
+<clicheDefectEstimatedVelocity>0</clicheDefectEstimatedVelocity>
+<clicheTechnicalStoryEstimatedVelocity>12</clicheTechnicalStoryEstimatedVelocity>
+<clicheFonctionalStoryBacklogPoints>330</clicheFonctionalStoryBacklogPoints>
+<clicheDefectBacklogPoints>0</clicheDefectBacklogPoints>
+<clicheTechnicalStoryBacklogPoints>35</clicheTechnicalStoryBacklogPoints>
+<clicheFonctionalStoryProductRemainingPoints>289</clicheFonctionalStoryProductRemainingPoints>
+<clicheDefectProductRemainingPoints>0</clicheDefectProductRemainingPoints>
+<clicheTechnicalStoryProductRemainingPoints>32</clicheTechnicalStoryProductRemainingPoints>
+<clicheFonctionalStoryReleaseRemainingPoints>159</clicheFonctionalStoryReleaseRemainingPoints>
+<clicheDefectReleaseRemainingPoints>0</clicheDefectReleaseRemainingPoints>
+<clicheTechnicalStoryReleaseRemainingPoints>32</clicheTechnicalStoryReleaseRemainingPoints>
+<clicheFinishedStories>12</clicheFinishedStories>
+<clicheLockedStories>14</clicheLockedStories>
+<clichePlannedStories>41</clichePlannedStories>
+<clicheEstimatedStories>39</clicheEstimatedStories>
+<clicheValidatedStories>0</clicheValidatedStories>
+<clicheIdentifiedStories>3</clicheIdentifiedStories>
+<clicheWrittenTests>2</clicheWrittenTests>
+<clicheProblems>0</clicheProblems>
+<clicheDate>2010-03-15 17:52:09.352</clicheDate>
+<clicheResource>57</clicheResource>
+</cliche>
+<cliche id="4">
+<clicheFonctionalStoryEstimatedVelocity>29</clicheFonctionalStoryEstimatedVelocity>
+<clicheDefectEstimatedVelocity>3</clicheDefectEstimatedVelocity>
+<clicheTechnicalStoryEstimatedVelocity>5</clicheTechnicalStoryEstimatedVelocity>
+<clicheFonctionalStoryBacklogPoints>339</clicheFonctionalStoryBacklogPoints>
+<clicheDefectBacklogPoints>5</clicheDefectBacklogPoints>
+<clicheTechnicalStoryBacklogPoints>35</clicheTechnicalStoryBacklogPoints>
+<clicheFonctionalStoryProductRemainingPoints>259</clicheFonctionalStoryProductRemainingPoints>
+<clicheDefectProductRemainingPoints>3</clicheDefectProductRemainingPoints>
+<clicheTechnicalStoryProductRemainingPoints>28</clicheTechnicalStoryProductRemainingPoints>
+<clicheFonctionalStoryReleaseRemainingPoints>259</clicheFonctionalStoryReleaseRemainingPoints>
+<clicheDefectReleaseRemainingPoints>3</clicheDefectReleaseRemainingPoints>
+<clicheTechnicalStoryReleaseRemainingPoints>25</clicheTechnicalStoryReleaseRemainingPoints>
+<clicheFinishedStories>27</clicheFinishedStories>
+<clicheLockedStories>9</clicheLockedStories>
+<clichePlannedStories>73</clichePlannedStories>
+<clicheEstimatedStories>1</clicheEstimatedStories>
+<clicheValidatedStories>0</clicheValidatedStories>
+<clicheIdentifiedStories>3</clicheIdentifiedStories>
+<clicheWrittenTests>2</clicheWrittenTests>
+<clicheProblems>0</clicheProblems>
+<clicheDate>2010-03-30 11:49:33.116</clicheDate>
+<clicheResource>null</clicheResource>
+</cliche>
+<cliche id="5">
+<clicheFonctionalStoryEstimatedVelocity>41</clicheFonctionalStoryEstimatedVelocity>
+<clicheDefectEstimatedVelocity>0</clicheDefectEstimatedVelocity>
+<clicheTechnicalStoryEstimatedVelocity>20</clicheTechnicalStoryEstimatedVelocity>
+<clicheFonctionalStoryBacklogPoints>339</clicheFonctionalStoryBacklogPoints>
+<clicheDefectBacklogPoints>8</clicheDefectBacklogPoints>
+<clicheTechnicalStoryBacklogPoints>35</clicheTechnicalStoryBacklogPoints>
+<clicheFonctionalStoryProductRemainingPoints>246</clicheFonctionalStoryProductRemainingPoints>
+<clicheDefectProductRemainingPoints>0</clicheDefectProductRemainingPoints>
+<clicheTechnicalStoryProductRemainingPoints>23</clicheTechnicalStoryProductRemainingPoints>
+<clicheFonctionalStoryReleaseRemainingPoints>246</clicheFonctionalStoryReleaseRemainingPoints>
+<clicheDefectReleaseRemainingPoints>0</clicheDefectReleaseRemainingPoints>
+<clicheTechnicalStoryReleaseRemainingPoints>23</clicheTechnicalStoryReleaseRemainingPoints>
+<clicheFinishedStories>32</clicheFinishedStories>
+<clicheLockedStories>11</clicheLockedStories>
+<clichePlannedStories>69</clichePlannedStories>
+<clicheEstimatedStories>0</clicheEstimatedStories>
+<clicheValidatedStories>0</clicheValidatedStories>
+<clicheIdentifiedStories>3</clicheIdentifiedStories>
+<clicheWrittenTests>2</clicheWrittenTests>
+<clicheProblems>0</clicheProblems>
+<clicheDate>2010-04-14 10:42:51.101</clicheDate>
+<clicheResource>null</clicheResource>
+</cliche>
+<role id="8a5ef3b1272dd90601273e9e76000001">
+<roleUser>3</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b12679ce630126d6e9c02c0009">
+<roleUser>5</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b1272dd90601278f9e530a000d">
+<roleUser>11</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b12679ce630127299ebb84001e">
+<roleUser>8</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b1279a2f0f0127fb9749ba0009">
+<roleUser>7</roleUser>
+<roleName>1</roleName>
+</role>
+<role id="8a5ef3b1279a2f0f0127fb6a20bf0007">
+<roleUser>2</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b1272dd906012762a8a6ec0007">
+<roleUser>4</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b12679ce630126dc63fcf5000a">
+<roleUser>6</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b1272dd906012762c6aad50009">
+<roleUser>10</roleUser>
+<roleName>4</roleName>
+</role>
+<role id="8a5ef3b1272dd906012743580b940003">
+<roleUser>9</roleUser>
+<roleName>4</roleName>
+</role>
+<user id="3">
+<userFirstName>clodio</userFirstName>
+<userLastName>a</userLastName>
+<userEmail>a@a.fr</userEmail>
+<userLogin>a</userLogin>
+<userPwd>0cc175b9c0f1b6a831c399e269772661</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="5">
+<userFirstName>Mohamed</userFirstName>
+<userLastName>Lahmich</userLastName>
+<userEmail>m.lahmich@akka.eu</userEmail>
+<userLogin>mlahmich</userLogin>
+<userPwd>aeb9e349c0c29a0b9f42b8312029c4af</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="11">
+<userFirstName>Nicolas</userFirstName>
+<userLastName>Mary</userLastName>
+<userEmail>nicolas.mary@external.thalesgroup.com</userEmail>
+<userLogin>Nicolas</userLogin>
+<userPwd>cad327c4dfd51fdfd446dc9dfb3ed498</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="8">
+<userFirstName>Patrice</userFirstName>
+<userLastName>Estublier</userLastName>
+<userEmail>patrice.estublier@thalesgroup.com</userEmail>
+<userLogin>estublier</userLogin>
+<userPwd>5974db231709cae2ed8c6f31a8ed120b</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="7">
+<userFirstName>Josiane</userFirstName>
+<userLastName>Rollin</userLastName>
+<userEmail>josiane.rollin@cnes.fr</userEmail>
+<userLogin>rollinj</userLogin>
+<userPwd>6c10829089343241ecf8905d3c55486c</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="2">
+<userFirstName>Serge</userFirstName>
+<userLastName>Saur</userLastName>
+<userEmail>serge.saur@thalesgroup.com</userEmail>
+<userLogin>saur</userLogin>
+<userPwd>5f4dcc3b5aa765d61d8327deb882cf99</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="4">
+<userFirstName>Stéphane</userFirstName>
+<userLastName>VETAULT</userLastName>
+<userEmail>s.vetault@akka.eu</userEmail>
+<userLogin>svetault</userLogin>
+<userPwd>d28193465b912799bd71701dc91873b0</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="6">
+<userFirstName>Philippe</userFirstName>
+<userLastName>Cabane</userLastName>
+<userEmail>philippe.cabane@thalesgroup.com</userEmail>
+<userLogin>cabane</userLogin>
+<userPwd>9b90f910f8a5d4b25ce7500e431db9ca</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="10">
+<userFirstName>Nicolas</userFirstName>
+<userLastName>Mary</userLastName>
+<userEmail>nicolas.mary@external.thalesgroup.com</userEmail>
+<userLogin>nmary</userLogin>
+<userPwd>8076a8a1d2404138751ceb2d39350bb3</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+<user id="9">
+<userFirstName>Alexandre</userFirstName>
+<userLastName>Nouvel</userLastName>
+<userEmail>a.nouvel@akka.eu</userEmail>
+<userLogin>nouvel</userLogin>
+<userPwd>1a0cd51345acdbbb82df4558e7bb334b</userPwd>
+<userLanguage>0</userLanguage>
+</user>
+</product>
