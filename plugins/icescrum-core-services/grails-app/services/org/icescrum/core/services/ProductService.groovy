@@ -121,9 +121,8 @@ class ProductService {
       securityService.secureDomain(_product)
       _product.productOwners.eachWithIndex{it,index ->
          securityService.createProductOwnerPermissions(it, _product)
-        if (index == 0)
-          securityService.changeOwner(it,_product)
       }
+      securityService.changeOwner(_product.productOwners.first(),_product)
     } catch (Exception e) {
       throw new RuntimeException(e)
     }

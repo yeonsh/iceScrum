@@ -184,9 +184,8 @@ class TeamService {
     }
     team.scrumMasters.eachWithIndex {it,index ->
       securityService.createScrumMasterPermissions it, team
-      if (index == 0)
-        securityService.changeOwner(it,team)
     }
+    securityService.changeOwner(team.scrumMasters.first(),team)
     team.save()
   }
 
