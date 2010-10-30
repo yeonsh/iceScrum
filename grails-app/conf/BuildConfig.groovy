@@ -90,17 +90,24 @@ println "Compile and use icescrum plugins : ${iceScrumPluginsDir?true:false}"
 
 if (iceScrumPluginsDir){
   iceScrumPluginsDir.split(";").each {
-    File pluginDir = new File(it.toString())
-    println "Scanning plugin dir : ${pluginDir.absolutePath}"
-    if (pluginDir.exists()){
-      File pluginDescriptor = GrailsScriptRunner.getPluginDescriptor(pluginDir);
-      if (pluginDescriptor){
-        String pluginName = GrailsNameUtils.getPluginName(pluginDescriptor.getName());
-        println "found plugin : ${pluginName}"
-        grails.plugin.location."${pluginName}" =  "${it}"
+    File dir = new File(it.toString())
+    println "Scanning plugin dir : ${dir.canonicalPath}"
+
+    if (dir.exists()){
+      File descriptor = dir.listFiles(new FilenameFilter() {
+            public boolean accept(File file, String s) {
+                return s.endsWith("GrailsPlugin.groovy");
+            }
+      })[0] ?: null;
+
+      if (descriptor){
+        String name = GrailsNameUtils.getPluginName(descriptor.getName());
+        println "found plugin : ${name}"
+        grails.plugin.location."${name}" =  "${it}"
       }
     }else{
       println "no plugin found in dir"
     }
+
   }
 }
