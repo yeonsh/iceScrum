@@ -80,7 +80,47 @@ class XMLConverterSupport {
             allowNewMembers(true)
             allowRoleChange(content.productEnableRole.text().toBoolean()?:true)
           }
+          def foundSm = null
+          scrumMasters(){
+            content.role.findAll{ it.roleName.text() == '1' }.each{
+              if (it.roleUser.text()?.toInteger()){
+                foundSm = -1
+                scrumMaster(id:it.roleUser)
+              }
+            }
+            if (foundSm == null){
+              content.role.find{ it.roleName.text() == '2' }.each {
+                foundSm = it.roleUser.text()
+                scrumMaster(id:it.roleUser)
+              }
+            }
+          }
           members(){
+            if (foundSm != -1){
+              def u = content.user.find{user -> user.@id == foundSm}
+              user(id:u.@id){
+                firstName(u.userFirstName.text())
+                lastName(u.userLastName.text())
+                username(u.userLogin.text())
+                password(u.userPwd.text())
+                email(u.userEmail.text())
+                dateCreated(formatter.format(new Date()))
+                enabled(true)
+                accountExpired(false)
+                accountLocked(false)
+                passwordExpired(true)
+                preferences(){
+                  u.userLanguage.text().toInteger() == 0 ? language('fr') : u.userLanguage.text().toInteger() == 1 ? language('en') : language('en')
+                  activity()
+                  filterTask(userPref.filterTask)
+                  menu(userPref.menu)
+                  menuHidden(userPref.menuHidden)
+                }
+                teams(){
+                  team(id:1)
+                }
+              }
+            }
             content.role.findAll{ it.roleName.text() != '2' }.each{ role ->
               def u = content.user.find{user -> user.@id == role.roleUser.text()}
               user(id:u.@id){
@@ -111,11 +151,7 @@ class XMLConverterSupport {
               }
             }
           }
-          scrumMasters(){
-            content.role.findAll{ it.roleName.text() == '1' }.each{
-              scrumMaster(id:it.roleUser)
-            }
-          }
+
         }
       }
       releases(){
@@ -260,7 +296,7 @@ class XMLConverterSupport {
                               type()
                               state(t.taskState.text())
                               rank(ind4+1)
-                              creationDate(s.sprintActivationDate.text())
+                              (s.sprintActivationDate.text() != "")  ? creationDate(s.sprintActivationDate.text()) : creationDate(s.sprintStartDate.text())
                               (inProgressD && t.taskState.text().toInteger() >= 1)  ? inProgressDate(inProgressD) : inProgressDate()
                               (doneDst && t.taskState.text().toInteger() == 2) ? doneDate(doneDst) : doneDate()
                               creator(id:t.taskCreator.text())

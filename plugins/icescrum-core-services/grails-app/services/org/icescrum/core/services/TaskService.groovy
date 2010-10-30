@@ -449,6 +449,8 @@ class TaskService {
                                       )?:null
         if (u)
           t.creator = u
+        else
+          t.creator = p.productOwners.first()
       }
 
       if (task.responsible?.@id != ''  && p){
@@ -458,6 +460,8 @@ class TaskService {
                                       )?:null
         if (u)
           t.responsible = u
+        else
+          t.responsible = p.productOwners.first()
       }
       return t
     }catch (Exception e){

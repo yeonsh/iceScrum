@@ -461,7 +461,7 @@ class ProjectController {
     productService.validateProduct(p, session.progress)
     def beansErrors = null
 
-    if (p.hasErrors()) {
+      if (p.hasErrors()) {
       if (full && !erasableByUser) {
         beansErrors = renderErrors(bean: p)
         log.info("Product validation error (${p.name}): " + p.errors)
