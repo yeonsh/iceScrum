@@ -65,7 +65,7 @@
             {label:'${message(code:"is.chart.productCumulativeflow.serie.inprogress.name")}',color: '#FF9933'},
             {label:'${message(code:"is.chart.productCumulativeflow.serie.planned.name")}',color: '#CC3300'},
             {label:'${message(code:"is.chart.productCumulativeflow.serie.estimated.name")}',color: '#0099CC'},
-            {label:'${message(code:"is.chart.productCumulativeflow.serie.accepted.name")}',color: '#FF9933'},
+            {label:'${message(code:"is.chart.productCumulativeflow.serie.accepted.name")}',color: '#0044CC'},
             {label:'${message(code:"is.chart.productCumulativeflow.serie.suggested.name")}',color: '#FFCC33'},
             ],
         axes:{
