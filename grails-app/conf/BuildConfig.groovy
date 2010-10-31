@@ -72,13 +72,9 @@ grails.project.dependency.resolution = {
         include(name: "**/*.properties")
       }
     }
-    /*native2ascii(src:"grails-app/i18n",
-                                 dest:"${stagingDir}/WEB-INF/classes/grails-app/i18n",
-                                 includes:"*.properties",
-                                 encoding:"UTF-8")*/
     copy(todir: "${stagingDir}/WEB-INF/classes/grails-app/i18n", encoding:"utf-8") {
       fileset(dir: "grails-app/i18n") {
-        include(name: "*.properties")
+        include(name: "report*")
       }
     }
   }

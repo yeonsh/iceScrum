@@ -55,6 +55,12 @@ class ProjectController {
     render(template: "dialogs/properties", model: [id: id, product: currentProduct, estimationSuitSelect: estimationSuitSelect])
   }
 
+  static ReleaseStateBundle = [
+          (Release.STATE_WAIT):'is.release.state.wait',
+          (Release.STATE_INPROGRESS):'is.release.state.inprogress',
+          (Release.STATE_DONE):'is.release.state.done'
+  ]
+
   //@Cacheable('activitiesFeed')
   def feed = {
     def currentProduct = Product.get(params.product)

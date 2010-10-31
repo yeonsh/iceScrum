@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2010 iceScrum Technologies.
-  ~
-  ~ This file is part of iceScrum.
-  ~
-  ~ iceScrum is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU Affero General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License.
-  ~
-  ~ iceScrum is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU Affero General Public License
-  ~ along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sprintBurndownHoursChart" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" resourceBundle="grails-app/i18n/messages">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sprintBurndownHoursChart" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" resourceBundle="grails-app/i18n/report">
 	<property name="ireport.zoom" value="0.9090909090909113"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="1"/>
@@ -147,7 +129,7 @@
 				<textElement textAlignment="Center">
 					<font size="11" isBold="true" isUnderline="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.chart.sprintBurndownHoursChart.title}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.chart.sprintBurndownHoursChart.title}]]></textFieldExpression>
 			</textField>
 			<lineChart>
 				<chart>
@@ -158,7 +140,7 @@
 				</chart>
 				<categoryDataset>
 					<categorySeries>
-						<seriesExpression><![CDATA[$R{is.chart.sprintBurndownHoursChart.serie.task.name}]]></seriesExpression>
+						<seriesExpression><![CDATA[$R{is.report.chart.sprintBurndownHoursChart.serie.task.name}]]></seriesExpression>
 						<categoryExpression><![CDATA[$F{label}]]></categoryExpression>
 						<valueExpression><![CDATA[$F{remainingHours}]]></valueExpression>
 					</categorySeries>
@@ -184,14 +166,14 @@
 				<textElement textAlignment="Right">
 					<font size="11" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.chart.sprintBurndownHoursChart.yaxis.label}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.chart.sprintBurndownHoursChart.yaxis.label}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="568" y="226" width="115" height="20"/>
 				<textElement textAlignment="Right">
 					<font size="11" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.chart.sprintBurndownHoursChart.xaxis.label}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.chart.sprintBurndownHoursChart.xaxis.label}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

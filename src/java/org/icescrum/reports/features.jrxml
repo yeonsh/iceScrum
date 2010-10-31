@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2010 iceScrum Technologies.
-  ~
-  ~ This file is part of iceScrum.
-  ~
-  ~ iceScrum is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU Affero General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License.
-  ~
-  ~ iceScrum is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU Affero General Public License
-  ~ along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="features" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" resourceBundle="grails-app/i18n/messages">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="features" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" resourceBundle="grails-app/i18n/report">
 	<property name="ireport.zoom" value="0.9090909090909113"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="57"/>
@@ -108,7 +90,7 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="26" splitType="Stretch">
+		<band height="15" splitType="Stretch">
 			<textField>
 				<reportElement x="575" y="0" width="227" height="15" isPrintWhenDetailOverflows="true"/>
 				<textElement textAlignment="Right">
@@ -123,47 +105,47 @@
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="0" y="2" width="80" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="80" y="2" width="174" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.backlogelement.description}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.backlogelement.description}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="254" y="2" width="135" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.backlogelement.notes}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.backlogelement.notes}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="389" y="2" width="45" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.rank}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.rank}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="434" y="2" width="105" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.type}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.type}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="539" y="2" width="59" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.value}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.value}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="598" y="2" width="62" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.effort}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.effort}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="660" y="2" width="61" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.stories}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.stories}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="721" y="2" width="81" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.feature.stories.finish}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.stories.finish}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>
@@ -256,7 +238,7 @@
 				</chart>
 				<categoryDataset>
 					<categorySeries>
-						<seriesExpression><![CDATA[$R{is.chart.productParkinglot.serie.name}]]></seriesExpression>
+						<seriesExpression><![CDATA[$R{is.report.chart.productParkinglot.serie.name}]]></seriesExpression>
 						<categoryExpression><![CDATA[$F{name}]]></categoryExpression>
 						<valueExpression><![CDATA[$F{parkingLotValue}]]></valueExpression>
 					</categorySeries>
@@ -285,21 +267,21 @@
 				<textElement textAlignment="Center">
 					<font size="11" isBold="true" isUnderline="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.ui.feature.charts.productParkingLot}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.feature.charts.productParkingLot}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="22" y="52" width="115" height="20"/>
 				<textElement textAlignment="Right">
 					<font size="11" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.chart.productParkinglot.yaxis.label}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.chart.productParkinglot.yaxis.label}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="557" y="241" width="115" height="20"/>
 				<textElement textAlignment="Right">
 					<font size="11" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.chart.productParkinglot.xaxis.label}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.chart.productParkinglot.xaxis.label}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

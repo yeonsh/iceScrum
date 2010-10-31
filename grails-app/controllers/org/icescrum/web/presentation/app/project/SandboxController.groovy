@@ -433,6 +433,7 @@ class SandboxController {
 
   def print = {
     def currentProduct = Product.get(params.product)
+    def user = User.load(springSecurityService.principal.id)
     def modelData = []
     def stories = Story.findAllByBacklogAndState(currentProduct, Story.STATE_SUGGESTED, [sort:'suggestedDate',order:'desc'])
     if(!stories){
@@ -458,6 +459,7 @@ class SandboxController {
               action: 'index',
               model: [data: modelData],
               params: [
+                      locale:user.preferences.language,
                       _format:params.format,
                       _name: message(code:'is.ui.sandbox'),
                       _file:'sandbox',

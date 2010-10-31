@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright (c) 2010 iceScrum Technologies.
-  ~
-  ~ This file is part of iceScrum.
-  ~
-  ~ iceScrum is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU Affero General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License.
-  ~
-  ~ iceScrum is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU Affero General Public License
-  ~ along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="backlog" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" resourceBundle="grails-app/i18n/messages">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="backlog" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" resourceBundle="grails-app/i18n/report">
 	<property name="ireport.zoom" value="1.210000000000003"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="1"/>
 	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
@@ -121,32 +103,32 @@
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="0" y="2" width="80" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.story.name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.story.name}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="80" y="2" width="151" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.backlogelement.description}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.backlogelement.description}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="231" y="2" width="135" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.backlogelement.notes}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.backlogelement.notes}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="366" y="2" width="82" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.story.type}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.story.type}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="448" y="2" width="89" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.story.date.accepted}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.story.date.accepted}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="631" y="2" width="81" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.story.creator}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.story.creator}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="712" y="2" width="90" height="16"/>
@@ -156,7 +138,7 @@
 			<textField isStretchWithOverflow="true">
 				<reportElement style="table_CH" stretchType="RelativeToTallestObject" x="537" y="2" width="94" height="16"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.story.date.estimated}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.story.date.estimated}]]></textFieldExpression>
 			</textField>
 		</band>
 	</columnHeader>
