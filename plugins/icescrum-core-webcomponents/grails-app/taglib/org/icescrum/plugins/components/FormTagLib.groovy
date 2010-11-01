@@ -161,7 +161,7 @@ class FormTagLib {
     locales <<  new Locale("en")
     new File(i18n).eachFile {
       def arr = it.name.split("[_.]")
-      if (arr[1] != 'svn' && arr[1] != 'properties')
+      if (arr[1] != 'svn' && arr[1] != 'properties' && arr[0].startsWith('messages'))
         locales << (arr.length > 3 ? new Locale(arr[1], arr[2]) : arr.length > 2 ? new Locale(arr[1]) : new Locale(""))
     }
 

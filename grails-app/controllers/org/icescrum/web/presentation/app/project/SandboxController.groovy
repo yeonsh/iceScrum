@@ -432,16 +432,17 @@ class SandboxController {
   }
 
   def print = {
-    def currentProduct = Product.get(params.product)
     def user = User.load(springSecurityService.principal.id)
-    def modelData = []
+
+    def currentProduct = Product.get(params.product)
+    def data = []
     def stories = Story.findAllByBacklogAndState(currentProduct, Story.STATE_SUGGESTED, [sort:'suggestedDate',order:'desc'])
     if(!stories){
       render(status: 400, contentType:'application/json', text: [notice: [text:message(code: 'is.report.error.no.data')]] as JSON)
       return
     } else if(params.get){
       stories.each {
-        modelData << [
+        data << [
                 name:it.name,
                 description:it.description,
                 notes:it.notes?.replaceAll(/<.*?>/, ''),
@@ -455,16 +456,11 @@ class SandboxController {
               session.progress = new ProgressSupport()
               session.progress.updateProgress(99,message(code:'is.report.processing'))
 
+      def model = [[product:currentProduct.name,stories:data?:null]]
       chain(controller: 'jasper',
               action: 'index',
-              model: [data: modelData],
-              params: [
-                      locale:user.preferences.language,
-                      _format:params.format,
-                      _name: message(code:'is.ui.sandbox'),
-                      _file:'sandbox',
-                      'labels.projectName':currentProduct.name
-              ])
+              model: [data: model],
+              params: [locale:user.preferences.language,_format:params.format,_file:'sandbox'])
         session.progress?.completeProgress(message(code: 'is.report.complete'))
       } catch (Exception e) {
         e.printStackTrace()

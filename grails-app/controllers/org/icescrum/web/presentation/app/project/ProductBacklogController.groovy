@@ -351,18 +351,21 @@ class ProductBacklogController {
   }
 
   def print = {
+    def user = User.load(springSecurityService.principal.id)
+
     def currentProduct = Product.get(params.product)
-    def modelData = []
+    def data = []
     def stories = Story.findAllByBacklogAndStateBetween(currentProduct, Story.STATE_ACCEPTED, Story.STATE_ESTIMATED, [cache: true, sort: 'rank'])
     if(!stories){
       render(status: 400, contentType:'application/json', text: [notice: [text:message(code: 'is.report.error.no.data')]] as JSON)
       return
     } else if(params.get){
       stories.each {
-        modelData << [
+        data << [
                 name:it.name,
+                rank:it.rank,
                 description:it.description,
-                notes:it.notes?.replaceAll(/<.*?>/, ''),
+                notes:wikitext.renderHtml([markup:'Textile',text:it.notes],null),
                 type:message(code:typesBundle[it.type]),
                 acceptedDate:it.acceptedDate,
                 estimatedDate:it.estimatedDate,
@@ -373,16 +376,11 @@ class ProductBacklogController {
       try {
               session.progress = new ProgressSupport()
               session.progress.updateProgress(99,message(code:'is.report.processing'))
-
+        def model = [[product:currentProduct.name,stories:data?:null]]
         chain(controller: 'jasper',
                 action: 'index',
-                model: [data: modelData],
-                params: [
-                        _format:params.format,
-                        _name: message(code:'is.ui.productBacklog'),
-                        _file:'backlog',
-                        'labels.projectName':currentProduct.name
-                ])
+                model: [data: model],
+                params: [locale:user.preferences.language,_format:params.format,_file:'backlog'])
         session.progress?.completeProgress(message(code: 'is.report.complete'))
       } catch (Exception e) {
         e.printStackTrace()

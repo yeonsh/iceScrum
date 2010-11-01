@@ -139,18 +139,6 @@ import org.icescrum.components.UtilsWebComponents
     }
   }
 
-  /**
-   * A simple hack to clean main layout from IE hacks
-   */
-  def customIE = { attrs ->
-    out << '<!--[if IE 6]>'
-    out << '<script src="' + r.resource(dir: 'js', file: 'DD_belatedPNG.js') + '"></script>'
-    out << '<script>'
-    out << " DD_belatedPNG.fix('.pngfix, .arrow-tab');"
-    out << '</script>'
-    out << '<![endif]-->'
-  }
-
   def savedRequest = {attrs, body ->
     if (params.ref) {
       out << params.ref.decodeURL()

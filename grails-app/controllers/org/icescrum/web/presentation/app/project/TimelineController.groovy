@@ -26,6 +26,7 @@ import org.icescrum.core.domain.Release
 import org.icescrum.core.domain.Sprint
 import org.icescrum.web.support.MenuBarSupport
 import org.icescrum.core.support.ProgressSupport
+import org.icescrum.core.domain.User
 
 @Secured('(isAuthenticated() and stakeHolder()) or inProduct()')
 class TimelineController {
@@ -39,6 +40,7 @@ class TimelineController {
   def releaseService
   def productService
   def featureService
+  def springSecurityService
 
   static SprintStateBundle = [
           (Sprint.STATE_WAIT):'is.sprint.state.wait',
@@ -520,6 +522,7 @@ class TimelineController {
               action: 'index',
               model: [data: values],
               params: [
+                      locale: User.get(springSecurityService.principal.id).preferences.language,
                       _format:params.format,
                       _name: message(code:'is.ui.timeline'),
                       _file: chart ?: 'timeline',

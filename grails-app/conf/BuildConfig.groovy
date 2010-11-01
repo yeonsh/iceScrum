@@ -67,12 +67,7 @@ grails.project.dependency.resolution = {
   }
 
   grails.war.resources = { stagingDir ->
-    copy(todir: "${stagingDir}/WEB-INF/classes") {
-      fileset(dir: "src/java") {
-        include(name: "**/*.properties")
-      }
-    }
-    copy(todir: "${stagingDir}/WEB-INF/classes/grails-app/i18n", encoding:"utf-8") {
+    copy(todir: "${stagingDir}/WEB-INF/classes/grails-app/i18n") {
       fileset(dir: "grails-app/i18n") {
         include(name: "report*")
       }

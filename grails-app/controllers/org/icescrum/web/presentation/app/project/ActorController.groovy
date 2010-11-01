@@ -278,15 +278,17 @@ class ActorController {
   }
 
   def print = {
+    def user = User.load(springSecurityService.principal.id)
+
     def currentProduct = Product.load(params.product)
-    def modelData = []
+    def data = []
     def actors = Actor.findAllByBacklog(currentProduct, [sort:'useFrequency', order:'asc']);
     if(!actors){
       render(status: 400, contentType:'application/json', text: [notice: [text:message(code: 'is.report.error.no.data')]] as JSON)
       return
     } else if(params.get){
       actors.each {
-        modelData << [
+        data << [
                 name:it.name,
                 description:it.description,
                 notes:it.notes?.replaceAll(/<.*?>/, ''),
@@ -300,24 +302,11 @@ class ActorController {
       try {
         session.progress = new ProgressSupport()
         session.progress.updateProgress(99,message(code:'is.report.processing'))
-        
+        def model = [[product:currentProduct.name,actors:data?:null]]
         chain(controller: 'jasper',
                 action: 'index',
-                model: [data: modelData],
-                params: [
-                        _format: params.format,
-                        _name: message(code: 'is.ui.actor'),
-                        _file: 'actors',
-                        'labels.name': message(code: 'is.actor.name'),
-                        'labels.description': message(code: 'is.backlogelement.description'),
-                        'labels.notes': message(code: 'is.backlogelement.notes'),
-                        'labels.expertnessLevel': message(code: 'is.actor.it.level'),
-                        'labels.instances': message(code: 'is.actor.instances'),
-                        'labels.satisfactionCriteria': message(code: 'is.actor.satisfaction.criteria'),
-                        'labels.useFrequency': message(code: 'is.actor.use.frequency'),
-                        'labels.associatedStories': message(code: 'is.actor.nb.stories'),
-                        'labels.projectName': currentProduct.name
-                ])
+                model: [data: model],
+                params: [locale:user.preferences.language,_format:params.format,_file:'actors'])
 
         session.progress?.completeProgress(message(code: 'is.report.complete'))
       } catch (Exception e) {

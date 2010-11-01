@@ -332,10 +332,11 @@ class FeatureController {
   }
 
   def print = {
-    def currentProduct = Product.get(params.product)
+    def user = User.load(springSecurityService.principal.id)
 
+    def currentProduct = Product.get(params.product)
     def values = featureService.productParkingLotValues(currentProduct)
-    def modelData = []
+    def data = []
     def effortFeature = { feature ->
       feature.stories?.sum{it.effort ?: 0}
     }
@@ -347,7 +348,7 @@ class FeatureController {
       return
     } else if(params.get){
       currentProduct.features.eachWithIndex{ feature, index ->
-        modelData << [
+        data << [
                 name:feature.name,
                 description:feature.description,
                 notes:feature.notes?.replaceAll(/<.*?>/, ''),
@@ -363,16 +364,11 @@ class FeatureController {
       try {
         session.progress = new ProgressSupport()
         session.progress.updateProgress(99,message(code:'is.report.processing'))
-        
+        def model = [[product:currentProduct.name,features:data?:null]]
         chain(controller: 'jasper',
                 action: 'index',
-                model: [data: modelData],
-                params: [
-                        _format:params.format,
-                        _name: message(code:'is.ui.feature'),
-                        _file:'features',
-                        'labels.projectName':currentProduct.name
-                ])
+                model: [data: model],
+                params: [locale:user.preferences.language,_format:params.format,_file:'features'])
         session.progress?.completeProgress(message(code: 'is.report.complete'))
       } catch (Exception e) {
         e.printStackTrace()

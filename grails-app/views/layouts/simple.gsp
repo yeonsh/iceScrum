@@ -26,7 +26,6 @@
   <r:use modules="jquery-ui, qtip, pnotify, ui-selectmenu, hotkeys, history, mousewheel, eventline, dotimeout, jqplot,
    browser, table, dropmenu, jeditable, progress, input, checkbox, alphanumeric"/>
   <r:layoutResources/>
-  <is:customIE/>
   <g:layoutHead/>
 </head>
 <body class="simple">

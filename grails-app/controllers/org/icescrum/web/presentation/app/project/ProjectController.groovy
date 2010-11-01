@@ -588,6 +588,7 @@ class ProjectController {
                 action: 'index',
                 model: [data: values],
                 params: [
+                        locale: User.get(springSecurityService.principal.id).preferences.language,
                         _format: params.format,
                         _name: message(code: 'is.ui.project'),
                         _file: chart ?: 'timeline',
