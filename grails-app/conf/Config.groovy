@@ -83,7 +83,11 @@ grails.attachmentable.taskDir = {
   Report jasper section
 */
 
-jasper.dir.reports = new File(".").getAbsolutePath().toString().substring(0, new File(".").getAbsolutePath().toString().length()-2)+"${File.separator}src${File.separator}java${File.separator}org${File.separator}icescrum${File.separator}reports"
+if (baseDir) {
+  jasper.dir.reports = "${baseDir}${File.separator}src${File.separator}java${File.separator}org${File.separator}icescrum${File.separator}reports"
+} else {
+  jasper.dir.reports = "classpath:org${File.separator}icescrum${File.separator}reports"
+}
 jasper.dir.projects.reports = {(new File(System.getProperty('user.home'),appName).canonicalPath) + "${File.separator + it.backlog.id + File.separator}reports${File.separator}"}
 
 /*
