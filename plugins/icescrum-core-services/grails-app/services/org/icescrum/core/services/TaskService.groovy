@@ -338,7 +338,7 @@ class TaskService {
       t.inProgressDate = new Date()
     }
 
-    if((t.responsible && u.id.equals(t.responsible.id)) || u.id.equals(t.creator.id) || securityService.productOwner(product,springSecurityService.authentication) || securityService.scrumMaster(null,springSecurityService.authentication)){
+    if((t.responsible && u.id.equals(t.responsible.id)) || u.id.equals(t.creator.id) || securityService.productOwner(p,springSecurityService.authentication) || securityService.scrumMaster(null,springSecurityService.authentication)){
       if (state == Task.STATE_BUSY && t.state != Task.STATE_BUSY) {
         t.inProgressDate = new Date()
         t.addActivity(u, 'taskInprogress', t.name)
