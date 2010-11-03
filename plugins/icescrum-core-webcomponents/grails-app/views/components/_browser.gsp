@@ -42,4 +42,5 @@
 </div>
 <jq:jquery>
   $("#${name}-browse").autocomplete('search');
+  $("#${name}-details").tabs();
 </jq:jquery>
