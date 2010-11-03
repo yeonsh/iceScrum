@@ -329,7 +329,7 @@ class ProjectController {
       try {
         session.progress = new ProgressSupport()
         session.progress.updateProgress(0, message(code: 'is.export.start'))
-        response.setHeader "Content-disposition", "attachment; filename=${product.name.replaceAll("[/W]", "").replaceAll(" ", "")}-${new Date().format('yyyy-MM-dd')}.xml"
+        response.setHeader "Content-disposition", "attachment; filename=${product.name.replaceAll("[^a-zA-Z\\s]", "")}-${new Date().format('yyyy-MM-dd')}.xml"
         render(contentType: 'text/xml', template: '/export/xml/product', model: [object: product, deep: true, root: true])
         session.progress?.completeProgress(message(code: 'is.export.complete'))
       } catch (Exception e) {

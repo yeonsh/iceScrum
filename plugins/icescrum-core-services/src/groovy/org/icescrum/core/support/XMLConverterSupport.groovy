@@ -48,7 +48,7 @@ class XMLConverterSupport {
 
     xml.product() {
       name(content.productName.text())
-      def pk = content.productName.text().replaceAll("[/W]", "").replaceAll(" ", "").toUpperCase()
+      def pk = content.productName.text().replaceAll("[^a-zA-Z0-9\\s]", "").toUpperCase()
       if (pk.length() > 10)
         pk = pk[0..9]
       pkey(pk)
