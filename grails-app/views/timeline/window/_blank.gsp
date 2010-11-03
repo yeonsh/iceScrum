@@ -6,6 +6,7 @@
       <td>
           <is:button
             type="link"
+            renderedOnAccess="productOwner()"
             button="button-s button-s-light"
             update="window-content-${id}"
             href="#${id}/add"

@@ -16,10 +16,11 @@
   - You should have received a copy of the GNU Affero General Public License
   - along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
   --}%
-
+<li>
 <is:select
           container="#window-title-bar-content-${id}"
           width="200"
+          rendered="${releasesName.size() > 0}"
           maxHeight="100"
           styleSelect="dropdown"
           name="selectOnRoadmap"

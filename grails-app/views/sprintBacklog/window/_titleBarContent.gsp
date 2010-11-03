@@ -21,6 +21,7 @@
   <is:select
           container="#window-title-bar-content-${id}"
           width="160"
+          rendered="${sprintsName.size() > 0}"
           maxHeight="100"
           styleSelect="dropdown"
           class="window-toolbar-selectmenu-button window-toolbar-selectmenu"

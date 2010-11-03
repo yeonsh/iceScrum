@@ -173,6 +173,10 @@ class FormTagLib {
 
   def select = { attrs ->
 
+    if (!UtilsWebComponents.rendered(attrs)) {
+      return
+    }
+
     def selectOptions = [
             container: UtilsWebComponents.wrap(attr: (attrs.container), doubleQuote: true),
             style: UtilsWebComponents.wrap(attr: (attrs.styleSelect), doubleQuote: true),

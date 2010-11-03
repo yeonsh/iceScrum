@@ -10,6 +10,7 @@
             history="false"
             remote="true"
             id="${release.id}"
+            renderedOnAccess="productOwner() or scrumMaster()"
             controller="${id}"
             update="window-content-${id}"
             action="generateSprints"
@@ -24,6 +25,7 @@
           <is:button
             type="link"
             button="button-s button-s-light"
+            renderedOnAccess="productOwner() or scrumMaster()"
             href="#${id}/add/${release.id}"
             title="${message(code:'is.ui.releasePlan.blankSprint.new')}"
             alt="${message(code:'is.ui.releasePlan.blankSprint.new')}"

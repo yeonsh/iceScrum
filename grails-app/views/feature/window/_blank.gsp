@@ -6,6 +6,7 @@
       <td>
           <is:button
             type="link"
+            renderedOnAccess="productOwner()"
             button="button-s button-s-light"
             href="#${id}/add"
             title="${message(code:'is.ui.feature.blank.new')}"

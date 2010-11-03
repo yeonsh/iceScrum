@@ -85,12 +85,7 @@ class ReleasePlanController {
        release = Product.get(params.product).releases.find {it.state == Release.STATE_INPROGRESS || it.state == Release.STATE_WAIT}
        if (release){
         params.id = release.id
-       }else{
-          render(template:'window/blank',model:[id:id])
-          return
        }
-    }else{
-      release = Release.get(params.long('id'))
     }
     render(template:'window/toolbar', model:[currentView:session.currentView, id:id])
   }

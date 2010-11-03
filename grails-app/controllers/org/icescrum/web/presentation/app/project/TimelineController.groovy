@@ -75,7 +75,7 @@ class TimelineController {
 
     def currentProduct = Product.get(params.product)
     if (!currentProduct.releases){
-       render(template:'blank',model:[id:id])
+       render(template:'window/blank',model:[id:id])
        return
     }
 

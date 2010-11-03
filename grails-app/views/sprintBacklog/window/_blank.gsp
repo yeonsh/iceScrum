@@ -8,6 +8,7 @@
               type="link"
               button="button-s button-s-light"
               href="#releasePlan"
+              renderedOnAccess="productOwner() or scrumMaster()"
               title="${message(code:'is.ui.sprintBacklog.blank.new')}"
               alt="${message(code:'is.ui.sprintBacklog.blank.sprint.new')}"
               icon="create" >
@@ -20,6 +21,7 @@
             type="link"
             button="button-s button-s-light"
             href="#timeline/add"
+            renderedOnAccess="productOwner() or scrumMaster()"
             title="${message(code:'is.ui.sprintBacklog.blank.release.new')}"
             alt="${message(code:'is.ui.sprintBacklog.blank.release.new')}"
             icon="create" >

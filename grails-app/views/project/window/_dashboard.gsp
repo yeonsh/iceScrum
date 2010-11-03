@@ -20,7 +20,6 @@
 <div class="dashboard">
   <div class="colset-2 clearfix">
     <div class="col1">
-
       <is:panel id="panel-description">
         <is:panelTitle><g:message code="is.ui.project.description.title"/></is:panelTitle>
           <div class="panel-box-content">
@@ -95,11 +94,9 @@
             </div>
         </g:if>
       </is:panel>
-
     </div>
 
     <div class="col2">
-
       <is:panel id="panel-activity">
         <is:panelTitle><g:link class="button-rss" action="feed" params="[product:product.pkey ]"><span class='ico'></span></g:link><g:message code="is.ui.project.activity.title"/></is:panelTitle>
         <g:if test="${activities.size() > 0}">

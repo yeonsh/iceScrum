@@ -48,7 +48,10 @@ class XMLConverterSupport {
 
     xml.product() {
       name(content.productName.text())
-      pkey(content.productName.text().replaceAll("[/W]", "").replaceAll(" ", "").toUpperCase())
+      def pk = content.productName.text().replaceAll("[/W]", "").replaceAll(" ", "").toUpperCase()
+      if (pk.length() > 10)
+        pk = pk[0..9]
+      pkey(pk)
       planningPokerGameType(content.productPlanningPoker.text())
       description(''){
         writer.write("<![CDATA[${content.productDescription}]]>")
