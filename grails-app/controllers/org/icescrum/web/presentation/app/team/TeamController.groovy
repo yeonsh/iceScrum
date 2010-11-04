@@ -122,7 +122,7 @@ class TeamController {
   def findTeams = {
     def teams
     def results = []
-    teams = params.product ? Team.findExceptProduct(params.long('product'), params.term ?: '', [max: 10]) : Team.teamLike(params.term ?: '').list(max: 10)
+    teams = Team.teamLike(params.term ?: '').list(max: 10)
 
     teams?.each {
       results << [id: it.id, label: it.name, value: it.members.collect {it2 -> [id: it2.id, label: it2.username, value: it2.username]},
