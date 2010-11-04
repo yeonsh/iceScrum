@@ -329,7 +329,7 @@ class ProjectController {
       try {
         session.progress = new ProgressSupport()
         session.progress.updateProgress(0, message(code: 'is.export.start'))
-        response.setHeader "Content-disposition", "attachment; filename=${product.name.replaceAll("[^a-zA-Z\\s]", "")}-${new Date().format('yyyy-MM-dd')}.xml"
+        response.setHeader "Content-disposition", "attachment; filename=${product.name.replaceAll("[^a-zA-Z\\s]", "").replaceAll(" ", "")}-${new Date().format('yyyy-MM-dd')}.xml"
         render(contentType: 'text/xml', template: '/export/xml/product', model: [object: product, deep: true, root: true])
         session.progress?.completeProgress(message(code: 'is.export.complete'))
       } catch (Exception e) {
@@ -434,7 +434,6 @@ class ProjectController {
       session.tmpP.pkey = params.productd.pkey
       session.tmpP.name = params.productd.name
     }
-
     def errors = this.validateImport(true, erasableByUser)
     if (errors) {
       render(status: 400, contentType: 'application/json', text: [notice: [text: errors]] as JSON)
@@ -445,8 +444,8 @@ class ProjectController {
       try {
         productService.saveImportedProduct(session.tmpP, params.productd?.name)
       } catch (IllegalStateException ise) {
-        render(status: 400, contentType: 'application/json', text: [notice: [text: message(code: ise.getMessage())]] as JSON)
         status.setRollbackOnly()
+        render(status: 400, contentType: 'application/json', text: [notice: [text: message(code: ise.getMessage())]] as JSON)
         return
       }
       catch (RuntimeException e) {

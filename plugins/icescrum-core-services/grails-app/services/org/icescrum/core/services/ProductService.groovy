@@ -386,15 +386,6 @@ class ProductService {
         progress?.updateProgress((product.releases.release.size() * (index + 1) / 100).toInteger(), g.message(code: 'is.parse', args: [g.message(code: 'is.release')]))
       }
 
-      p.stories.each {
-        def sameNameStory = p.stories.findAll{st -> st.name.toLowerCase() == it.name.toLowerCase()}
-        if (sameNameStory.size() > 1){
-          sameNameStory.eachWithIndex{s,index ->
-            s.name = s.name + " #${index + 1}"
-          }
-        }
-      }
-
       return p
     } catch (Exception e) {
       e.printStackTrace()

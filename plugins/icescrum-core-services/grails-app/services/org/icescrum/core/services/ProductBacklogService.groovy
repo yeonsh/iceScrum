@@ -627,15 +627,6 @@ class ProductBacklogService {
           s.addToTasks(t)
         }
 
-        s.tasks.each {
-          def sameNameTask = s.tasks.findAll{tt -> tt.name.toLowerCase() == it.name.toLowerCase()}
-          if (sameNameTask.size() > 1){
-            sameNameTask.eachWithIndex{t,index ->
-              t.name = t.name + " #${index + 1}"
-            }
-          }
-        }
-
         if (p){
            p.addToStories(s)
         }

@@ -186,7 +186,6 @@ class TeamService {
       securityService.createScrumMasterPermissions it, team
     }
     securityService.changeOwner(team.scrumMasters.first(),team)
-    team.save()
   }
 
   @Secured(['ROLE_USER', 'RUN_AS_PERMISSIONS_MANAGER'])
