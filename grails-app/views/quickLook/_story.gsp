@@ -93,7 +93,7 @@
             rect="true"
             styleClass="story task${story.state == org.icescrum.core.domain.Story.STATE_DONE ? ' ui-selectable-disabled':''}"
             type="story"
-            miniValue="${story.effort?:'?'}"
+            miniValue="${story.effort >= 0 ? story.effort :'?'}"
             color="${story.feature?.color ?: 'yellow'}"
             stateText="${is.bundleFromController(bundle:'StoryStateBundle',value:story.state)}">
       </is:postit>

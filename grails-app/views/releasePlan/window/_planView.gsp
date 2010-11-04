@@ -110,7 +110,7 @@
                   type="story"
                   typeName="${story.type}"
                   sortable='[restrictOnAccess:"productOwner()", disabled:story.state == org.icescrum.core.domain.Story.STATE_DONE]'
-                  miniValue="${story.effort?:'?'}"
+                  miniValue="${story.effort >= 0 ? story.effort :'?'}"
                   color="${story.feature?.color ?: 'yellow'}"
                   stateText="${is.bundleFromController(bundle:'StoryStateBundle',value:story.state)}"
                   comment="${story.totalComments >= 0 ? story.totalComments : ''}">

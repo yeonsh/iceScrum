@@ -220,9 +220,9 @@ class XMLConverterSupport {
                         }
                         def tName = t.taskLabel.text() + " (${t.@id})"
                         if (tName.length() > 100)
-                          name(sName[0..99])
+                          name(tName[0..99])
                         else
-                          name(sName)
+                          name(tName)
                         estim >=0 ? estimation(estim) : estimation()
                         type(Task.TYPE_URGENT)
                         state(t.taskState.text())
@@ -232,13 +232,16 @@ class XMLConverterSupport {
                         (doneD && t.taskState.text().toInteger() == 2) ? doneDate(doneD) : doneDate()
                         creator(id:t.taskCreator.text())
                         responsible(id:t.taskOwner.text())
-                        description()
-                        notes(''){
-                          def notes = ""
+                        description(''){
+                          def description = ""
                           if (tName.length() > 100){
-                              notes += "Complete name: ${sName} \n\n"
+                              description += "Complete name: ${tName} \n"
                           }
-                          notes += t.taskNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
+                          description += t.taskDescription.text()
+                          writer.write("<![CDATA[${description}]]>");
+                        }
+                        notes(''){
+                          def notes = t.taskNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
                           writer.write("<![CDATA[${notes}]]>")
                         }
                       }
@@ -269,14 +272,15 @@ class XMLConverterSupport {
                         type(st.storyType.text())
                         executionFrequency(1)
                         description(''){
-                          writer.write("<![CDATA[${st.storyDescription.text()}]]>");
+                          def description = ""
+                          if (sName.length() > 100){
+                              description += "Complete name: ${sName} \n"
+                          }
+                          description += st.storyDescription.text()
+                          writer.write("<![CDATA[${description}]]>");
                         }
                         notes(''){
-                          def notes = ""
-                          if (sName.length() > 100){
-                              notes += "Complete name: ${sName} \n"
-                          }
-                          notes += st.storyNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
+                          def notes = st.storyNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
                           st.test.each { test ->
                             notes += "---------Test - ${test.testName.text()}---------- <br>"
                             notes += "${test.testDescription.text()}<br><br>"
@@ -313,9 +317,9 @@ class XMLConverterSupport {
                               }
                               def tName = t.taskLabel.text() + " (${t.@id})"
                               if (tName.length() > 100)
-                                name(sName[0..99])
+                                name(tName[0..99])
                               else
-                                name(sName)
+                                name(tName)
                               estim >= 0 ? estimation(estim) : estimation()
                               type()
                               state(t.taskState.text())
@@ -325,13 +329,16 @@ class XMLConverterSupport {
                               (doneDst && t.taskState.text().toInteger() == 2) ? doneDate(doneDst) : doneDate()
                               creator(id:t.taskCreator.text())
                               responsible(id:t.taskOwner.text())
-                              description()
-                              notes(''){
-                                def notes = ""
+                              description(''){
+                                def description = ""
                                 if (tName.length() > 100){
-                                    notes += "Complete name: ${sName} \n\n"
+                                    description += "Complete name: ${tName} \n"
                                 }
-                                notes += t.taskNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
+                                description += t.taskDescription.text()
+                                writer.write("<![CDATA[${description}]]>");
+                              }
+                              notes(''){
+                                def notes = t.taskNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
                                 writer.write("<![CDATA[${notes}]]>")
                               }
                             }
@@ -349,7 +356,11 @@ class XMLConverterSupport {
       actors(){
         content.customRole.eachWithIndex { act,ind ->
           actor(id:act.@id){
-            name(act.customRoleName.text())
+            def aName = act.customRoleName.text() + " (${act.@id})"
+            if (aName.length() > 100)
+              name(aName[0..99])
+            else
+              name(aName)
             instances(act.customRoleInstances.text())
             expertnessLevel(act.customRoleExpertnessLevel.text())
             useFrequency(act.customRoleUserFrequency.text())
@@ -358,9 +369,14 @@ class XMLConverterSupport {
               writer.write("<![CDATA[${act.customRoleSatisfactionCriteria.text()}]]>");
             }
             description(''){
-              writer.write("<![CDATA[${act.themeDescription.text()}]]>");
+              def description = ""
+              if (aName.length() > 100){
+                  description += "Complete name: ${aName} \n"
+              }
+              description += act.themeDescription.text()
+              writer.write("<![CDATA[${description}]]>");
             }
-            notes('')
+            notes()
           }
         }
       }
@@ -368,7 +384,11 @@ class XMLConverterSupport {
         def colors = ['blue','green','red','orange','violet','gray','pink','bluelight']
         content.theme.eachWithIndex { ft,ind ->
           feature(id:ft.@id){
-            name(ft.themeName.text())
+            def tName = ft.themeName.text() + " (${ft.@id})"
+            if (tName.length() > 100)
+              name(tName[0..99])
+            else
+              name(tName)
             Random rand = new Random()
             color(colors[rand.nextInt(7)])
             value(0)
@@ -376,9 +396,14 @@ class XMLConverterSupport {
             rank(ind+1)
             creationDate(formatter.format(new Date()))
             description(''){
-              writer.write("<![CDATA[${ft.themeDescription.text()}]]>");
+              def description = ""
+              if (tName.length() > 100){
+                  description += "Complete name: ${tName} \n"
+              }
+              description += ft.themeDescription.text()
+              writer.write("<![CDATA[${description}]]>");
             }
-            notes('')
+            notes()
           }
         }
       }
@@ -401,14 +426,15 @@ class XMLConverterSupport {
             type(st.storyType.text())
             executionFrequency(1)
             description(''){
-              writer.write("<![CDATA[${st.storyDescription.text()}]]>");
+              def description = ""
+              if (sName.length() > 100){
+                  description += "Complete name: ${sName} \n"
+              }
+              description += st.storyDescription.text()
+              writer.write("<![CDATA[${description}]]>");
             }
             notes(''){
-              def notes = ""
-              if (sName.length() > 100){
-                  notes += "Complete name: ${sName} \n"
-              }
-              notes += st.storyNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
+              def notes = st.storyNotes.text().replaceAll("<(.|\n)*?>", '').decodeHTML()
               st.test.each { test ->
                 notes += "\n \n ---------${test.testName.text()}---------- \n"
                 notes += "${test.testDescription.text()}\n\n"

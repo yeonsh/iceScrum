@@ -191,7 +191,7 @@
                 type="story"
                 attachment="${story.totalAttachments}"
                 typeName="${story.type}"
-                miniValue="${story.effort?:'?'}"
+                miniValue="${story.effort >= 0 ? story.effort :'?'}"
                 color="${story.feature?.color}"
                 stateText="${is.bundleFromController(bundle:'stateBundle',value:story.state)}"
                 editableEstimation="${(task?.responsible && task?.responsible?.id == user.id  && task?.state != org.icescrum.core.domain.Task.STATE_DONE) || (!task?.responsible && task?.creator?.id == user.id && task?.state != Task.STATE_DONE)}"
