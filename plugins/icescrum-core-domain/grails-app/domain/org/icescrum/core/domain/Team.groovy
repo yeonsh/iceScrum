@@ -46,7 +46,7 @@ class Team {
   def scrumMasters = null
   int idFromImport
 
-  static belongsTo = [Product, User]
+  static belongsTo = [Product]
 
   static constraints = {
     description(nullable: true, maxSize: 1000)
@@ -130,5 +130,20 @@ class Team {
       }
       return scrumMastersList
     }
+  }
+
+  boolean equals(o) {
+    if (this.is(o)) return true;
+    if (getClass() != o.class) return false;
+
+    Team team = (Team) o;
+
+    if (name != team.name) return false;
+
+    return true;
+  }
+
+  int hashCode() {
+    return name.hashCode();
   }
 }

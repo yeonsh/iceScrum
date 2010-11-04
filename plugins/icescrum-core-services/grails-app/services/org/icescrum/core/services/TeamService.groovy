@@ -248,7 +248,7 @@ class TeamService {
         if (!u.id) {
           existingTeam = false
         }
-        t.addToMembers(t)
+        t.addToMembers(u)
         progress?.updateProgress((team.members.user.size() * (index + 1) / 100).toInteger(), g.message(code: 'is.parse', args: [g.message(code: 'is.user')]))
       }
       def scrumMastersList = []

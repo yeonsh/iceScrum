@@ -45,6 +45,8 @@ class User implements Serializable, Attachmentable {
           teams: Team
   ]
 
+  static belongsTo = [Team]
+
   static transients = [
           'idFromImport'
   ]

@@ -25,6 +25,8 @@ grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.war.file = "target/${appName}.war"
 
+grails.project.war.osgi.headers = false
+
 grails.plugin.location.'icescrum-core-domain' =  'plugins/icescrum-core-domain'
 grails.plugin.location.'icescrum-core-services' =  'plugins/icescrum-core-services'
 grails.plugin.location.'icescrum-core-webcomponents' =  'plugins/icescrum-core-webcomponents'
