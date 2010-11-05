@@ -40,7 +40,7 @@
   </is:scrumLink>
 </is:postitMenuItem>
 
-<is:postitMenuItem rendered="${story.state == Story.STATE_INPROGRESS}">
+<is:postitMenuItem rendered="${story.state <= Story.STATE_INPROGRESS}">
   <is:link id="${params.id}"
           action="add"
           controller="${id}"
@@ -49,7 +49,7 @@
           value="${message(code:'is.ui.sprintBacklog.menu.postit.new')}"
           remote="true"/>
 </is:postitMenuItem>
-<is:postitMenuItem rendered="${productOwner && story.state == Story.STATE_INPROGRESS}">
+<is:postitMenuItem rendered="${productOwner && story.state <= Story.STATE_INPROGRESS}">
   <is:link id="${story.id}"
           action="edit"
           controller="productBacklog"
@@ -59,7 +59,7 @@
           history="false"
           remote="true"/>
 </is:postitMenuItem>
-<is:postitMenuItem rendered="${(productOwner || scrumMaster) && story.state == Story.STATE_INPROGRESS}">
+<is:postitMenuItem rendered="${(productOwner || scrumMaster) && story.state <= Story.STATE_INPROGRESS}">
   <is:link id="${story.id}"
           action="dissociate"
           remote="true"
@@ -67,7 +67,7 @@
           update="window-content-${id}"
           value="${message(code:'is.ui.sprintBacklog.menu.postit.dissociate')}"/>
 </is:postitMenuItem>
-<is:postitMenuItem rendered="${(productOwner || scrumMaster) && nextSprintExist && story.state == Story.STATE_INPROGRESS}">
+<is:postitMenuItem rendered="${(productOwner || scrumMaster) && nextSprintExist && story.state <= Story.STATE_INPROGRESS}">
   <is:link id="${story.id}"
           action="dissociate"
           remote="true"

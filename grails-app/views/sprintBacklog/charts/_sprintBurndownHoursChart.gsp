@@ -28,8 +28,9 @@
   <jq:jquery>
     $.jqplot.config.enablePlugins = true;
     line1 = ${remainingHours};
+    line2 = ${idealHours};
 
-    $.jqplot('sprintBurndownHours', [line1], {
+    $.jqplot('sprintBurndownHours', [line1,line2], {
         legend:{
           show:true,
           placement:'outside',
@@ -51,9 +52,8 @@
         seriesDefaults: {
           pointLabels:{location:'s', ypadding:2}
         },
-        series:[
-            {label:'${message(code:"is.chart.sprintBurndownHoursChart.serie.task.name")}',color: '#003399'},
-            ],
+        series:[ {label:'${message(code:"is.chart.sprintBurndownHoursChart.serie.task.name")}',color: '#003399'},
+                 {label:'${message(code:"is.chart.sprintBurndownHoursChart.serie.task.ideal")}',color: '#003344'}],
         axes:{
             xaxis:{
               min:0,

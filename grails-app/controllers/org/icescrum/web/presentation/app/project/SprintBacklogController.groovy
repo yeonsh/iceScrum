@@ -885,6 +885,7 @@ class SprintBacklogController {
       render(template: 'charts/sprintBurndownHoursChart', model: [
               id: id,
               remainingHours: values.remainingHours as JSON,
+              idealHours: values.idealHours as JSON,
               labels: values.label as JSON])
     } else {
       def msg = message(code: 'is.chart.error.no.values')

@@ -337,24 +337,19 @@ class SprintService {
 
   def sprintBurndownHoursValues(Sprint sprint) {
     def values = []
-    def lastDaycliche = sprint.startDate
-
-    if (Sprint.STATE_INPROGRESS <= sprint.state){
-      def nbDays = sprint.activationDate - lastDaycliche
-      nbDays.times{
-         values << [
-                  remainingHours: null,
-                  label: "${g.formatDate(date:lastDaycliche + it,formatName:'is.date.format.short')}"
-          ]
-      }
-    }
+    def lastDaycliche = sprint.activationDate
+    def maxHours = null
 
     sprint.cliches?.eachWithIndex {cliche,index ->
         def xmlRoot = new XmlSlurper().parseText(cliche.data)
         if (xmlRoot) {
           lastDaycliche = cliche.datePrise
+          def currentRemaining = xmlRoot."${Cliche.REMAINING_HOURS}".toInteger()
+          if (maxHours < currentRemaining){
+            maxHours = currentRemaining
+          }
           values << [
-                  remainingHours: xmlRoot."${Cliche.REMAINING_HOURS}".toInteger(),
+                  remainingHours: currentRemaining,
                   label: "${g.formatDate(date:lastDaycliche,formatName:'is.date.format.short')}"
           ]
         }
@@ -368,24 +363,16 @@ class SprintService {
           ]
       }
     }
+    if (!values.isEmpty()){
+      values.first()?.idealHours = maxHours
+      values.last()?.idealHours = 0
+    }
     return values
   }
 
   def sprintBurnupTasksValues(Sprint sprint) {
     def values = []
-    def lastDaycliche = sprint.startDate
-
-    if (Sprint.STATE_INPROGRESS <= sprint.state){
-      def nbDays = sprint.activationDate - lastDaycliche
-      nbDays.times{
-         values << [
-                  tasksDone:null,
-                  tasks:null,
-                  label: "${g.formatDate(date:lastDaycliche + it,formatName:'is.date.format.short')}"
-          ]
-      }
-    }
-
+    def lastDaycliche = sprint.activationDate
     sprint.cliches?.eachWithIndex { cliche,index ->
         def xmlRoot = new XmlSlurper().parseText(cliche.data)
         if (xmlRoot) {
@@ -413,19 +400,7 @@ class SprintService {
 
   def sprintBurnupStoriesValues(Sprint sprint) {
     def values = []
-    def lastDaycliche = sprint.startDate
-
-    if (Sprint.STATE_INPROGRESS <= sprint.state){
-      def nbDays = sprint.activationDate - lastDaycliche
-      nbDays.times{
-         values << [
-                  storiesDone: null,
-                  stories: null,
-                  label: "${g.formatDate(date:lastDaycliche + it,formatName:'is.date.format.short')}"
-          ]
-      }
-    }
-
+    def lastDaycliche = sprint.activationDate
     sprint.cliches?.eachWithIndex { cliche,index ->
         def xmlRoot = new XmlSlurper().parseText(cliche.data)
         if (xmlRoot) {
