@@ -43,7 +43,7 @@
                   <g:else>
                     <strong>${a.cachedLabel.encodeAsHTML()}</strong>
                   </g:else>
-                <p><g:formatDate date="${a.dateCreated}"/></p>
+                <p><g:formatDate date="${a.dateCreated}" formatName="is.date.format.short.time"/></p>
               </div>
             </li>
           </g:each>
@@ -70,7 +70,7 @@
               <is:tableColumn><is:scrumLink product="${story.backlog.pkey}" controller="backlogElement" id="${story.id}">${story.backlog.pkey}-${story.id}</is:scrumLink></is:tableColumn>
               <is:tableColumn>${story.name.encodeAsHTML()}</is:tableColumn>
               <is:tableColumn>${message(code:ProductBacklogController.stateBundle[story.state])}</is:tableColumn>
-              <is:tableColumn><g:formatDate date="${story.lastUpdated}"/></is:tableColumn>
+              <is:tableColumn><g:formatDate date="${story.lastUpdated}" formatName="is.date.format.short.time"/></is:tableColumn>
             </is:tableRows>
           </is:table>
         </is:tableView>

@@ -42,8 +42,8 @@
         </div>
 
         <div class="drap-container">
-          ${message(code: 'is.ui.releasePlan.from')} <strong><g:formatDate date="${sprint.startDate}" type="date" style="SHORT"/></strong>
-          ${message(code: 'is.ui.releasePlan.to')} <strong><g:formatDate date="${sprint.endDate}" type="date" style="SHORT"/></strong>
+          ${message(code: 'is.ui.releasePlan.from')} <strong><g:formatDate date="${sprint.startDate}" formatName="is.date.format.short"/></strong>
+          ${message(code: 'is.ui.releasePlan.to')} <strong><g:formatDate date="${sprint.endDate}" formatName="is.date.format.short"/></strong>
           <is:menu class="dropmenu-action" id="${sprint.id}" contentView="window/menu" params="[id:id,sprint:sprint,nextSprint:nextSprint]"/>
         </div>
         

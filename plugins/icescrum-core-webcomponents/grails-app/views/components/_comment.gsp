@@ -24,7 +24,7 @@
 
   <div class="comment-details">
     <is:scrumLink controller="user" action='profile' id="${comment.poster?.username}"><strong>${comment.poster?.firstName} ${comment.poster?.lastName}</strong></is:scrumLink>,
-    <g:formatDate type="datetime" date="${comment.dateCreated}" style="SHORT"/>
+    <g:formatDate date="${comment.dateCreated}" formatName="is.date.format.short.time"/>
     <g:if test="${moderation && (access || user?.id == comment.poster?.id)}">
       (
       <is:link history="false"
@@ -53,7 +53,7 @@
       )
     </g:if>
     <g:if test="${comment.lastUpdated && comment.lastUpdated.time >= (comment.dateCreated.time + 5000)}">
-      <em>${message(code:'is.ui.backlogelement.comment.last.update')} <g:formatDate type="datetime" date="${comment.lastUpdated}" style="SHORT"/></em>
+      <em>${message(code:'is.ui.backlogelement.comment.last.update')} <g:formatDate date="${comment.lastUpdated}" formatName="is.date.format.short.time"/></em>
     </g:if>
   </div>
 

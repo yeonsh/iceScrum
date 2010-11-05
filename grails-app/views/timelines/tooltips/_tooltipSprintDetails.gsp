@@ -36,9 +36,9 @@
 </g:else>
 <div class="drap-container" style="width:100%;float:left;margin-top:10px;">
   <div class="drap date-start" style="float:left;margin:0px">
-    <g:formatDate date="${sprint.startDate}" type="date" style="SHORT"/>
+    <g:formatDate date="${sprint.startDate}" formatName="is.date.format.short"/>
   </div>
   <div class="drap date-end" style="float:right;margin:0px">
-    <g:formatDate date="${sprint.endDate}" type="date" style="SHORT"/>
+    <g:formatDate date="${sprint.endDate}" formatName="is.date.format.short"/>
   </div>
 </div>

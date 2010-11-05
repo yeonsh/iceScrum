@@ -337,45 +337,118 @@ class SprintService {
 
   def sprintBurndownHoursValues(Sprint sprint) {
     def values = []
-    sprint.cliches?.eachWithIndex { cliche,index ->
+    def lastDaycliche = sprint.startDate
+
+    if (Sprint.STATE_INPROGRESS <= sprint.state){
+      def nbDays = sprint.activationDate - lastDaycliche
+      nbDays.times{
+         values << [
+                  remainingHours: null,
+                  label: "${g.formatDate(date:lastDaycliche + it,formatName:'is.date.format.short')}"
+          ]
+      }
+    }
+
+    sprint.cliches?.eachWithIndex {cliche,index ->
         def xmlRoot = new XmlSlurper().parseText(cliche.data)
         if (xmlRoot) {
+          lastDaycliche = cliche.datePrise
           values << [
                   remainingHours: xmlRoot."${Cliche.REMAINING_HOURS}".toInteger(),
-                  label: "${g.message(code:"is.day")} ${index + 1}"
+                  label: "${g.formatDate(date:lastDaycliche,formatName:'is.date.format.short')}"
           ]
         }
+    }
+    if (Sprint.STATE_INPROGRESS == sprint.state){
+      def nbDays = sprint.endDate - lastDaycliche
+      nbDays.times{
+         values << [
+                  remainingHours: null,
+                  label: "${g.formatDate(date:lastDaycliche + ( it + 1 ),formatName:'is.date.format.short')}"
+          ]
+      }
     }
     return values
   }
 
   def sprintBurnupTasksValues(Sprint sprint) {
     def values = []
+    def lastDaycliche = sprint.startDate
+
+    if (Sprint.STATE_INPROGRESS <= sprint.state){
+      def nbDays = sprint.activationDate - lastDaycliche
+      nbDays.times{
+         values << [
+                  tasksDone:null,
+                  tasks:null,
+                  label: "${g.formatDate(date:lastDaycliche + it,formatName:'is.date.format.short')}"
+          ]
+      }
+    }
+
     sprint.cliches?.eachWithIndex { cliche,index ->
         def xmlRoot = new XmlSlurper().parseText(cliche.data)
         if (xmlRoot) {
+          lastDaycliche = cliche.datePrise
           values << [
                   tasksDone: xmlRoot."${Cliche.TASKS_DONE}".toInteger(),
                   tasks: xmlRoot."${Cliche.TOTAL_TASKS}".toInteger(),
-                  label: "${g.message(code:"is.day")} ${index + 1}"
+                  label: "${g.formatDate(date:lastDaycliche,formatName:'is.date.format.short')}"
           ]
         }
+    }
+
+    if (Sprint.STATE_INPROGRESS == sprint.state){
+      def nbDays = sprint.endDate - lastDaycliche
+      nbDays.times{
+         values << [
+                  tasksDone:null,
+                  tasks:null,
+                  label: "${g.formatDate(date:lastDaycliche + ( it + 1 ),formatName:'is.date.format.short')}"
+          ]
+      }
     }
     return values
   }
 
   def sprintBurnupStoriesValues(Sprint sprint) {
     def values = []
+    def lastDaycliche = sprint.startDate
+
+    if (Sprint.STATE_INPROGRESS <= sprint.state){
+      def nbDays = sprint.activationDate - lastDaycliche
+      nbDays.times{
+         values << [
+                  storiesDone: null,
+                  stories: null,
+                  label: "${g.formatDate(date:lastDaycliche + it,formatName:'is.date.format.short')}"
+          ]
+      }
+    }
+
     sprint.cliches?.eachWithIndex { cliche,index ->
         def xmlRoot = new XmlSlurper().parseText(cliche.data)
         if (xmlRoot) {
+          lastDaycliche = cliche.datePrise
           values << [
                   storiesDone: xmlRoot."${Cliche.STORIES_DONE}".toInteger(),
                   stories: xmlRoot."${Cliche.TOTAL_STORIES}".toInteger(),
-                  label: "${g.message(code:"is.day")} ${index + 1}"
+                  label: "${g.formatDate(date:lastDaycliche,formatName:'is.date.format.short')}"
           ]
         }
     }
+
+    if (Sprint.STATE_INPROGRESS == sprint.state){
+      def nbDays = sprint.endDate - lastDaycliche
+      nbDays.times{
+         values << [
+                  storiesDone: null,
+                  stories: null,
+                  label: "${g.formatDate(date:lastDaycliche + ( it + 1 ),formatName:'is.date.format.short')}"
+          ]
+      }
+    }
+
     return values
   }
 
@@ -415,11 +488,17 @@ class SprintService {
     try {
       def activationDate = null
       if (sprint.activationDate?.text() && sprint.activationDate?.text() != "")
-        acceptedDate = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').parse(sprint.activationDate.text())?:null
+        activationDate = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').parse(sprint.activationDate.text())?:null
+      if (!activationDate && sprint.state.text().toInteger() >= Sprint.STATE_INPROGRESS){
+        activationDate = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').parse(sprint.startDate.text())
+      }
 
       def closeDate = null
       if (sprint.closeDate?.text() && sprint.closeDate?.text() != "")
         closeDate = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').parse(sprint.closeDate.text())?:null
+      if (!closeDate && sprint.state.text().toInteger() == Sprint.STATE_INPROGRESS){
+        closeDate = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').parse(sprint.endDate.text())
+      }
 
       def s = new Sprint(
               retrospective:sprint.retrospective.text(),

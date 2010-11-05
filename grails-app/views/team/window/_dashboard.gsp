@@ -42,7 +42,7 @@
                   <p><is:scrumLink controller="user" action='profile' id="${a.poster.username}">${a.poster.firstName} ${a.poster.lastName}</is:scrumLink>
                     <g:message code="is.fluxiable.${a.code}"/> <g:message code="is.story"/>
                     <g:link class="scrum-link" action="idURL"  controller="backlogElement" id="${a.cachedId}">${a.cachedLabel.encodeAsHTML()}</g:link></p>
-                  <p><g:formatDate date="${a.dateCreated}"/></p>
+                  <p><g:formatDate date="${a.dateCreated}" formatName="is.date.format.short.time"/></p>
                 </div>
               </li>
             </g:each>

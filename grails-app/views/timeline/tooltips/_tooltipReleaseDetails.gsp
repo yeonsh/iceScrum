@@ -29,9 +29,9 @@
 </g:if>
 <div class="drap-container" style="width:100%;float:left;margin-top:10px;">
   <div class="drap date-start" style="float:left;margin:0px">
-    <g:formatDate date="${release.startDate}" type="date" style="SHORT"/>
+    <g:formatDate date="${release.startDate}" formatName="is.date.format.short"/>
   </div>
   <div class="drap date-end" style="float:right;margin:0px">
-    <g:formatDate date="${release.endDate}" type="date" style="SHORT"/>
+    <g:formatDate date="${release.endDate}" formatName="is.date.format.short"/>
   </div>
 </div>

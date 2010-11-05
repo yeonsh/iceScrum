@@ -114,7 +114,7 @@
                   <is:area rich="[disabled:true]" id="description" name="description" value="${product.description}"/>
                 </is:fieldArea>
                 <is:fieldInput label="is.product.startDate" for="startDate">
-                  <is:input id="startDate"  name="startDate" disabled="disabled" value="${g.formatDate(date:product.startDate, type:'datetime', style:'SHORT')}"/>
+                  <is:input id="startDate"  name="startDate" disabled="disabled" value="${g.formatDate(date:product.startDate, formatName:"is.date.format.short")}"/>
                 </is:fieldInput>
                 <is:fieldInput label="is.dialog.importProject.confirm.details.stories" for="stories">
                   <is:input id="stories"  name="stories" disabled="disabled" value="${product.stories?.size()?:0}"/>

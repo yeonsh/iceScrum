@@ -68,12 +68,12 @@
       <is:panel id="panel-dates">
         <is:panelTitle>${message(code:'is.ui.backlogelement.dates')}</is:panelTitle>
         <is:panelContext>
-          <is:panelLine legend="${message(code:'is.story.date.suggested')}"><g:formatDate date="${story.suggestedDate}" type="datetime" style="LONG"/></is:panelLine>
-          <is:panelLine legend="${message(code:'is.story.date.accepted')}" rendered="${story.acceptedDate != null}"><g:formatDate date="${story.acceptedDate}" type="datetime" style="LONG"/></is:panelLine>
-          <is:panelLine legend="${message(code:'is.story.date.estimated')}" rendered="${story.estimatedDate != null}"><g:formatDate date="${story.estimatedDate}" type="datetime" style="LONG"/></is:panelLine>
-          <is:panelLine legend="${message(code:'is.story.date.planned')}" rendered="${story.plannedDate != null}"><g:formatDate date="${story.plannedDate}" type="datetime" style="LONG"/></is:panelLine>
-          <is:panelLine legend="${message(code:'is.story.date.inprogress')}" rendered="${story.inProgressDate != null}"><g:formatDate date="${story.inProgressDate}" type="datetime" style="LONG"/></is:panelLine>
-          <is:panelLine legend="${message(code:'is.story.date.done')}" rendered="${story.doneDate != null}"><g:formatDate date="${story.doneDate}" type="datetime" style="LONG"/></is:panelLine>
+          <is:panelLine legend="${message(code:'is.story.date.suggested')}"><g:formatDate date="${story.suggestedDate}" formatName="is.date.format.short.time"/></is:panelLine>
+          <is:panelLine legend="${message(code:'is.story.date.accepted')}" rendered="${story.acceptedDate != null}"><g:formatDate date="${story.acceptedDate}" formatName="is.date.format.short.time"/></is:panelLine>
+          <is:panelLine legend="${message(code:'is.story.date.estimated')}" rendered="${story.estimatedDate != null}"><g:formatDate date="${story.estimatedDate}" formatName="is.date.format.short.time"/></is:panelLine>
+          <is:panelLine legend="${message(code:'is.story.date.planned')}" rendered="${story.plannedDate != null}"><g:formatDate date="${story.plannedDate}" formatName="is.date.format.short.time"/></is:panelLine>
+          <is:panelLine legend="${message(code:'is.story.date.inprogress')}" rendered="${story.inProgressDate != null}"><g:formatDate date="${story.inProgressDate}" formatName="is.date.format.short.time"/></is:panelLine>
+          <is:panelLine legend="${message(code:'is.story.date.done')}" rendered="${story.doneDate != null}"><g:formatDate date="${story.doneDate}" formatName="is.date.format.short.time"/></is:panelLine>
         </is:panelContext>
       </is:panel>
 

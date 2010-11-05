@@ -36,7 +36,7 @@
       </div>
       <p>
         <strong><g:message code="is.backlogelement.creationDate"/> :</strong>
-        <g:formatDate date="${actor.creationDate}" type="date" style="SHORT"/>
+        <g:formatDate date="${actor.creationDate}" formatName="is.date.format.short.time"/>
       </p>
       <p>
         <strong><g:message code="is.actor.satisfaction.criteria"/> :</strong> ${actor.satisfactionCriteria?.encodeAsHTML()}
