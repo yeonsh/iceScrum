@@ -43,39 +43,12 @@ jQuery.editable.addInputType('datepicker', {
     }
 });
 
+
 $.editable.addInputType('richarea', {
-   element : function(settings, original) {
-      $(original).attr("id",new Date().getTime());
-      var textarea = $('<textarea id="'+$(original).attr("id")+'_mce"/>');
-
-      //override onblur jeditable
-      settings.onblur = function(e){};
-      if (settings.rows) {
-         textarea.attr('rows', settings.rows);
-      } else {
-         textarea.height(settings.height);
-      }
-      if (settings.cols) {
-         textarea.attr('cols', settings.cols);
-      } else {
-         textarea.width(settings.width);
-      }
-      $(this).append(textarea);
-         return(textarea);
-   },
-
-   plugin: function(settings,original){
-       var textarea = $('<textarea id="'+$(original).attr("id")+'_mce"/>');
-       textarea.tinymce({auto_focus : $(original).attr("id")+'_mce',setup : function(ed) {ed.onInit.add(function(ed) {tinyMCE.dom.Event.add(ed.getWin(),"blur",function(e){jQuery("#"+ed.editorId).parents("form").submit();});});},script_url:$.icescrum.o.baseUrl+'/js/tiny_mce/tiny_mce.js', theme:'advanced', plugins:'safari,fullscreen', theme_advanced_toolbar_align:'left', theme_advanced_toolbar_location:'top', theme_advanced_buttons1:'undo,redo,bold,italic,underline,numlist,bullist,link,unlink,blockquote,cleanup,fullscreen', theme_advanced_buttons2:'', theme_advanced_buttons3:'', theme_advanced_buttons4:''});
-   },
-
-   reset : function(settings, original) {
-      var textarea = $('<textarea id="'+$(original).attr("id")+'_mce"/>');
-      textarea.execCommand("mceRemoveControl", true);
-      //$('<iframe frameborder="0" id="'+$(original).attr("id")+'_ifr" style="width: 100%; height: 100px;" src="/frame.html"></iframe>');
-      //$("#"+(original).attr("id")+"_ifr").load(function(){$(this.contentDocument).find("body").css({"font-family":"Verdana,Arial,Helvetica,sans-serif", "font-size":"10px", "margin":"8px"}).html();});
-      original.reset();
-   }
+    element : $.editable.types.textarea.element,
+    plugin  : function(settings, original) {
+        $('textarea', this).markItUp(settings.markitup);
+    }
 });
 
 

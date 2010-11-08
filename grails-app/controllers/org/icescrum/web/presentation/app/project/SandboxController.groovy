@@ -190,6 +190,11 @@ class SandboxController {
       return
     }
 
+    if (params.boolean('loadrich')){
+      render(status: 200, text: story.notes)
+      return
+    }
+
     // If the version is different, the feature has been modified since the last loading
     if (params.long('story.version') != story.version) {
       def msg = message(code: 'is.stale.object', args: [message(code: 'is.story')])
@@ -199,7 +204,7 @@ class SandboxController {
 
     story.properties = params.story
 
-    if (params.int('displayTemplate') != 1){
+    if (params.int('displayTemplate') && params.int('displayTemplate') != 1){
       story.textAs = null
       story.textICan = null
       story.textTo = null
@@ -225,6 +230,9 @@ class SandboxController {
           returnValue = message(code:typesBundle[story.type])
         else if (params.name == 'feature.id')
           returnValue = story.feature?.name?:message(code:message(code:'is.ui.sandbox.manage.chooseFeature'))
+        else if (params.name == 'notes'){
+          returnValue = wikitext.renderHtml(markup:'Textile',text:story."${params.name}")
+        }
         else
           returnValue = story."${params.name}"
         render(status: 200, text: returnValue)

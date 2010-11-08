@@ -49,9 +49,9 @@
       <is:tableColumn editable="[type:'textarea',disabled:!productOwner,name:'description']">${story.description?.encodeAsHTML()}</is:tableColumn>
       <is:tableColumn editable="[type:'selectui',id:'feature',disabled:!productOwner,detach:true,name:'feature.id',values:featureSelect]"><g:message code="${story.feature?.name?:message(code:'is.ui.productBacklog.choose.feature')}"/></is:tableColumn>
       <is:tableColumn editable="[type:'selectui',id:'effort',disabled:!inProduct,name:'effort',values:suiteSelect]">${story.effort?:'?'}</is:tableColumn>
-      <is:tableColumn editable="[type:'richarea',disabled:!productOwner,name:'notes']">${story.notes}</is:tableColumn>
-      <is:tableColumn>${story.acceptedDate}</is:tableColumn>
-      <is:tableColumn>${story.estimatedDate}</is:tableColumn>
+      <is:tableColumn editable="[type:'richarea',disabled:!productOwner,name:'notes']"><wikitext:renderHtml markup="Textile">${story.notes}</wikitext:renderHtml></is:tableColumn>
+      <is:tableColumn><g:formatDate value="${story.acceptedDate}" formatName="is.date.format.short"/></is:tableColumn>
+      <is:tableColumn><g:formatDate value="${story.estimatedDate}" formatName="is.date.format.short"/></is:tableColumn>
     </is:tableRows>
   </is:table>
 </is:tableView>
