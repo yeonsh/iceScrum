@@ -68,7 +68,7 @@
         label.text(self.data('settings').label);
         var statusTracker = function(){
                             if (!self.is(':visible')){
-                                self.show();
+                                self.css('display','block')
                             }
                             if (self.data('settings') == null){
                                 return false;

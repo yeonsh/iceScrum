@@ -227,7 +227,7 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
     }else{
       out << r.img(
             id:attrs.elementId?:'',
-            uri:"/${is.currentThemeImage()}avatar.png",
+            uri:"/${is.currentThemeImage()}avatars/avatar.png",
             class:"avatar avatar-user-${attrs.userid} ${attrs."class"?attrs."class":''}",
             title:message(code:"is.user.avatar"),
             alt:message(code:"is.user.avatar")

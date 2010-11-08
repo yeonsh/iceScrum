@@ -146,6 +146,10 @@ li#li-roles{
     top: 26px;
 }
 
+#main .box .window-content-toolbar, .window-fullscreen .window-content-toolbar {
+    bottom: 26px;
+}
+
 #main .box .window-content-statusbar, .window-fullscreen .window-content-statusbar {
     top: 52px;
 }

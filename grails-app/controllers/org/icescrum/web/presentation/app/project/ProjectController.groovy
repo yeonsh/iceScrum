@@ -27,6 +27,8 @@ import org.icescrum.core.support.ProgressSupport
 import org.icescrum.web.support.MenuBarSupport
 import org.springframework.security.access.AccessDeniedException
 import org.icescrum.core.domain.*
+import org.springframework.web.servlet.support.RequestContextUtils as RCU
+
 
 @Secured('stakeHolder() or inProduct()')
 class ProjectController {
@@ -79,6 +81,7 @@ class ProjectController {
             e.link = "${is.createScrumLink(absolute: true, controller: 'backlogElement', id: a.cachedId)}"
           else
             e.link = "${is.createScrumLink(absolute: true, controller: 'project')}"
+          e.publishedDate = a.dateCreated
         }
       }
     }
@@ -184,7 +187,7 @@ class ProjectController {
         releaseService.saveRelease(release, product)
         sprintService.generateSprints(release, params.firstSprint)
         flash.message = "is.product.saved.redirect"
-        render(text: jq.jquery(null, "document.location='${createLink(controller: 'scrumOS', params: [product: product.pkey])}';"))
+        render(text: jq.jquery(null, "document.location='${createLink(controller: 'scrumOS', params: [product: product.pkey])}#project';"))
       } catch (IllegalStateException ise) {
         render(status: 400, contentType: 'application/json', text: [notice: [text: message(code: ise.getMessage())]] as JSON)
         status.setRollbackOnly()
@@ -215,6 +218,7 @@ class ProjectController {
             model: [product: currentProduct,
                     activities: activities,
                     sprint: sprint,
+                    lang:RCU.getLocale(request).toString().substring(0,2),
                     id:id
             ]
   }

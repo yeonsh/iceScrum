@@ -765,7 +765,6 @@ $(document).ready(function($) {
                     });
                     $('.ui-selectable',selectNode).draggable({opacity: 0.8, helper: 'clone',handle:'.ico'});
                     response({});
-                    //params.listId
                 }
             });
         },
@@ -781,7 +780,7 @@ $(document).ready(function($) {
             }
             if(data.forceRefresh){
                 $.doTimeout(500,function(){
-                    document.location=data.refreshLink
+                    document.location=data.refreshLink+document.location.hash;
                 })
             }
             $.icescrum.renderNotice(data.notice,'notice');

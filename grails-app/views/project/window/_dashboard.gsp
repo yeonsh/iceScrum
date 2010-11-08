@@ -98,7 +98,7 @@
 
     <div class="col2">
       <is:panel id="panel-activity">
-        <is:panelTitle><g:link class="button-rss" action="feed" params="[product:product.pkey ]"><span class='ico'></span></g:link><g:message code="is.ui.project.activity.title"/></is:panelTitle>
+        <is:panelTitle><g:link class="button-rss" action="feed" params="[product:product.pkey,lang:lang]"><span class='ico'></span></g:link><g:message code="is.ui.project.activity.title"/></is:panelTitle>
         <g:if test="${activities.size() > 0}">
           <ul class="list-news">
             <g:each in="${activities}" var="a" status="i">

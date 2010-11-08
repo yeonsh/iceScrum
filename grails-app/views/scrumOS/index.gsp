@@ -17,8 +17,8 @@
   --}%
 <head>
   <meta name='layout' content='main'/>
-<g:if test="${params.product}">
-    <feed:meta kind="rss" version="2.0" controller="project" action="feed" params="[product:params.product]"/>
+  <g:if test="${params.product}">
+    <feed:meta kind="rss" version="2.0" controller="project" action="feed" params="[product:params.product,lang:lang]"/>
     <title>${product?.name ?: ''}</title>
   </g:if>
 </head>

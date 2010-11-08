@@ -41,21 +41,31 @@ class ScrumOSController {
 
   def index = {
     def currentUserInstance = null
+
     def userAgent = request.getHeader("user-agent")
-    def locale = params.lang?:userAgent.substring(userAgent.indexOf("(") + 1).split("; ")[3]?:null
+    def headers = userAgent.substring(userAgent.indexOf("(") + 1).split("; ")
+    def locale = params.lang?:null
+    if (headers.size() >= 3){
+      locale = params.lang?:headers[3].substring(0,2)
+    }
+
     if (springSecurityService.isLoggedIn()) {
       currentUserInstance = User.get(springSecurityService.principal.id)
       if (locale != currentUserInstance.preferences.language) {
         RCU.getLocaleResolver(request).setLocale(request, response, new Locale(currentUserInstance.preferences.language))
+        locale = currentUserInstance.preferences.language
       }
     }else{
-      RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
+      if (locale){
+        RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
+      }
     }
     def currentProductInstance = params.product ? productService.openProduct(params.long('product')) : null
     def currentTeamInstance = params.team ? teamService.openTeam(params.long('team')) : null
 
     [user: currentUserInstance,
             team: currentTeamInstance,
+            lang:RCU.getLocale(request).toString().substring(0,2),
             product: currentProductInstance,
             publicProductsExists:productService.getProductList(null)?.size()?true:false,
             productFilteredsList: productService.getByMemberProductList(),
