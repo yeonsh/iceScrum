@@ -234,4 +234,20 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
       )
     }
   }
+
+  def avatarSelector = {
+    def avatarsDir = grailsApplication.parentContext.getResource(is.currentThemeImage().toString()+'avatars').file
+    if (avatarsDir.isDirectory()){
+      out << "<span class=\"selector-avatars\">"
+      avatarsDir.listFiles().each{
+        if (it.name.endsWith('.png')){
+          out << """<span>
+                      <img rel='${it.name}' src=\"${createLink(uri:'/'+is.currentThemeImage())}avatars/${it.name}\" onClick=\"jQuery('#preview-avatar').attr('src',jQuery(this).attr('src'));jQuery('#avatar-selected').val(jQuery(this).attr('rel'));jQuery('#avatar-field input.is-multifiles-uploaded').val('');\"/>
+                    </span>"""
+        }
+      }
+      out << "<input type='text' style='display:none;' id='avatar-selected' name='avatar-selected'/>"
+      out << "</span>"
+    }
+  }
 }

@@ -54,7 +54,7 @@ class UserService {
       throw new RuntimeException()
   }
 
-  void updateUser(User _user, String pwd = null, String avatarPath = null) {
+  void updateUser(User _user, String pwd = null, String avatarPath = null, boolean scale = true) {
     if (pwd)
       _user.password = springSecurityService.encodePassword(pwd)
 
@@ -63,12 +63,13 @@ class UserService {
         if (FilenameUtils.getExtension(avatarPath) != 'png'){
           def oldAvatarPath = avatarPath
           def newAvatarPath = avatarPath.replace(FilenameUtils.getExtension(avatarPath),'png')
-          ImageConvert.convertToJpeg(oldAvatarPath,newAvatarPath)
+          ImageConvert.convertToPNG(oldAvatarPath,newAvatarPath)
           avatarPath = newAvatarPath
         }
         burningImageService.doWith(avatarPath, grailsApplication.config.icescrum.images.users.dir)
         .execute (_user.id.toString(), {
-          it.scaleAccurate(40, 40)
+          if(scale)
+            it.scaleAccurate(40, 40)
         })
       }
     }

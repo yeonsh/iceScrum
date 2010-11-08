@@ -113,9 +113,18 @@ class UserController {
       params.user.password = currentUser.password
 
     File avatar = null
+    def scale = true
     params.avatar?.split(':')?.with {
       if (session.uploadedFiles[it[0]])
         avatar = new File(session.uploadedFiles[it[0]])
+    }
+
+    if(params."avatar-selected"){
+      def file = grailsApplication.parentContext.getResource(is.currentThemeImage().toString()+'avatars/'+params."avatar-selected").file
+      if (file.exists()){
+        avatar = file
+        scale = false
+      }
     }
 
     def forceRefresh = false
@@ -126,7 +135,7 @@ class UserController {
     currentUser.properties = params.user
 
     try {
-      userService.updateUser(currentUser, pwd, avatar?.canonicalPath)
+      userService.updateUser(currentUser, pwd, avatar?.canonicalPath, scale)
     } catch (IllegalStateException ise) {
       render(status: 400, contentType: 'application/json', text: [notice: [text: message(code: ise.getMessage())]] as JSON)
       return

@@ -1872,3 +1872,21 @@ li#li-roles{
 .login-link, .retrieve-link {
     float:right;
 }
+
+.selector-avatars {
+    float:left;
+}
+
+.selector-avatars span {
+    float:left;
+    margin: 5px;
+    padding:3px;
+}
+
+.selector-avatars span:hover{
+    padding:2px;
+    border-style:solid;
+    border-width:1px;
+    border-color:#C4C4C4;
+    cursor:pointer;
+}

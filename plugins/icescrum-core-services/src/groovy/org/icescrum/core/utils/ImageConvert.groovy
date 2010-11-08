@@ -29,7 +29,7 @@ import com.sun.media.jai.codec.PNGEncodeParam
 import java.awt.image.BufferedImage
 
 class ImageConvert {
-  static void convertToJpeg(String inputFile, String outputFile)
+  static void convertToPNG(String inputFile, String outputFile)
   {
       OutputStream ios
       try
