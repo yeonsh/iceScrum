@@ -65,18 +65,19 @@ class BacklogElementController {
 
     switch(story.state){
       case Story.STATE_SUGGESTED:
-        next = Story.findNextSuggested(story.backlog.id,story.suggestedDate).list()[0]?:Story.findNextAcceptedOrEstimated(story.backlog.id,1).list()[0]?:null
+        next = Story.findNextSuggested(story.backlog.id,story.suggestedDate).list()[0]?:null
         previous = Story.findPreviousSuggested(story.backlog.id,story.suggestedDate).list()[0]?:null
         break
       case Story.STATE_ACCEPTED:
       case Story.STATE_ESTIMATED:
         next = Story.findNextAcceptedOrEstimated(story.backlog.id,story.rank + 1).list()[0]?:null
-        previous = Story.findNextAcceptedOrEstimated(story.backlog.id,story.rank - 1).list()[0]?:Story.findFirstSuggested(story.backlog.id).list()[0]?:null
+        previous = Story.findNextAcceptedOrEstimated(story.backlog.id,story.rank - 1).list()[0]?:null
         break
       case Story.STATE_PLANNED:
       case Story.STATE_INPROGRESS:
       case Story.STATE_DONE:
-        previous = Story.findBySprintAndRank(story.sprint,story.rank-1)?:Story.findLastAcceptedOrEstimated(story.backlog.id).list()[0]?:Story.findFirstSuggested(story.backlog.id).list()[0]?:null
+        previous = Story.findByParentSprintAndRank(story.parentSprint,story.rank-1)?:null
+        next = Story.findByParentSprintAndRank(story.parentSprint,story.rank+1)?:null
       break
     }
 
