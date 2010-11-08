@@ -37,7 +37,7 @@ class ActorController {
   static final id = 'actor'
   static menuBar = MenuBarSupport.productDynamicBar('is.ui.actor',id , false, 3)
   static window =  [title:'is.ui.actor',help:'is.ui.actor.help',init:'list',toolbar:true]
-  static widget =  [title:'is.ui.actor',init:'list',toolbar:true]
+  static widget =  [title:'is.ui.actor',init:'list',toolbar:true,height:143]
 
   static instancesBundle = [
           (Actor.NUMBER_INSTANCES_INTERVAL_1): '1',

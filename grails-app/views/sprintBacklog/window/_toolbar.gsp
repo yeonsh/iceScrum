@@ -29,7 +29,7 @@
           id="${sprint.id}"
           controller="${id}"
           shortcut="[key:'ctrl+n',scope:id]"
-          title="${message(code:'is.ui.sprintBacklog.toolbar.new')}"
+          title="${message(code:'is.ui.sprintBacklog.toolbar.alt.new')}"
           alt="${message(code:'is.ui.sprintBacklog.toolbar.alt.new')}"
           update="window-content-${id}">
     ${message(code: 'is.ui.sprintBacklog.toolbar.new')}

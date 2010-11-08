@@ -23,8 +23,8 @@
   <link rel="shortcut icon" href="${r.resource(dir: is.currentThemeImage(), file: 'favicon.ico')}" type="image/x-icon"/>
   <!--[if IE 8]><meta http-equiv="X-UA-Compatible" content="IE=8"/><![endif]-->
   <r:use module="icescrum"/>
-  <r:use modules="jquery-ui, qtip, pnotify, ui-selectmenu, hotkeys, history, mousewheel, eventline, dotimeout, jqplot,
-   browser, table, dropmenu, jeditable, progress, input, checkbox, alphanumeric"/>
+  <r:use modules="jquery-ui, datepicker-locales, resize, qtip, pnotify, ui-selectmenu, hotkeys, history, mousewheel, eventline, dotimeout, jqplot,
+   browser, table, dropmenu, jeditable, progress, input, checkbox, alphanumeric, scrollbar"/>
   <r:layoutResources/>
   <g:layoutHead/>
 </head>

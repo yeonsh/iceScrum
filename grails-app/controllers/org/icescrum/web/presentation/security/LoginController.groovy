@@ -27,6 +27,7 @@ import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.springframework.web.servlet.support.RequestContextUtils as RCU
 import org.icescrum.core.domain.User
 
 class LoginController {
@@ -69,8 +70,10 @@ class LoginController {
 			redirect uri: config.successHandler.defaultTargetUrl
 			return
 		}
-
         session.invalidate()
+        def userAgent = request.getHeader("user-agent")
+        def locale = params.lang?:userAgent.substring(userAgent.indexOf("(") + 1).split("; ")[3]?:null
+        RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
 		String view = 'auth'
 		String postUrl = "${config.apf.filterProcessesUrl}"
 		render view: view, model: [postUrl: postUrl, rememberMeParameter: config.rememberMe.parameter, activeLostPassword:grailsApplication.config.icescrum?.login?.retrieve?:true]

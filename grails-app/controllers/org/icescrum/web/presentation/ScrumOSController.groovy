@@ -41,13 +41,15 @@ class ScrumOSController {
 
   def index = {
     def currentUserInstance = null
+    def userAgent = request.getHeader("user-agent")
+    def locale = params.lang?:userAgent.substring(userAgent.indexOf("(") + 1).split("; ")[3]?:null
     if (springSecurityService.isLoggedIn()) {
       currentUserInstance = User.get(springSecurityService.principal.id)
-
-      def locale = RCU.getLocale(request)
-      if (locale.toString() != currentUserInstance.preferences.language) {
+      if (locale != currentUserInstance.preferences.language) {
         RCU.getLocaleResolver(request).setLocale(request, response, new Locale(currentUserInstance.preferences.language))
       }
+    }else{
+      RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
     }
     def currentProductInstance = params.product ? productService.openProduct(params.long('product')) : null
     def currentTeamInstance = params.team ? teamService.openTeam(params.long('team')) : null
@@ -93,6 +95,7 @@ class ScrumOSController {
               closeable:(controller.getPropertyValue('widget')?.closeable == null) ? true : controller.getPropertyValue('widget').closeable,
               sortable:(controller.getPropertyValue('widget')?.sortable == null) ? true : controller.getPropertyValue('widget').sortable,
               windowable:controller.getPropertyValue('window')? true : false,
+              height:controller.getPropertyValue('widget')?.height ?: false,
               hasTitleBarContent: controller.getPropertyValue('widget')?.titleBarContent ?: false,
               title: message(code: controller.getPropertyValue('widget')?.title ?: ''),
               init: controller.getPropertyValue('widget')?.init ?: 'indexWidget',

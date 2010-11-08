@@ -151,6 +151,7 @@ class ScrumTagLib {
               connectWith: UtilsWebComponents.wrap(attrs.sortable.connectWith),
               disabled: attrs.sortable.disabled
       ]
+
       def opts = sortableOptions.findAll {k, v -> v}.collect {k, v -> " $k:$v" }.join(',')
       jqCode += " \$('#backlog-layout-${attrs.id}').sortable({$opts}); "
     }
@@ -163,7 +164,11 @@ class ScrumTagLib {
               handle: UtilsWebComponents.wrap(attr: attrs.draggable.handle, doubleQuote: true),
               scope: UtilsWebComponents.wrap(attrs.draggable.scope),
               connectToSortable: UtilsWebComponents.wrap(attrs.draggable.connectToSortable),
-              helper: UtilsWebComponents.wrap(attrs.draggable.helper)
+              helper: UtilsWebComponents.wrap(attrs.draggable.helper),
+              start: "function(event,ui){${attrs.draggable.start}}",
+              stop: "function(event,ui){${attrs.draggable.stop}}",
+              appendTo: UtilsWebComponents.wrap(attrs.draggable.appendTo),
+              scroll: attrs.draggable.scroll ?: true
       ]
       def opts = draggableOptions.findAll {k, v -> v}.collect {k, v -> " $k:$v" }.join(',')
       jqCode += " \$('#backlog-layout-${attrs.id} > ${attrs.draggable.selector ?: 'div'}').draggable({$opts}); "

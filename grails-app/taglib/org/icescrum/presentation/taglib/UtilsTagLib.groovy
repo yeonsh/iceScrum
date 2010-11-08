@@ -19,7 +19,7 @@
 package org.icescrum.presentation.taglib
 import grails.converters.JSON
 import org.icescrum.components.UtilsWebComponents
-  import org.apache.commons.io.FileUtils
+import org.springframework.web.servlet.support.RequestContextUtils as RCU
 
   class UtilsTagLib {
 
@@ -45,7 +45,7 @@ import org.icescrum.components.UtilsWebComponents
       controllerSpace = 'team'
       widgetsList = session.widgetsTeamList
     }
-
+    def locale = attrs.locale ? attrs.locale.replace('_', '-') : RCU.getLocale(request).toString().replace('_', '-')
     def jsCode = """\$.icescrum.init({
                           baseUrl: "${createLink(controller: controllerSpace)}",
                           baseUrlProduct: "${createLink(controller: controllerSpace, params: p)}${p ? '/' : ''}",
@@ -59,6 +59,7 @@ import org.icescrum.components.UtilsWebComponents
                           acceptedState:"${message(code: 'is.story.state.accepted').encodeAsJavaScript()}",
                           estimatedState:"${message(code: 'is.story.state.estimated').encodeAsJavaScript()}",
                           widgetsList:${widgetsList as JSON ?: []},
+                          locale:'${locale}',
                           dialogErrorContent:"<div id=\'window-dialog\'><form method=\'post\' class=\'box-form box-form-250 box-form-250-legend\'><div  title=\'${message(code: 'is.dialog.sendError.title')}\' class=\' panel ui-corner-all\'><h3 class=\'panel-title\'>${message(code: 'is.dialog.sendError.title')}</h3><p class=\'field-information\'>${message(code: 'is.dialog.sendError.description')}</p><p class=\'field-area clearfix field-noseparator\' for=\'stackError\' label=\'${message(code: 'is.dialog.sendError.stackError')}\'><label for=\'stackError\'>${message(code: 'is.dialog.sendError.stackError')}</label><span class=\'area area-large\' id=\'stackError-field\'><span class=\'start\'></span><span class=\'content\'><textarea id=\'stackError\' name=\'stackError\' ></textarea></span><span class=\'end\'></span></span></p><p class=\'field-area clearfix field-noseparator\' for=\'comments\' label=\'${message(code: 'is.dialog.sendError.comments')}\'><label for=\'comments\'>${message(code: 'is.dialog.sendError.comments')}</label><span class=\'area area-large\' id=\'comments-field\'><span class=\'start\'></span><span class=\'content\'><textarea id=\'comments\' name=\'comments\' ></textarea></span><span class=\'end\'></span></span></p></div></form></div>"
                 });
                 \$.icescrum.initHistory();"""

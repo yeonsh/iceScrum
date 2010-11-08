@@ -196,8 +196,8 @@ class TimelineController {
     }
 
     def currentProduct = Product.get(params.product)
-    def startDate = params.startDate ? new Date().parse('yyyy-M-d', params.startDate) : release.startDate
-    def endDate = new Date().parse('yyyy-M-d', params.endDate)
+    def startDate = params.startDate ? new Date().parse(message(code:'is.date.format.short'), params.startDate) : release.startDate
+    def endDate = new Date().parse(message(code:'is.date.format.short'), params.endDate)
     release.properties = params.release
 
     try {
@@ -255,10 +255,10 @@ class TimelineController {
     def release = new Release(params.release)
     def currentProduct = Product.get(params.product)
     
-    release.startDate = new Date().parse('yyyy-M-d', params.startDate)
-    release.endDate = new Date().parse('yyyy-M-d', params.endDate)
+    release.startDate = new Date().parse(message(code:'is.date.format.short'), params.startDate)
+    release.endDate = new Date().parse(message(code:'is.date.format.short'), params.endDate)
 
-    if (release.startDate == new Date().parse('yyyy-M-d', currentProduct.startDate.toString()) && currentProduct.releases?.size() == 0)
+    if (release.startDate == new Date().parse(message(code:'is.date.format.short'), currentProduct.startDate.toString()) && currentProduct.releases?.size() == 0)
       release.startDate =  currentProduct.startDate
 
     try {

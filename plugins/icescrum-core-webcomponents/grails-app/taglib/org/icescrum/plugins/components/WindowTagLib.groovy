@@ -77,6 +77,7 @@ class WindowTagLib {
             titleBarContent: titleBarContent,
             contentClass: attrs.contentClass,
             sortable: attrs.sortable?:false,
+            height: attrs.height?:false,
             windowContent: windowContent
     ]
     out << g.render(template: '/components/window', plugin: 'icescrum-core-webcomponents', model: params)
@@ -188,6 +189,7 @@ class WindowTagLib {
               pushDisabled: grailsApplication.config?.icepush?.disabled?:true,
               hasToolbar: controller.getPropertyValue('widget')?.toolbar ?: false,
               closeable:(controller.getPropertyValue('widget')?.closeable == null) ? true : controller.getPropertyValue('widget').closeable,
+              height:controller.getPropertyValue('widget')?.height ?: false,
               windowable:controller.getPropertyValue('window')? true : false,
               sortable:(controller.getPropertyValue('widget')?.sortable?.enable == null) ? true : controller.getPropertyValue('widget').sortable.enable,
               hasTitleBarContent: controller.getPropertyValue('widget')?.titleBarContent ?: false,
@@ -217,6 +219,7 @@ class WindowTagLib {
             ],
             window: attrs.id,
             sortable:attrs.sortable,
+            height:attrs.height,
             hasStatusbar: false,
             pushDisabled: attrs.pushDisabled,
             hasToolbar: attrs.hasToolbar,

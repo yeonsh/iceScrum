@@ -29,7 +29,7 @@
     list-style:none;
 }
 
-.backlog {
+#main .backlog {
     height:98%;
 }
 
@@ -384,4 +384,14 @@ comment-button-wrapper .button-s {
 
 .file-avatar .is-multifiles-select {
     margin-top:5px;
+}
+
+#import-form .area-rich {
+    height:65px;
+    overflow:auto;
+    width:218px;
+}
+
+#import-form .field-area label {
+    height:60px;
 }

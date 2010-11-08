@@ -41,7 +41,7 @@
     -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.1);
 }
 
-.css3-shadow, .ui-dialog, #local .postit-rows .ui-draggable-dragging  {
+.css3-shadow, .ui-dialog,.postit-row.ui-draggable-dragging  {
     box-shadow: 0 2px 2px rgba(0,0,0,0.2);
     -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
     -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.2);

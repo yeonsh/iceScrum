@@ -66,20 +66,6 @@ class Feature extends BacklogElement implements Serializable {
           ilike 'notes', term
         }
     }
-
-    filterByFeature { feat, p, r = null ->
-      stories {
-        eq 'backlog', p.id
-        if(r) {
-          parentSprint {
-            parentRelease {
-              eq 'id', r.id
-            }
-          }
-        }
-      }
-      eq 'id', feat
-    }
   }
 
   int hashCode() {

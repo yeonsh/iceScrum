@@ -105,9 +105,10 @@
 </g:if>
 <g:if test="${type == 'widget'}">
   <jq:jquery>
-    $("#${type}-id-${id}").isWidget({
+    jQuery("#${type}-id-${id}").isWidget({
             windowable:${titleBarActions?.windowable},
-            closeable:${titleBarActions?.closeable}
+            closeable:${titleBarActions?.closeable},
+            height:'${height}'
         }
     );
   </jq:jquery>

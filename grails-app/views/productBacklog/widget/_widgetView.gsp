@@ -22,7 +22,14 @@
           id="widget-${id}"
           container="ul"
           containerClass="list postit-rows"
-          draggable='[restrictOnAccess:"productOwner() or scrumMaster()", selector:".postit-row"]'
+          draggable='[
+                    restrictOnAccess:"productOwner() or scrumMaster()",
+                    selector:".postit-row",
+                    helper:"clone",
+                    appendTo:"body",
+                    start:"jQuery(this).hide();",
+                    stop:"jQuery(this).show();"
+                  ]'
           dblclickable='[restrictOnAccess:"inProduct()", selector:".postit-row", callback:is.quickLook(params:"\"story.id=\"+obj.attr(\"elemId\")")]'
           value="${stories}"
           var="story">
@@ -40,7 +47,7 @@
 <jq:jquery>
   <icep:notifications
         name="${id}Widget"
-        reload="[update:'#widget-content-'+id,action:'list',params:[product:params.product]]"
+        reload="[update:'#widget-content-'+id+' .scrollbar-wrapper',action:'list',params:[product:params.product]]"
         group="${params.product}-${id}"
         listenOn="#widget-content-${id}"/>
 </jq:jquery>

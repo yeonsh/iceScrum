@@ -71,7 +71,7 @@
           value="${message(code:'is.ui.releasePlan.menu.story.done')}"/>
 </is:postitMenuItem>
 
-<is:postitMenuItem first="true" rendered="${productOwner && story.state == org.icescrum.core.domain.Story.STATE_DONE && story.parentSprint.state == org.icescrum.core.domain.Sprint.STATE_INPROGRESS}">
+<is:postitMenuItem rendered="${productOwner && story.state == org.icescrum.core.domain.Story.STATE_DONE && story.parentSprint.state == org.icescrum.core.domain.Sprint.STATE_INPROGRESS}">
   <is:link
           history="false"
           id="${params.id}"

@@ -145,21 +145,45 @@ class Story extends BacklogElement implements Cloneable {
       }
     }
 
-    // Return all the PBIs of a product that are in in the sprints
-    filterByAllItemsSprint { p ->
+    findAllStoriesInSprints { p ->
       parentSprint {
         parentRelease {
           parentProduct {
             eq 'id', p.id
           }
-          order('startDate')
+          order('orderNumber')
         }
         order('orderNumber')
       }
       order('rank')
     }
 
-    // Return all the PBIs of a product that are in in the release
+    findNextStoryInSprints {p ->
+      parentSprint {
+        parentRelease {
+          parentProduct {
+            eq 'id', p.id
+          }
+          order('orderNumber')
+        }
+        order('orderNumber')
+      }
+      order('rank')
+    }
+
+    findPreviousStoryInSprints {p ->
+      parentSprint {
+        parentRelease {
+          parentProduct {
+            eq 'id', p.id
+          }
+          order('orderNumber')
+        }
+        order('orderNumber')
+      }
+      order('rank')
+    }
+
     storiesByRelease { r ->
       parentSprint {
         parentRelease {
@@ -168,7 +192,25 @@ class Story extends BacklogElement implements Cloneable {
       }
     }
 
-    // Return all the PBIs of a product that are in in the sprints
+    findPreviousSuggested { p, d ->
+      backlog {
+        eq 'id', p
+      }
+      eq 'state', Story.STATE_SUGGESTED
+      gt 'suggestedDate', d
+      maxResults(1)
+      order("suggestedDate", "asc")
+    }
+
+    findFirstSuggested { p ->
+      backlog {
+        eq 'id', p
+      }
+      eq 'state', Story.STATE_SUGGESTED
+      maxResults(1)
+      order("suggestedDate", "asc")
+    }
+
     findNextSuggested { p, d ->
       backlog {
         eq 'id', p
@@ -188,6 +230,18 @@ class Story extends BacklogElement implements Cloneable {
         eq 'state', Story.STATE_ESTIMATED
       }
       eq 'rank', r
+    }
+
+    findLastAcceptedOrEstimated { p ->
+      backlog {
+        eq 'id', p
+      }
+      or {
+        eq 'state', Story.STATE_ACCEPTED
+        eq 'state', Story.STATE_ESTIMATED
+      }
+      maxResults(1)
+      order("rank", "desc")
     }
 
     findAllAcceptedOrEstimated { p ->
@@ -227,78 +281,6 @@ class Story extends BacklogElement implements Cloneable {
       }
     }
 
-    /**
-     * Return the PBI that have link with a specific feature
-     * @param p The product
-     * @param th The feature (feature)
-     * @param r The release (optional)
-     */
-    filterByFeature { p, f, r = null ->
-      backlog {
-        eq 'id', p.id
-      }
-      if (r) {
-        parentSprint {
-          parentRelease {
-            eq 'id', r.id
-          }
-        }
-      }
-      feature {
-        eq 'id', f.id
-      }
-    }
-
-    /**
-     * Count the number of PBIs that are between specified dates
-     * (comparison on local attribute decided by typeDate)
-     * @param p The product considered
-     * @param typeDate The name of the date to compare ('creationDate' or 'estimatedDate')
-     * @param startDate
-     * @param endDate
-     */
-    countByItemsBtwDate { p, typeDate, startDate, endDate ->
-      projections {
-        rowCount()
-        backlog {
-          eq 'id', p.id
-        }
-        between("${typeDate}", startDate, endDate)
-      }
-    }
-
-    /**
-     * Count the number of PBIs that are before the specified date
-     * (comparison on local attribute decided by typeDate)
-     * @param p The product considered
-     * @param typeDate The name of the date to compare ('creationDate' or 'estimatedDate')
-     * @param date The date to check, can be state to NULL to ignore the date criterion
-     * @param minState The minimum state the PBI must match, can be set to NULL to ignore this criterion
-     */
-    countByItemsBeforeDate {p, date, typeDate = 'creationDate', minState = null ->
-      projections {
-        rowCount()
-        backlog {
-          eq 'id', p.id
-        }
-        if (date) {
-          lt "${typeDate}", date
-        }
-        if (minState != null) {
-          ge 'state', minState
-        }
-        and {
-          or {
-            isNull 'parentSprint'
-            and {
-              isNotNull 'parentSprint'
-              isNull 'effort'
-            }
-          }
-        }
-      }
-    }
-
     // Return the total number of points in the backlog
     totalPoint { idProduct ->
       projections {
@@ -310,60 +292,6 @@ class Story extends BacklogElement implements Cloneable {
         isNull 'effort'
       }
     }
-  }
-
-  /**
-   * Return all the PBI of a specified product
-   * @param p
-   * @return
-   */
-  static List<Story> filterByAllItems(Product p) {
-    def storiesSprint = Story.filterByAllItemsSprint(p).list()
-    storiesSprint.addAll(Story.findAllByBacklog(p, [sort: 'rank', order: 'asc']))
-
-    return storiesSprint.unique()
-  }
-
-  /**
-   * Return the number of PBIs which creation date are between the specified dates
-   * @param p
-   * @param startDate
-   * @param endDate
-   * @return
-   */
-  static int countByItemsBtwCreationDate(Product p, Date startDate, Date endDate) {
-    return Story.countByItemsBtwDate(p, 'creationDate', startDate, endDate).list()[0]
-  }
-
-  /**
-   * Return the number of PBIs which estimation date are between the specified dates
-   * @param p
-   * @param startDate
-   * @param endDate
-   * @return
-   */
-  static int countByItemsBtwEstimationDate(Product p, Date startDate, Date endDate) {
-    return Story.countByItemsBtwDate(p, 'estimatedDate', startDate, endDate).list()[0]
-  }
-
-  /**
-   * Return the PBI that have a creationDate anterior to the specified date
-   * @param p The product
-   * @param d The date before which the pbi have been created
-   * @return
-   */
-  static int countByIdentifiedItemsProductBeforeDate(Product p, Date d) {
-    return Story.countByItemsBeforeDate(p, d).list()[0]
-  }
-
-  /**
-   * Return the PBI that have a estimatedDate anterior to the specified date
-   * @param p The product
-   * @param d The date before which the pbi have been estimated
-   * @return
-   */
-  static int countByEstimatedItemsProductBeforeDate(Product p, Date d) {
-    return Story.countByItemsBeforeDate(p, d, 'estimatedDate', Story.STATE_ESTIMATED).list()[0]
   }
 
   static recentActivity(Product currentProductInstance) {

@@ -30,7 +30,6 @@ class IcePushJQuery2TagLib {
       assert attrs.reload.update
       callback += "jQuery('${attrs.reload.remove('update')}').load('${g.createLink(attrs.reload)}',${attrs.reload.textStatus?:'[]'}${attrs.reload.onComplete?','+attrs.reload.onComplete:''})"
     }
-
     callback += attrs.disabled? "}" :""
 
     def callbackVar = "callbackPushListener${attrs.name}"

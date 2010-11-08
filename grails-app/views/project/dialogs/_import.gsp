@@ -57,7 +57,7 @@
     </g:if>
 
     <g:else>
-      <form class="box-form box-form-180 box-form-200-legend">
+      <form class="box-form box-form-180 box-form-200-legend" id="import-form">
         <is:fieldset title="is.dialog.importProject.confirm.title" nolegend="true">
           <is:fieldInformation noborder="true">
             <g:message code="is.dialog.importProject.confirm.description"/>
@@ -114,7 +114,7 @@
                   <is:area rich="[disabled:true]" id="description" name="description" value="${product.description}"/>
                 </is:fieldArea>
                 <is:fieldInput label="is.product.startDate" for="startDate">
-                  <is:input id="startDate"  name="startDate" disabled="disabled" value="${g.formatDate(date:product.startDate, formatName:"is.date.format.short")}"/>
+                  <is:input id="startDate"  name="startDate" disabled="disabled" value="${g.formatDate(date:product.startDate, formatName:'is.date.format.short')}"/>
                 </is:fieldInput>
                 <is:fieldInput label="is.dialog.importProject.confirm.details.stories" for="stories">
                   <is:input id="stories"  name="stories" disabled="disabled" value="${product.stories?.size()?:0}"/>

@@ -1,7 +1,4 @@
-
-<head>
-  <meta name='layout' content='simple'/>
-  <title>%{--
+%{--
   - Copyright (c) 2010 iceScrum Technologies.
   -
   - This file is part of iceScrum.
@@ -18,8 +15,9 @@
   - You should have received a copy of the GNU Affero General Public License
   - along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
   --}%
-
-<g:message code="is.dialog.register"/></title>
+<head>
+  <meta name='layout' content='simple'/>
+  <title><g:message code="is.dialog.register"/></title>
 </head>
 <body>
 <g:setProvider library="jquery"/>

@@ -1,5 +1,3 @@
-
-
 /*
  * Copyright (c) 2010 iceScrum Technologies.
  *
@@ -60,6 +58,7 @@ $(document).ready(function($) {
             maskSpinner:false,
             dialogErrorContent:null,
             openWindow:false,
+            locale:'en',
             selectedObject:{obj:'',time:'',callback:''}
         },
         o:{},
@@ -74,6 +73,7 @@ $(document).ready(function($) {
                     this.addToWidgetBar(tmp[i]);
                 }
             }
+            $.datepicker.setDefaults($.datepicker.regional[this.o.locale]);
             var url = location.hash.replace(/^.*#/, '');
             if(url != ''){
                 $.icescrum.openWindow(url);
@@ -901,6 +901,10 @@ $(document).ready(function($) {
                         $.icescrum.closeWidget(obj, event)
                     });
                 }
+
+                if (opts.height) {
+                    jQuery("#widget-content-"+id).scrollbar({contentHeight:parseInt(opts.height)});
+                }
             },
 
             $.fn.isWindow = function(options) {
@@ -1085,6 +1089,7 @@ $.fn.isWindow.defaults = {
 
 $.fn.isWidget.defaults = {
     windowable:false,
+    scrollable:true,
     closeable:true,
     onClose:null
 };

@@ -39,7 +39,7 @@ class FeatureController {
   static final id = 'feature'
   static menuBar = MenuBarSupport.productDynamicBar('is.ui.feature',id , false, 2)
   static window =  [title:'is.ui.feature',help:'is.ui.feature.help',init:'list',toolbar:true]
-  static widget =  [title:'is.ui.feature',init:'list',toolbar:true]
+  static widget =  [title:'is.ui.feature',init:'list',toolbar:true,height:143]
 
   static typesBundle = [
           (Feature.TYPE_FUNCTIONAL): 'is.feature.type.functional',

@@ -19,8 +19,6 @@
 package org.icescrum.plugins.components
 
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
-import org.springframework.context.i18n.LocaleContextHolder as LCH
-
 import grails.converters.JSON
 import grails.util.BuildSettingsHolder
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
@@ -167,7 +165,7 @@ class FormTagLib {
 
     attrs.from = locales
     attrs.value = RCU.getLocale(request)
-    attrs.optionValue = {"${it.getDisplayName(it)}"}
+    attrs.optionValue = {"${it.getDisplayName(it).capitalize()}"}
     out << is.select(attrs)
   }
 
@@ -762,7 +760,8 @@ class FormTagLib {
             dateFormat: UtilsWebComponents.wrap(attrs.dateFormat),
             changeMonth: attrs.changeMonth,
             changeYear: attrs.changeYear,
-            onSelect: attrs.onSelect
+            onSelect: attrs.onSelect,
+            firstDay: 1
     ]
     if (attrs.mode && attrs.mode == 'inline') {
       out << "<input type=\"hidden\" id=\"datepicker-input-${attrs.id}\" name=\"${attrs.name}\" class=\"datePicker\" />"
@@ -780,16 +779,12 @@ class FormTagLib {
       // out << "<input type=\"text\" id=\"datepicker-${attrs.id}\" name=\"${attrs.name}\" class=\"datePicker\" value=\"\"/>"
 
       jqCode += "\$('#datepicker-${attrs.id}').attr('readonly', true);"
-      args.dateFormat = UtilsWebComponents.wrap("yy-mm-dd")
+      args.dateFormat = UtilsWebComponents.wrap(message(code:'is.date.jquery'))
     } else {
       out << "<input type=\"text\" id=\"datepicker-${attrs.id}\" name=\"${attrs.name}\" class=\"datePicker\" />"
     }
     def opts = args.findAll {k, v -> v != null}.collect {k, v -> " $k:$v"}.join(',')
     jqCode += "\$('#datepicker-${attrs.id}').datepicker({${opts}});"
-
-    def locale = attrs.locale ? attrs.locale.replace('_', '-') : LCH.getLocale().toString().replace('_', '-')
-    jqCode += "\$.datepicker.setDefaults(\$.datepicker.regional['']);"
-    jqCode += "\$('#datepicker-${attrs.id}').datepicker(\$.datepicker.regional['${locale}']);"
     jqCode += "\$('#datepicker-${attrs.id}').datepicker('setDate', ${args.defaultDate});"
     if (attrs.disabled && (attrs.disabled == 'true' || attrs.disabled == true))
       jqCode += "\$('#datepicker-${attrs.id}').datepicker('disable');"

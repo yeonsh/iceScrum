@@ -63,12 +63,6 @@
 
 <is:separator/>
 
-%{--Xml stories importer
-<is:iconButton action="uploadStoriesPanel" controller="productBacklog" alt="${message(code:'is.ui.productBacklog.toolbar.alt.import')}" title="${message(code:'is.ui.productBacklog.toolbar.alt.import')}"><g:message code="is.ui.productBacklog.toolbar.import"/></is:iconButton>
-
-
-<is:separator/>
---}%
 %{--Print button--}%
 <is:reportPanel
         action="print"

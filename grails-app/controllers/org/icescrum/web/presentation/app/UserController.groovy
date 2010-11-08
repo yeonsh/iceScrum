@@ -27,8 +27,6 @@ import grails.plugin.fluxiable.Activity
 import org.icescrum.core.domain.Story
 import org.icescrum.core.domain.Product
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
-import javax.mail.MessagingException
-import org.springframework.mail.MailSendException
 import org.springframework.mail.MailException
 
 class UserController {
@@ -44,6 +42,9 @@ class UserController {
   static window = [title: 'is.user', toolbar: false, init: 'profile']
 
   def register = {
+    def userAgent = request.getHeader("user-agent")
+    def locale = params.lang?:userAgent.substring(userAgent.indexOf("(") + 1).split("; ")[3]?:null
+    RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
     render(template: 'window/register', model: [user: new User()])
   }
 

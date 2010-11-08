@@ -107,3 +107,28 @@
         disabled="true">
   ${message(code:'is.ui.backlogelement.toolbar.comment')}
 </is:iconButton>
+
+
+<div class="navigation-right-toolbar">
+
+  <g:if test="${previous}">
+    <is:iconButton
+            href="#${id}/${previous.id}"
+            title="${message(code:'is.ui.backlogelement.toolbar.previous')}"
+            alt="${message(code:'is.ui.backlogelement.toolbar.previous')}">
+      ${message(code:'is.ui.backlogelement.toolbar.previous')}
+    </is:iconButton>
+  </g:if>
+
+  <is:separatorSmall rendered="${previous != null && next != null}"/>
+
+  <g:if test="${next}">
+    <is:iconButton
+            href="#${id}/${next.id}"
+            title="${message(code:'is.ui.backlogelement.toolbar.next')}"
+            alt="${message(code:'is.ui.backlogelement.toolbar.next')}">
+      ${message(code:'is.ui.backlogelement.toolbar.next')}
+    </is:iconButton>
+  </g:if>
+
+</div>

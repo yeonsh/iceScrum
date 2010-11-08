@@ -111,7 +111,7 @@ body {
 .box-form .field-input, .box-form .field-area, .box-form .field-select,
     .box-form .field-checkbox, .box-form .field-rich, .box-form .field-color,
     .wizard #wizard-left #steps li, .postit-details .postit-details-information p,
-    .list-news li, #local .box-chat, .box-blank .box-blank-button,#version-tab p,
+    .list-news li, .box-blank .box-blank-button,#version-tab p,
     .panel-line .line-left, .panel-line .line-right, .list-comments .comment,.postit-details-information .line  {
     background-image: url(../images/application/separator-h.png);
 	background-repeat: repeat-x;
@@ -208,10 +208,6 @@ body {
 
 .browse .browse-item-active {
     background: url(../images/choose/active.png) no-repeat 0 0;
-}
-
-#local .box-chat .chat-selector .ico  {
-    background-image: url(../images/news/chat.png);
 }
 
 .members .ui-selected {
@@ -418,7 +414,7 @@ body, #main .box .box-title .start, #main .box .box-title .end,
     #login_form .box-title .start, #login_form .box-title .end, #login_form .box-title .content,
     #dropmenu .dropmenu-content, #local .box-simple, #register-form .box-title .content,
     .table .table-row-focus td, .table .table-row-focus .first,
-    .box-form .field-choose, #local .postit-rows .ui-draggable-dragging,
+    .box-form .field-choose, .postit-row.ui-draggable-dragging,
     .kanban .table-line .kanban-col-0, .panel-tab-button .selected,
     .panel-tab-button a:hover {
 	background-color: white;
@@ -465,7 +461,7 @@ body, #main .box .box-title .start, #main .box .box-title .end,
     #dropmenu .dropmenu-content, #dropmenu .dropmenu-content ul li, #local .box-simple,
     .panel .panel-title, .panel, #main .box #button-bar, .window-fullscreen #button-bar,
     .field-choose .field-choose-search input, .field-choose .field-choose-legend,
-    .field-choose .pagination, #local .postit-rows .ui-draggable-dragging,
+    .field-choose .pagination, .postit-row.ui-draggable-dragging,
     #main .box .box-navigation ul, .panel-box, .panel-box .panel-box-title,
     .view-release .event-line-scroll, .view-release, .browse .browse-legend,
     .table-lines, .bar-pagination, .browse .browse-filter input, .browse .browse-filter,

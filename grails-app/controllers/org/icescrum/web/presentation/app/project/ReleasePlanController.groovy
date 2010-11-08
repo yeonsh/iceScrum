@@ -122,8 +122,8 @@ class ReleasePlanController {
   def save = {
     def sprint = new Sprint(params.sprint)
     def release = Release.get(params.long('id'))
-    sprint.startDate = new Date().parse('yyyy-M-d', params.startDate)
-    sprint.endDate = new Date().parse('yyyy-M-d', params.endDate)
+    sprint.startDate = new Date().parse(message(code:'is.date.format.short'), params.startDate)
+    sprint.endDate = new Date().parse(message(code:'is.date.format.short'), params.endDate)
     try {
       sprintService.saveSprint(sprint, release)
       flash.notice = [text:message(code: 'is.sprint.saved'), type:  'notice']
@@ -155,8 +155,8 @@ class ReleasePlanController {
       return
     }
     sprint.properties = params.sprint
-    def startDate = params.startDate ? new Date().parse('yyyy-M-d', params.startDate) : sprint.startDate
-    def endDate = new Date().parse('yyyy-M-d', params.endDate)
+    def startDate = params.startDate ? new Date().parse(message(code:'is.date.format.short'), params.startDate) : sprint.startDate
+    def endDate = new Date().parse(message(code:'is.date.format.short'), params.endDate)
 
     try {
       sprintService.updateSprint(sprint,startDate,endDate)
@@ -372,13 +372,15 @@ class ReleasePlanController {
    try {
       def sprint = story.parentSprint
       productBacklogService.dissociateStory(sprint, story)
-      redirect(action: 'index', params:[product:params.product,id:sprint.id])
+      redirect(action: 'index', params:[product:params.product,id:sprint.parentRelease.id])
       pushOthers "${params.product}-${id}-${sprint.parentRelease.id}"
       push "${params.product}-productBacklog"
       push "${params.product}-sprintBacklog-${sprint.id}"
     } catch (IllegalStateException e) {
+      e.printStackTrace()
       render(status: 400, contentType:'application/json', text: [notice: [text:message(code: e)]] as JSON)
     } catch (RuntimeException e) {
+      e.printStackTrace()
       render(status: 400, contentType:'application/json', text: [notice: [text: renderErrors(bean:story)]] as JSON)
     }
   }

@@ -59,8 +59,28 @@ class BacklogElementController {
       render(text: '')
       return
     }
-    render(template: 'window/toolbar',
-            model: [id: id, story: story, user: user])
+
+    def next = null
+    def previous = null
+
+    switch(story.state){
+      case Story.STATE_SUGGESTED:
+        next = Story.findNextSuggested(story.backlog.id,story.suggestedDate).list()[0]?:Story.findNextAcceptedOrEstimated(story.backlog.id,1).list()[0]?:null
+        previous = Story.findPreviousSuggested(story.backlog.id,story.suggestedDate).list()[0]?:null
+        break
+      case Story.STATE_ACCEPTED:
+      case Story.STATE_ESTIMATED:
+        next = Story.findNextAcceptedOrEstimated(story.backlog.id,story.rank + 1).list()[0]?:null
+        previous = Story.findNextAcceptedOrEstimated(story.backlog.id,story.rank - 1).list()[0]?:Story.findFirstSuggested(story.backlog.id).list()[0]?:null
+        break
+      case Story.STATE_PLANNED:
+      case Story.STATE_INPROGRESS:
+      case Story.STATE_DONE:
+        previous = Story.findBySprintAndRank(story.sprint,story.rank-1)?:Story.findLastAcceptedOrEstimated(story.backlog.id).list()[0]?:Story.findFirstSuggested(story.backlog.id).list()[0]?:null
+      break
+    }
+
+    render(template: 'window/toolbar',model: [id: id, story: story, user: user,next:next,previous:previous])
   }
 
   /**
@@ -71,14 +91,15 @@ class BacklogElementController {
       if (springSecurityService.isAjax(request)) {
         def jqCode = jq.jquery(null, "\$.icescrum.renderNotice('${message(code: 'is.story.error.not.exist')}','error');");
         render(status: 400, text: jqCode);
+      }else{
+        render(status: 400, contentType: 'application/json', text: [notice: [text: 'is.story.error.not.exist']] as JSON)
       }
       return
     }
 
     def story = Story.get(params.long('id'))
     if (!story) {
-      def jqCode = jq.jquery(null, "\$.icescrum.renderNotice('${message(code: 'is.story.error.not.exist')}','error');");
-      render(status: 400, text: jqCode);
+      render(status: 400, contentType: 'application/json', text: [notice: [text: 'is.story.error.not.exist']] as JSON)
       return
     }
 
@@ -279,8 +300,7 @@ class BacklogElementController {
     def story = Story.get(params.id)
 
     if (!story) {
-      def jqCode = jq.jquery(null, "\$.icescrum.renderNotice('${message(code: 'is.story.error.not.exist')}','error');");
-      render(status: 400, text: jqCode);
+      render(status: 400, contentType: 'application/json', text: [notice: [text: 'is.story.error.not.exist']] as JSON)
       return
     }
 
@@ -299,8 +319,7 @@ class BacklogElementController {
     }
     def story = Story.get(params.long('id'))
     if (!story) {
-      def jqCode = jq.jquery(null, "\$.icescrum.renderNotice('${message(code: 'is.story.error.not.exist')}','error');");
-      render(status: 400, text: jqCode);
+      render(status: 400, contentType: 'application/json', text: [notice: [text: 'is.story.error.not.exist']] as JSON)
       return
     }
     def user = null

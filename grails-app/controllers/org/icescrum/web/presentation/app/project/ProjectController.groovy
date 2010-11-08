@@ -143,9 +143,9 @@ class ProjectController {
     if (!params.product) return
     def product = new Product()
     product.preferences = new ProductPreferences()
-    params.product.startDate = new Date().parse('yyyy-M-d', params.product.startDate)
-    params.product.endDate = new Date().parse('yyyy-M-d', params.product.endDate)
-    params.firstSprint = new Date().parse('yyyy-M-d', params.firstSprint)
+    params.product.startDate = new Date().parse(message(code:'is.date.format.short'), params.product.startDate)
+    params.product.endDate = new Date().parse(message(code:'is.date.format.short'), params.product.endDate)
+    params.firstSprint = new Date().parse(message(code:'is.date.format.short'), params.firstSprint)
     product.properties = params.product
 
     if (params.firstSprint.after(product.endDate)) {

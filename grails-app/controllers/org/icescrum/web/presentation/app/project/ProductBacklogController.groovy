@@ -40,7 +40,7 @@ class ProductBacklogController {
   static final id = 'productBacklog'
   static menuBar = MenuBarSupport.productDynamicBar('is.ui.productBacklog', id, true, 3)
   static window =  [title:'is.ui.productBacklog',help:'is.ui.productBacklog.help',init:'list',toolbar:true]
-  static widget =  [title:'is.ui.productBacklog',init:'list',toolbar:false]
+  static widget =  [title:'is.ui.productBacklog',init:'list',toolbar:false,height:143]
 
   static stateBundle = [
           (Story.STATE_SUGGESTED):'is.story.state.suggested',

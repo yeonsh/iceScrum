@@ -230,7 +230,6 @@ li#li-roles{
 #navigation .right .navigation-line {
 	float: right;
 }
-
 /*
 ////////////////////////////////////////////////////////////////////////////////
 //	Box
@@ -364,6 +363,13 @@ li#li-roles{
     padding: 2px;
     list-style: none;
     list-style-type: none;
+}
+
+.box .box-navigation ul .navigation-right-toolbar {
+    float: right;
+    list-style: none;
+    list-style-type: none;
+    margin-right:5px;
 }
 
 .box .box-navigation ul .navigation-right a {
@@ -580,93 +586,24 @@ li#li-roles{
 
 /*
 ////////////////////////////////////////////////////////////////////////////////
-//	Chat
-////////////////////////////////////////////////////////////////////////////////
-*/
-
-#local .box-chat {
-    margin-bottom: 5px;
-    padding: 0;
-}
-
-#local .box-chat .chat-selector {
-    padding: 3px 0 5px;
-    margin-right: 10px;
-    padding-left: 24px;
-    height: 17px;
-    position: relative;
-    overflow: hidden;
-    background-position: right 3px;
-}
-
-#local .box-chat .chat-selector .ico {
-    display: block;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 16px;
-    height: 16px;
-}
-
-#dropmenu .chat-content {
-    background: white;
-    width: 260px;
-    border-bottom-width: 1px;
-}
-
-.chat-content .chat-users {
-    margin: 0;
-    padding: 2px 0;
-    padding-left: 10px;
-}
-
-.chat-content .chat-users li {
-    margin: 0;
-    padding: 1px 0 3px 0;
-    list-style: none;
-    line-height: 16px;
-    list-style-type: none;
-}
-
-.chat-content .chat-group {
-    padding: 2px 5px;
-    margin: 1px 0;
-}
-
-.chat-content .chat-users li a {
-    display: block;
-    padding-left: 10px;
-}
-
-.chat-content .chat-status {
-    padding: 4px;
-}
-
-.chat-content .chat-status-change {
-    cursor: pointer;
-}
-
-.chat-content .chat-status-change:hover {
-    text-decoration: underline;
-}
-
-/*
-////////////////////////////////////////////////////////////////////////////////
 //	Postit Rows
 ////////////////////////////////////////////////////////////////////////////////
 */
 
-#local .postit-rows .ui-draggable-dragging {
+.postit-row.ui-draggable-dragging {
     border-width: 1px;
+    list-style:none outside none;
+    font-size:11px;
+    line-height:17px;
+    padding:3px 25px;
 }
 
-#local .postit-rows .postit-row {
+#local .postit-row {
     padding-left: 25px;
     position: relative;
 }
 
-
-#local .postit-rows .postit-icon {
+.postit-row .postit-icon {
     display: block;
     height: 13px;
     position: absolute;

@@ -84,4 +84,18 @@ modules = {
     resource url: [dir: 'js/markitup/sets/textile', file: 'style.css'], attrs:[media: 'screen,projection'],bundle:'jquery-plugins'
     resource url: [dir: 'js/markitup/skins/simple', file: 'style.css'], attrs:[media: 'screen,projection'],bundle:'jquery-plugins'
   }
+  'resize' {
+    dependsOn 'jquery'
+    resource url: [dir: 'js/jquery', file: 'jquery.resize.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+  }
+  'scrollbar' {
+    dependsOn 'jquery'
+    resource url: [dir: 'js/jquery', file: 'jquery.icescrum.scrollbar.js'], disposition: 'head',bundle:'jquery-plugins'
+  }
+
+  'datepicker-locales' {
+    dependsOn 'jquery-ui'
+    resource url: [dir: 'js/jquery/datepicker', file: 'jquery.ui.datepicker-en.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery/datepicker', file: 'jquery.ui.datepicker-fr.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+  }
 }
