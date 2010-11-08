@@ -137,7 +137,7 @@ class TooltipTagLib {
             button: attrs.styleButtonCss ? "'${attrs.styleButtonCss}'" : null,
             width: styleWidth,
             border: styleBorder,
-            tip: styleTip,
+            tip: "'${attrs.styleTip}'"?:styleTip,
             classes: styleClasses
     ]
 
