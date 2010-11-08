@@ -281,6 +281,22 @@ class Story extends BacklogElement implements Cloneable {
       }
     }
 
+    filterByFeature { p, f, r = null ->
+      backlog {
+        eq 'id', p.id
+      }
+      if (r) {
+        parentSprint {
+          parentRelease {
+            eq 'id', r.id
+          }
+        }
+      }
+      feature {
+        eq 'id', f.id
+      }
+    }
+
     // Return the total number of points in the backlog
     totalPoint { idProduct ->
       projections {
