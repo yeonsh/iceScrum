@@ -102,6 +102,7 @@ class ProductService {
       def p = Product.findByName(_product.name)
       p.productOwners.each {
         securityService.deleteProductOwnerPermissions(it, p)
+        it.save()
       }
       p.delete(flush: true)
     }

@@ -414,13 +414,22 @@ class ProjectController {
         }
       }
     }
+
     if (params.user?.username) {
-      session.tmpP.getAllUsers().each {
-        if (params.user.username."${it.idFromImport}") {
-          it.username = params.user.username."${it.idFromImport}"
+      session.tmpP.teams.each {
+        it.members.each {it2 ->
+          if (params.user.username."${it2.idFromImport}") {
+            it2.username = params.user.username."${it2.idFromImport}"
+          }
+        }
+        it.scrumMasters.each {it2 ->
+          if (params.user.username."${it2.idFromImport}") {
+            it2.username = params.user.username."${it2.idFromImport}"
+          }
         }
       }
     }
+
     if (params.productOwner?.username) {
       session.tmpP.productOwners.each {
         if (params.productOwner.username."${it.idFromImport}") {

@@ -240,11 +240,12 @@ class UserController {
     if (user) {
       def avat = new File(grailsApplication.config.icescrum.images.users.dir.toString() + user.id + '.png')
       if (avat.exists()) {
-        OutputStream out = response.getOutputStream()
-        out.write(avat.bytes)
-        out.close()
-        return
+      }else{
+        avat = grailsApplication.parentContext.getResource("/${is.currentThemeImage()}avatars/avatar.png").file
       }
+      OutputStream out = response.getOutputStream()
+      out.write(avat.bytes)
+      out.close()
     }
     render(status: 404)
   }

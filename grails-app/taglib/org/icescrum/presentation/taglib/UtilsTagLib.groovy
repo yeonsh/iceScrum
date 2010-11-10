@@ -229,9 +229,8 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
             id:attrs.elementId?:'',
             uri:"/${is.currentThemeImage()}avatars/avatar.png",
             class:"avatar avatar-user-${attrs.userid} ${attrs."class"?attrs."class":''}",
-            title:message(code:"is.user.avatar"),
-            alt:message(code:"is.user.avatar")
-      )
+            title:message(code:"is.user.avatar")
+            )
     }
   }
 

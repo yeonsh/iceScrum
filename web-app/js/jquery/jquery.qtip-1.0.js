@@ -1115,9 +1115,9 @@
                 }
 
                 if(posOptions.container != $(document.body) ){
-                    var offset = $(posOptions.container).offset();
+                    var offset = $(posOptions.container).offset() ;
                     position.left = position.left - offset.left;
-                    position.top = position.top - offset.top;
+                    position.top = (position.top - offset.top) + $(posOptions.container).scrollTop();
 
                     if ($(posOptions.container).width() < position.left + elemWidth){
                         position.left = position.left - elemWidth;

@@ -159,18 +159,18 @@ class TeamService {
     if (!team)
       throw new IllegalStateException('is.team.error.not.exist')
 
-    def usersAlreadyExists = team.members.findAll{m -> User.findByUsernameAndEmail(m.username,m.email) != null}
+    def usersAlreadyExists = team.members.findAll{m -> m.id == null && User.findByUsernameAndEmail(m.username,m.email) != null}
     for(User userTodelete in usersAlreadyExists){
       def user = User.findByUsernameAndEmail(userTodelete.username,userTodelete.email)
-      team.removeFromMembers(userTodelete)
       team.addToMembers(user)
+      team.removeFromMembers(userTodelete)
       if (team.scrumMasters.contains(userTodelete)){
-        team.scrumMasters.remove(userTodelete)
         team.scrumMasters.add(user)
+        team.scrumMasters.remove(userTodelete)
       }
     }
 
-    if (!team.save(flush:true)) {
+    if (!team.save()) {
       throw new RuntimeException('is.team.error.not.saved')
     }
 

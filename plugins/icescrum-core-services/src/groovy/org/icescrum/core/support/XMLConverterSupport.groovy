@@ -218,11 +218,12 @@ class XMLConverterSupport {
                             }
                           }
                         }
-                        def tName = t.taskLabel.text() + " (${t.@id})"
-                        if (tName.length() > 100)
-                          name(tName[0..99])
+                        def tSuffixe = " (${t.@id})"
+                        def tName = t.taskLabel.text()
+                        if (tName.length() + tSuffixe.size() > 100)
+                          name(tName[0..(99 - tSuffixe.size())] + tSuffixe)
                         else
-                          name(tName)
+                          name(tName + tSuffixe)
                         estim >=0 ? estimation(estim) : estimation()
                         type(Task.TYPE_URGENT)
                         state(t.taskState.text())
@@ -250,11 +251,12 @@ class XMLConverterSupport {
                   stories(){
                     s.story.findAll{it.storyEstimatedPoints != '-999'}.eachWithIndex{ st,ind3 ->
                       story(id:st.@id){
-                        def sName = st.storyLabel.text() + " (${st.@id})"
-                        if (sName.length() > 100)
-                          name(sName[0..99])
+                        def sSuffixe = " (${st.@id})"
+                        def sName = st.storyLabel.text()
+                        if (sName.length() + sSuffixe.size() > 100)
+                          name(sName[0..(99 - sSuffixe.size())] + sSuffixe)
                         else
-                          name(sName)
+                          name(sName + sSuffixe)
                         st.storyState.text().toInteger() == 6 ? state(7) : state(st.storyState.text())
                         suggestedDate(st.storyCreationDate.text())
                         acceptedDate(st.storyCreationDate.text())
@@ -315,11 +317,12 @@ class XMLConverterSupport {
                                   }
                                 }
                               }
-                              def tName = t.taskLabel.text() + " (${t.@id})"
-                              if (tName.length() > 100)
-                                name(tName[0..99])
+                              def tSuffixe = " (${t.@id})"
+                              def tName = t.taskLabel.text()
+                              if (tName.length() + tSuffixe.size() > 100)
+                                name(tName[0..(99 - tSuffixe.size())] + tSuffixe)
                               else
-                                name(tName)
+                                name(tName + tSuffixe)
                               estim >= 0 ? estimation(estim) : estimation()
                               type()
                               state(t.taskState.text())
@@ -356,11 +359,12 @@ class XMLConverterSupport {
       actors(){
         content.customRole.eachWithIndex { act,ind ->
           actor(id:act.@id){
-            def aName = act.customRoleName.text() + " (${act.@id})"
-            if (aName.length() > 100)
-              name(aName[0..99])
+            def aSuffixe = " (${act.@id})"
+            def aName = act.customRoleName.text()
+            if (aName.length() + aSuffixe.size() > 100)
+              name(aName[0..(99 - aSuffixe.size())] + aSuffixe)
             else
-              name(aName)
+              name(aName + aSuffixe)
             instances(act.customRoleInstances.text())
             expertnessLevel(act.customRoleExpertnessLevel.text())
             useFrequency(act.customRoleUserFrequency.text())
@@ -384,11 +388,12 @@ class XMLConverterSupport {
         def colors = ['blue','green','red','orange','violet','gray','pink','bluelight']
         content.theme.eachWithIndex { ft,ind ->
           feature(id:ft.@id){
-            def tName = ft.themeName.text() + " (${ft.@id})"
-            if (tName.length() > 100)
-              name(tName[0..99])
+             def tSuffixe = " (${ft.@id})"
+            def tName = ft.themeName.text()
+            if (tName.length() + tSuffixe.size() > 100)
+              name(tName[0..(99 - tSuffixe.size())] + tSuffixe)
             else
-              name(tName)
+              name(tName + tSuffixe)
             Random rand = new Random()
             color(colors[rand.nextInt(7)])
             value(0)
@@ -410,11 +415,12 @@ class XMLConverterSupport {
       stories(){
         content.story.eachWithIndex { st,ind ->
           story(id:st.@id){
-            def sName = st.storyLabel.text() + " (${st.@id})"
-            if (sName.length() > 100)
-              name(sName[0..99])
+            def sSuffixe = " (${st.@id})"
+            def sName = st.storyLabel.text()
+            if (sName.length() + sSuffixe.size() > 100)
+              name(sName[0..(99 - sSuffixe.size())] + sSuffixe)
             else
-              name(sName)
+              name(sName + sSuffixe)
             st.storyState.text().toInteger() == 6 ? state(7) : state(st.storyState.text())
             suggestedDate(st.storyCreationDate.text())
             st.storyState.text().toInteger() >= 2 ? acceptedDate(formatter.format(new Date())) : acceptedDate()

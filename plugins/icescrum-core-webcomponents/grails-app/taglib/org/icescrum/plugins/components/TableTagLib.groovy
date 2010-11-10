@@ -132,7 +132,7 @@ class TableTagLib {
 
   def editableCell = {attrs ->
     if (attrs?.type && attrs?.name && !attrs?.disabled)
-      out << 'class="table-cell table-cell-editable-'+attrs.type+(attrs.id?'-'+attrs.id:'')+'" name="'+attrs.name+'"'
+      out << 'class="table-cell table-cell-editable table-cell-editable-'+attrs.type+(attrs.id?'-'+attrs.id:'')+'" name="'+attrs.name+'"'
     else
       out << 'class="table-cell"'
   }  

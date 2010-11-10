@@ -1890,3 +1890,7 @@ li#li-roles{
     border-color:#C4C4C4;
     cursor:pointer;
 }
+
+.table-cell-editable {
+    cursor:pointer;
+}

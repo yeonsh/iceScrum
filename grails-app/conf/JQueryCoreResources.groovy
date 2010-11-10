@@ -5,6 +5,6 @@ modules = {
   'jquery-ui' {
     dependsOn 'jquery'
     resource url: [
-           plugin:'jquery-ui', dir: 'jquery-ui/js', file: 'jquery-ui-1.8.5.custom.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+           plugin:'jquery-ui', dir: 'jquery-ui/js', file: 'jquery-ui-1.8.6.custom.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
   }
 }
