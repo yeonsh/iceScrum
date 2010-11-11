@@ -35,7 +35,6 @@ class ScrumOSController {
   def springSecurityService
   def productService
   def teamService
-  def grailsApplication
   def userService
   def menuBarSupport
 

@@ -28,6 +28,7 @@ import org.icescrum.core.domain.Story
 import org.icescrum.core.domain.Product
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
 import org.springframework.mail.MailException
+import org.icescrum.core.domain.security.Authority
 
 class UserController {
 
@@ -42,6 +43,10 @@ class UserController {
   static window = [title: 'is.user', toolbar: false, init: 'profile']
 
   def register = {
+    if (!grailsApplication.config.icescrum.enable.registration){
+        render(status:403)
+        return
+    }
     def userAgent = request.getHeader("user-agent")
     def locale = params.lang?:userAgent.substring(userAgent.indexOf("(") + 1).split("; ")[3]?:null
     RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
@@ -56,7 +61,10 @@ class UserController {
 
 
   def save = {
-
+    if (!grailsApplication.config.icescrum.enable.registration){
+        render(status:403)
+        return
+    }
     if (params.confirmPassword || params.password) {
       if (params.confirmPassword != params.password) {
         render(status: 400, contentType: 'application/json', text: [notice: [text: message(code: 'is.user.error.password.check')]] as JSON)

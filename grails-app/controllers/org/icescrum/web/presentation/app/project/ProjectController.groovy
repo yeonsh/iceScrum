@@ -28,6 +28,8 @@ import org.icescrum.web.support.MenuBarSupport
 import org.springframework.security.access.AccessDeniedException
 import org.icescrum.core.domain.*
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import org.icescrum.core.domain.security.Authority
 
 
 @Secured('stakeHolder() or inProduct()')
@@ -130,6 +132,13 @@ class ProjectController {
 
   @Secured('isAuthenticated()')
   def openWizard = {
+    if (!grailsApplication.config.icescrum.enable.creation){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
+
     def product = new Product()
     def countPlusUn = Product.count() + 1
     product.name = "${message(code: "is.product.template.name")} ${countPlusUn}"
@@ -143,6 +152,13 @@ class ProjectController {
 
   @Secured('isAuthenticated()')
   def save = {
+    if (!grailsApplication.config.icescrum.enable.creation){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
+
     if (!params.product) return
     def product = new Product()
     product.preferences = new ProductPreferences()
@@ -326,6 +342,13 @@ class ProjectController {
 
   @Secured('productOwner() or scrumMaster()')
   def exportProject = {
+    if (!grailsApplication.config.icescrum.enable.export){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
+
     if (params.status) {
       render(status: 200, contentType: 'application/json', text: session.progress as JSON)
     } else if (params.get) {
@@ -347,6 +370,13 @@ class ProjectController {
 
   @Secured('isAuthenticated()')
   def importProject = {
+    if (!grailsApplication.config.icescrum.enable.import){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
+
     def user = User.load(springSecurityService.principal.id)
     if (params.cancel) {
       session.tmpP = null
@@ -402,6 +432,13 @@ class ProjectController {
 
   @Secured('isAuthenticated()')
   def saveImport = {
+    if (!grailsApplication.config.icescrum.enable.import){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
+
     if (!session.tmpP) {
       render(status: 400, contentType: 'application/json', text: [notice: [text: 'is.import.error.no.backup']] as JSON)
       return

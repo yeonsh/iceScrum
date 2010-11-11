@@ -38,36 +38,42 @@
         <is:dropMenu id="menu-project" title="${message(code:'is.projectmenu.title')}">
           <ul>
             <li class="first menu-label"><g:message code="is.projectmenu.submenu.project.title"/></li>
-            <li>
-              <is:remoteDialog
-                      action="openWizard"
-                      controller="project"
-                      resizable="false"
-                      withTitlebar="false"
-                      width="770"
-                      height="620"
-                      draggable="false">
-                <g:message code="is.projectmenu.submenu.project.create"/>
-              </is:remoteDialog>
-            </li>
-            <li>
-              <is:remoteDialog
-                      action="importProject"
-                      controller="project"
-                      resizable="false"
-                      withTitlebar="false"
-                      width="520"
-                      onOpen="if (jQuery('#import-validate').is(':hidden')){jQuery(\'.ui-dialog-buttonpane button:eq(1)\').hide()};"
-                      valid="[button:'is.dialog.importProject.submit',
-                              action:'saveImport',
-                              update:'dialog',
-                              controller:'project']"
-                      cancel="[action:'importProject',controller:'project',params:'\'cancel=1\'']"
-                      draggable="false">
-                  <g:message code="is.projectmenu.submenu.project.import"/>
-              </is:remoteDialog>
-            </li>
-            <g:if test="${product != null && sec.access(expression:'scrumMaster() or productOwner()',{true})}">
+            <g:if test="${creationEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})}">
+              <li>
+                <is:remoteDialog
+                        action="openWizard"
+                        rendered="${creationEnable}"
+                        controller="project"
+                        resizable="false"
+                        withTitlebar="false"
+                        width="770"
+                        height="620"
+                        draggable="false">
+                  <g:message code="is.projectmenu.submenu.project.create"/>
+                </is:remoteDialog>
+              </li>
+            </g:if>
+            <g:if test="${importEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})}">
+              <li>
+                <is:remoteDialog
+                        action="importProject"
+                        rendered="${importEnable}"
+                        controller="project"
+                        resizable="false"
+                        withTitlebar="false"
+                        width="520"
+                        onOpen="if (jQuery('#import-validate').is(':hidden')){jQuery(\'.ui-dialog-buttonpane button:eq(1)\').hide()};"
+                        valid="[button:'is.dialog.importProject.submit',
+                                action:'saveImport',
+                                update:'dialog',
+                                controller:'project']"
+                        cancel="[action:'importProject',controller:'project',params:'\'cancel=1\'']"
+                        draggable="false">
+                    <g:message code="is.projectmenu.submenu.project.import"/>
+                </is:remoteDialog>
+              </li>
+            </g:if>
+            <g:if test="${(exportEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})) && product != null && sec.access(expression:'scrumMaster() or productOwner()',{true})}">
               <li>
                 <is:remoteDialog
                       action="exportProject"
@@ -81,7 +87,6 @@
               </is:remoteDialog>
               </li>
             </g:if>
-
             <g:if test="${publicProductsExists}">
               <li>
                 <is:remoteDialog
@@ -127,20 +132,20 @@
           <is:dropMenu id="menu-project-2" title="${message(code: 'is.team')}">
             <ul>
               <li class="menu-label"><g:message code="is.projectmenu.submenu.team.title"/></li>
-
-              <li>
-                <is:remoteDialog
-                        action="create"
-                        controller="team"
-                        resizable="false"
-                        draggable="false"
-                        width="600"
-                        title="is.projectmenu.submenu.team.create"
-                        valid="[action:'save',controller:'team',update:'dialog',button:'is.dialog.createTeam.button']">
-                  <g:message code="is.projectmenu.submenu.team.create"/>
-                </is:remoteDialog>
-              </li>
-
+              <g:if test="${creationEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})}">
+                <li>
+                  <is:remoteDialog
+                          action="create"
+                          controller="team"
+                          resizable="false"
+                          draggable="false"
+                          width="600"
+                          title="is.projectmenu.submenu.team.create"
+                          valid="[action:'save',controller:'team',update:'dialog',button:'is.dialog.createTeam.button']">
+                    <g:message code="is.projectmenu.submenu.team.create"/>
+                  </is:remoteDialog>
+                </li>
+              </g:if>
               <li>
                 <is:remoteDialog action="join" controller="team" resizable="false" draggable="false" width="940"
                         valid="[action:'requestMembership',controller:'team',update:'dialog',button:'is.dialog.joinTeam.button']">

@@ -55,7 +55,7 @@
       
       <is:buttonBar id="login-button-bar">
         <is:button id="loginSubmit" history="false" type="submitToRemote" url="${[uri:postUrl]}" onSuccess="document.location='${params.ref?params.ref.replace('@','#'):''}'" value="${message(code: 'is.button.connect')}"/>
-        <is:button type="link" action="register" controller="user" remote="false" value="${message(code: 'is.button.register')}"/>
+        <is:button rendered="${enableRegistration}" type="link" action="register" controller="user" remote="false" value="${message(code: 'is.button.register')}"/>
       </is:buttonBar>
 
     </g:formRemote>

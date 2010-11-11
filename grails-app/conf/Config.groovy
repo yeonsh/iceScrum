@@ -24,10 +24,13 @@ import org.apache.log4j.PatternLayout
 grails.serverURL = "http://localhost:8080/${appName}"
 
 /*
-  Login section
+Administration section
  */
-icescrum.login.validate = true
 icescrum.login.retrieve = true
+icescrum.enable.import = true
+icescrum.enable.export = true
+icescrum.enable.creation = true
+icescrum.enable.registration = true
 
 /*
   Images section

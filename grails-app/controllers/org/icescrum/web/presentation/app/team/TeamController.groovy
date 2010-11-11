@@ -27,6 +27,8 @@ import org.icescrum.core.domain.Team
 import org.icescrum.core.domain.User
 import org.icescrum.core.domain.preferences.TeamPreferences
 import org.icescrum.web.support.MenuBarSupport
+import org.icescrum.core.domain.security.Authority
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 @Secured('isAuthenticated()')
 class TeamController {
@@ -44,10 +46,23 @@ class TeamController {
 
 
   def create = {
+    if (!grailsApplication.config.icescrum.enable.creation){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
     render template: 'dialogs/create', model: [user: User.get(springSecurityService.principal.id)]
   }
 
   def save = {
+    if (!grailsApplication.config.icescrum.enable.creation){
+        if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
+        render(status:403)
+        return
+      }
+    }
+
     def team = new Team(params.team)
     team.preferences = new TeamPreferences()
     try {

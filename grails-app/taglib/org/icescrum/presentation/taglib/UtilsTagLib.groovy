@@ -20,6 +20,8 @@ package org.icescrum.presentation.taglib
 import grails.converters.JSON
 import org.icescrum.components.UtilsWebComponents
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
+  import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+  import org.icescrum.core.domain.security.Authority
 
   class UtilsTagLib {
 
@@ -121,7 +123,13 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
    * Generate iceScrum main menu (project dropMenu, avatar, roles, logout, ...)
    */
   def mainMenu = { attrs, body ->
-    out << g.render(template: '/scrumOS/navigation')
+    out << g.render(template: '/scrumOS/navigation',
+            model:[
+              importEnable:(grailsApplication.config.icescrum.enable.import || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              exportEnable:(grailsApplication.config.icescrum.enable.export || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              creationEnable:(grailsApplication.config.icescrum.enable.creation || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN))
+            ]
+          )
   }
 
   def renderNotice = {attrs ->
