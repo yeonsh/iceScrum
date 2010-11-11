@@ -201,7 +201,11 @@ class DummyPopulator {
         i++
       }
 
-
+      p.stories.findAll{ (it.state == Story.STATE_ACCEPTED) || (it.state == Story.STATE_ESTIMATED)}.eachWithIndex{ it,index ->
+        index++
+        it.rank = index
+        it.save()
+      }
     }
 
     sessionFactory.currentSession.flush()

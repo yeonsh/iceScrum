@@ -21,17 +21,17 @@
   <is:table id="story-table"
           editable="[controller:id,action:'update',params:[product:params.product],onExitCell:'submit']">
 
-    <is:tableHeader class="table-cell-checkbox" name="" />
-    <is:tableHeader name="" />
-    <is:tableHeader name="${message(code:'is.story.rank')}"/>
-    <is:tableHeader name="${message(code:'is.story.name')}"/>
-    <is:tableHeader name="${message(code:'is.story.type')}"/>
-    <is:tableHeader name="${message(code:'is.backlogelement.description')}"/>
-    <is:tableHeader name="${message(code:'is.feature')}"/>
-    <is:tableHeader name="${message(code:'is.story.effort')}"/>
-    <is:tableHeader name="${message(code:'is.backlogelement.notes')}"/>
-    <is:tableHeader name="${message(code:'is.story.date.accepted')}"/>
-    <is:tableHeader name="${message(code:'is.story.date.estimated')}"/>
+    <is:tableHeader width="3%" class="table-cell-checkbox" name="" />
+    <is:tableHeader width="3%" name="" />
+    <is:tableHeader width="4%" name="${message(code:'is.story.rank')}"/>
+    <is:tableHeader width="10%" name="${message(code:'is.story.name')}"/>
+    <is:tableHeader width="10%" name="${message(code:'is.story.type')}"/>
+    <is:tableHeader width="10%" name="${message(code:'is.feature')}"/>
+    <is:tableHeader width="4%" name="${message(code:'is.story.effort')}"/>
+    <is:tableHeader width="20%" name="${message(code:'is.backlogelement.description')}"/>
+    <is:tableHeader width="20%" name="${message(code:'is.backlogelement.notes')}"/>
+    <is:tableHeader width="8%" name="${message(code:'is.story.date.accepted')}"/>
+    <is:tableHeader width="8%" name="${message(code:'is.story.date.estimated')}"/>
 
     <g:set var="productOwner" value="${sec.access([expression:'productOwner()'], {true})}"/>
     <g:set var="inProduct" value="${sec.access([expression:'inProduct()'], {true})}"/>
@@ -46,9 +46,9 @@
       <is:tableColumn editable="[type:'selectui',id:'rank',disabled:!productOwner,name:'rank',values:rankSelect]">${story.rank}</is:tableColumn>
       <is:tableColumn editable="[type:'text',disabled:!productOwner,name:'name']">${story.name}</is:tableColumn>
       <is:tableColumn editable="[type:'selectui',id:'type',disabled:!productOwner,name:'type',values:typeSelect]"><is:bundleFromController bundle="typesBundle" value="${story.type}"/></is:tableColumn>
-      <is:tableColumn editable="[type:'textarea',disabled:!productOwner,name:'description']">${story.description?.encodeAsHTML()}</is:tableColumn>
       <is:tableColumn editable="[type:'selectui',id:'feature',disabled:!productOwner,detach:true,name:'feature.id',values:featureSelect]"><g:message code="${story.feature?.name?:message(code:'is.ui.productBacklog.choose.feature')}"/></is:tableColumn>
       <is:tableColumn editable="[type:'selectui',id:'effort',disabled:!inProduct,name:'effort',values:suiteSelect]">${story.effort?:'?'}</is:tableColumn>
+      <is:tableColumn editable="[type:'textarea',disabled:!productOwner,name:'description']">${story.description?.encodeAsHTML()}</is:tableColumn>
       <is:tableColumn editable="[type:'richarea',disabled:!productOwner,name:'notes']"><wikitext:renderHtml markup="Textile">${story.notes}</wikitext:renderHtml></is:tableColumn>
       <is:tableColumn><g:formatDate value="${story.acceptedDate}" formatName="is.date.format.short"/></is:tableColumn>
       <is:tableColumn><g:formatDate value="${story.estimatedDate}" formatName="is.date.format.short"/></is:tableColumn>

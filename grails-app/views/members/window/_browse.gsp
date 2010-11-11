@@ -19,9 +19,9 @@
 <is:tableView>
   <is:table id="members-table">
 
-    <is:tableHeader class="table-cell-checkbox" name=""/>
-    <is:tableHeader name="${message(code:'is.team')}"/>
-    <is:tableHeader name="${message(code:'is.team.members')}"/>
+    <is:tableHeader width="3%" class="table-cell-checkbox" name=""/>
+    <is:tableHeader width="17%" name="${message(code:'is.team')}"/>
+    <is:tableHeader width="70%" name="${message(code:'is.team.members')}"/>
 
     <is:tableRows in="${teams}" var="team" elemID="id">
       <is:tableColumn class="table-cell-checkbox">

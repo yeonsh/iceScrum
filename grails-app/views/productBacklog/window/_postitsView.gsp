@@ -93,7 +93,7 @@
               title="${story.name}"
               text="${is.storyTemplate(story:story)} "
               apiBeforeShow="if(\$('#dropmenu').is(':visible') || \$('#postit-select-suite').is(':visible')){return false;}"
-              container="\$('#window-id-${id}')"/>
+              container="\$('#window-content-${id}')"/>
     </g:if>
   </is:postit>
 </is:backlogElementLayout>

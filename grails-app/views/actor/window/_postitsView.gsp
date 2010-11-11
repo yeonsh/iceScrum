@@ -46,7 +46,7 @@
             title="${actor.name.encodeAsHTML()}"
             text="${actor.description?.encodeAsHTML()}"
             apiBeforeShow="if(\$('#dropmenu').is(':visible')){return false;}"
-            container="\$('.backlog')"/>
+            container="\$('#window-content-${id}')"/>
     </g:if>
 
   </is:postit>

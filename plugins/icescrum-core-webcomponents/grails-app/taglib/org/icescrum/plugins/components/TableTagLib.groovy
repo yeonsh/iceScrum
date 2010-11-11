@@ -91,11 +91,11 @@ class TableTagLib {
 
         col."class" = col."class" ?: ""
         if (indexCol == 0)
-          out << '<td class="' + col."class" + ' first"><div '+is.editableCell(col.editable)+'>' + is.nbps(null, col?.body(row.attrs)) + '</div></td>'
+          out << '<td class="' + col."class" + ' break-word first"><div '+is.editableCell(col.editable)+'>' + is.nbps(null, col?.body(row.attrs)) + '</div></td>'
         else if (indexCol == (maxCols - 1))
-          out << '<td class="' + col."class" + ' last"><div '+is.editableCell(col.editable)+'>' + is.nbps(null, col?.body(row.attrs)) + '</div></td>'
+          out << '<td class="' + col."class" + ' break-word last"><div '+is.editableCell(col.editable)+'>' + is.nbps(null, col?.body(row.attrs)) + '</div></td>'
         else
-          out << '<td class="' + col."class" + '"><div '+is.editableCell(col.editable)+'>' + is.nbps(null, col?.body(row.attrs)) + '</div></td>'
+          out << '<td class="' + col."class" + ' break-word"><div '+is.editableCell(col.editable)+'>' + is.nbps(null, col?.body(row.attrs)) + '</div></td>'
       }
       out << '</tr>'
     }

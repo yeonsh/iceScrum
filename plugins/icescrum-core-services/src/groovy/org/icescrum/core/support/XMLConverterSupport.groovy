@@ -413,6 +413,7 @@ class XMLConverterSupport {
         }
       }
       stories(){
+        def rankBacklog = 0
         content.story.eachWithIndex { st,ind ->
           story(id:st.@id){
             def sSuffixe = " (${st.@id})"
@@ -427,7 +428,9 @@ class XMLConverterSupport {
             st.storyState.text().toInteger() >= 3 ? estimatedDate(formatter.format(new Date())) : estimatedDate()
             st.storyEstimatedPoints.text() == '-5' ? effort() : effort(st.storyEstimatedPoints.text())
             value(0)
-            rank(ind+1)
+            if (3 >= st.storyState.text().toInteger() && st.storyState.text().toInteger() >= 2 )
+              rankBacklog += 1
+              rank(rankBacklog)
             creationDate(st.storyCreationDate.text())
             type(st.storyType.text())
             executionFrequency(1)
