@@ -21,26 +21,28 @@
   <is:table id="feature-table"
           editable="[controller:id,action:'update',params:[product:params.product],onExitCell:'submit']">
 
-    <is:tableHeader class="table-cell-checkbox" name="" />
-    <is:tableHeader name="${message(code:'is.actor.name')}"/>
-    <is:tableHeader name="${message(code:'is.backlogelement.description')}"/>
-    <is:tableHeader name="${message(code:'is.actor.it.level')}"/>
-    <is:tableHeader name="${message(code:'is.actor.satisfaction.criteria')}"/>
-    <is:tableHeader name="${message(code:'is.actor.use.frequency')}"/>
-    <is:tableHeader name="${message(code:'is.actor.instances')}"/>
-    <is:tableHeader name="${message(code:'is.actor.nb.stories')}"/>
+    <is:tableHeader width="4%" class="table-cell-checkbox" name="" />
+    <is:tableHeader width="10%" name="${message(code:'is.actor.name')}"/>
+    <is:tableHeader width="20%" name="${message(code:'is.backlogelement.description')}"/>
+    <is:tableHeader width="16%" name="${message(code:'is.actor.it.level')}"/>
+    <is:tableHeader width="15%" name="${message(code:'is.actor.satisfaction.criteria')}"/>
+    <is:tableHeader width="15%" name="${message(code:'is.actor.use.frequency')}"/>
+    <is:tableHeader width="10%" name="${message(code:'is.actor.instances')}"/>
+    <is:tableHeader width="10%" name="${message(code:'is.actor.nb.stories')}"/>
+
+    <g:set var="productOwner" value="${sec.access([expression:'productOwner()'], {true})}"/>
 
     <is:tableRows in="${actors}" var="actor" elemID="id">
       <is:tableColumn class="table-cell-checkbox">
         <g:checkBox name="check-${actor.id}" />
       </is:tableColumn>
-      <is:tableColumn editable="[type:'text',disabled:false,name:'name']">${actor.name}</is:tableColumn>
-      <is:tableColumn editable="[type:'textarea',disabled:false,name:'description']">${actor.description?.encodeAsHTML()}</is:tableColumn>
-      <is:tableColumn editable="[type:'selectui',id:'level',name:'expertnessLevel',values:levelsSelect,disabled:false]"><is:bundleFromController bundle="levelsBundle" value="${actor.expertnessLevel}"/></is:tableColumn>
-      <is:tableColumn editable="[type:'textarea',disabled:false,name:'satisfactionCriteria']">${actor.satisfactionCriteria?.encodeAsHTML()}</is:tableColumn>      
-      <is:tableColumn editable="[type:'selectui',id:'useFrequency',name:'useFrequency',values:frequenciesSelect,disabled:false]"><is:bundleFromController bundle="frequenciesBundle" value="${actor.useFrequency}"/></is:tableColumn>
-      <is:tableColumn editable="[type:'selectui',id:'instances',name:'instances',values:instancesSelect,disabled:false]"><is:bundleFromController bundle="instancesBundle" value="${actor.instances}"/></is:tableColumn>
-      <is:tableColumn>${actor.stories?:0}</is:tableColumn>
+      <is:tableColumn editable="[type:'text',disabled:!productOwner,name:'name']">${actor.name}</is:tableColumn>
+      <is:tableColumn editable="[type:'textarea',disabled:!productOwner,name:'description']">${actor.description?.encodeAsHTML()}</is:tableColumn>
+      <is:tableColumn editable="[type:'selectui',id:'level',name:'expertnessLevel',values:levelsSelect,disabled:!productOwner]"><is:bundleFromController bundle="levelsBundle" value="${actor.expertnessLevel}"/></is:tableColumn>
+      <is:tableColumn editable="[type:'textarea',disabled:!productOwner,name:'satisfactionCriteria']">${actor.satisfactionCriteria?.encodeAsHTML()}</is:tableColumn>
+      <is:tableColumn editable="[type:'selectui',id:'useFrequency',name:'useFrequency',values:frequenciesSelect,disabled:!productOwner]"><is:bundleFromController bundle="frequenciesBundle" value="${actor.useFrequency}"/></is:tableColumn>
+      <is:tableColumn editable="[type:'selectui',id:'instances',name:'instances',values:instancesSelect,disabled:!productOwner]"><is:bundleFromController bundle="instancesBundle" value="${actor.instances}"/></is:tableColumn>
+      <is:tableColumn>${actor.stories.size()?:0}</is:tableColumn>
     </is:tableRows>
   </is:table>
 </is:tableView>

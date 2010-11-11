@@ -21,16 +21,18 @@
   <is:table id="feature-table"
           editable="[controller:id,action:'update',params:[product:params.product],onExitCell:'submit']">
 
-    <is:tableHeader class="table-cell-checkbox" name="" />
-    <is:tableHeader name="" />
-    <is:tableHeader name="${message(code:'is.feature.rank')}"/>
-    <is:tableHeader name="${message(code:'is.feature.value')}"/>
-    <is:tableHeader name="${message(code:'is.feature.type')}"/>
-    <is:tableHeader name="${message(code:'is.feature')}"/>
-    <is:tableHeader name="${message(code:'is.backlogelement.description')}"/>
-    <is:tableHeader name="${message(code:'is.feature.effort')}"/>
-    <is:tableHeader name="${message(code:'is.feature.stories')}"/>
-    <is:tableHeader name="${message(code:'is.feature.stories.finish')}"/>
+    <is:tableHeader width="3%" class="table-cell-checkbox" name="" />
+    <is:tableHeader width="3%" name="" />
+    <is:tableHeader width="4%" name="${message(code:'is.feature.rank')}"/>
+    <is:tableHeader width="4%" name="${message(code:'is.feature.value')}"/>
+    <is:tableHeader width="10%" name="${message(code:'is.feature.type')}"/>
+    <is:tableHeader width="15%" name="${message(code:'is.feature')}"/>
+    <is:tableHeader width="30%" name="${message(code:'is.backlogelement.description')}"/>
+    <is:tableHeader width="5%" name="${message(code:'is.feature.effort')}"/>
+    <is:tableHeader width="11%" name="${message(code:'is.feature.stories')}"/>
+    <is:tableHeader width="15%" name="${message(code:'is.feature.stories.finish')}"/>
+
+    <g:set var="productOwner" value="${sec.access([expression:'productOwner()'], {true})}"/>
 
     <is:tableRows in="${features}" var="feature" elemID="id">
       <is:tableColumn class="table-cell-checkbox">
@@ -39,11 +41,11 @@
       <is:tableColumn class="table-cell-postit-icon">
         <is:postitIcon color="${feature.color}" />
       </is:tableColumn>
-      <is:tableColumn editable="[type:'selectui',id:'rank',name:'rank',values:rankSelect,disabled:false]">${feature.rank}</is:tableColumn>
-      <is:tableColumn editable="[type:'selectui',disabled:false,name:'value',values:suiteSelect]">${feature.value}</is:tableColumn>
-      <is:tableColumn editable="[type:'selectui',id:'type',disabled:false,name:'type',values:typeSelect]"><is:bundleFromController bundle="typesBundle" value="${feature.type}"/></is:tableColumn>
-      <is:tableColumn editable="[type:'text',disabled:false,name:'name']">${feature.name.encodeAsHTML()}</is:tableColumn>
-      <is:tableColumn editable="[type:'textarea',disabled:false,name:'description']">${feature.description?.encodeAsHTML()}</is:tableColumn>
+      <is:tableColumn editable="[type:'selectui',id:'rank',name:'rank',values:rankSelect,disabled:!productOwner]">${feature.rank}</is:tableColumn>
+      <is:tableColumn editable="[type:'selectui',disabled:!productOwner,name:'value',values:suiteSelect]">${feature.value}</is:tableColumn>
+      <is:tableColumn editable="[type:'selectui',id:'type',disabled:!productOwner,name:'type',values:typeSelect]"><is:bundleFromController bundle="typesBundle" value="${feature.type}"/></is:tableColumn>
+      <is:tableColumn editable="[type:'text',disabled:!productOwner,name:'name']">${feature.name.encodeAsHTML()}</is:tableColumn>
+      <is:tableColumn editable="[type:'textarea',disabled:!productOwner,name:'description']">${feature.description?.encodeAsHTML()}</is:tableColumn>
       <is:tableColumn>${effortFeature(feature)}</is:tableColumn>
       <is:tableColumn>${feature.stories?.size() ?: 0}</is:tableColumn>
       <is:tableColumn>${linkedDoneStories(feature)}</is:tableColumn>
