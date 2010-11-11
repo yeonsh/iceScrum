@@ -76,7 +76,7 @@ class LoginController {
         RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
 		String view = 'auth'
 		String postUrl = "${config.apf.filterProcessesUrl}"
-		render view: view, model: [postUrl: postUrl, rememberMeParameter: config.rememberMe.parameter, activeLostPassword:grailsApplication.config.icescrum?.login?.retrieve?:true, enableRegistration:grailsApplication.config.icescrum.enable.registration]
+		render view: view, model: [postUrl: postUrl, rememberMeParameter: config.rememberMe.parameter, activeLostPassword:grailsApplication.config.icescrum.enable.login.retrieve?:true, enableRegistration:grailsApplication.config.icescrum.enable.registration]
 	}
 
 	/**

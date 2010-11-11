@@ -38,7 +38,7 @@
         <is:dropMenu id="menu-project" title="${message(code:'is.projectmenu.title')}">
           <ul>
             <li class="first menu-label"><g:message code="is.projectmenu.submenu.project.title"/></li>
-            <g:if test="${creationEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})}">
+            <g:if test="${creationProjectEnable}">
               <li>
                 <is:remoteDialog
                         action="openWizard"
@@ -53,7 +53,7 @@
                 </is:remoteDialog>
               </li>
             </g:if>
-            <g:if test="${importEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})}">
+            <g:if test="${importEnable}">
               <li>
                 <is:remoteDialog
                         action="importProject"
@@ -73,7 +73,7 @@
                 </is:remoteDialog>
               </li>
             </g:if>
-            <g:if test="${(exportEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})) && product != null && sec.access(expression:'scrumMaster() or productOwner()',{true})}">
+            <g:if test="${exportEnable && product != null && sec.access(expression:'scrumMaster() or productOwner()',{true})}">
               <li>
                 <is:remoteDialog
                       action="exportProject"
@@ -132,7 +132,7 @@
           <is:dropMenu id="menu-project-2" title="${message(code: 'is.team')}">
             <ul>
               <li class="menu-label"><g:message code="is.projectmenu.submenu.team.title"/></li>
-              <g:if test="${creationEnable || sec.access([expression:'hasRole(\'ROLE_ADMIN\')'], {true})}">
+              <g:if test="${creationTeamEnable}">
                 <li>
                   <is:remoteDialog
                           action="create"

@@ -26,11 +26,21 @@ grails.serverURL = "http://localhost:8080/${appName}"
 /*
 Administration section
  */
-icescrum.login.retrieve = true
-icescrum.enable.import = true
-icescrum.enable.export = true
-icescrum.enable.creation = true
 icescrum.enable.registration = true
+icescrum.enable.login.retrieve = true
+
+/*
+Project administration section
+ */
+icescrum.project.enable.import = false
+icescrum.project.enable.export = false
+icescrum.project.enable.creation = false
+icescrum.project.disable.private = false
+
+/*
+Team administration section
+ */
+icescrum.team.enable.creation = false
 
 /*
   Images section

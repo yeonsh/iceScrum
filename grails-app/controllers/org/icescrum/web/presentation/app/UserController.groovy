@@ -259,7 +259,7 @@ class UserController {
   }
 
   def retrieve = {
-    def activated = grailsApplication.config.icescrum.login?.retrieve?:true
+    def activated = grailsApplication.config.icescrum.enable.login.retrieve?:true
     if (!activated){
       render(status: 400, contentType:'application/json', text: [notice: [text: message(code:'is.login.retrieve.not.activated')]] as JSON)
     }

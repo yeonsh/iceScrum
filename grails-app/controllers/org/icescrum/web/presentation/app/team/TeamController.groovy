@@ -46,7 +46,7 @@ class TeamController {
 
 
   def create = {
-    if (!grailsApplication.config.icescrum.enable.creation){
+    if (!grailsApplication.config.icescrum.team.enable.creation){
         if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
         render(status:403)
         return
@@ -56,7 +56,7 @@ class TeamController {
   }
 
   def save = {
-    if (!grailsApplication.config.icescrum.enable.creation){
+    if (!grailsApplication.config.icescrum.team.enable.creation){
         if(!SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)){
         render(status:403)
         return

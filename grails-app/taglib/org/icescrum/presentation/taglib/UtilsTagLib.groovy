@@ -125,9 +125,10 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
   def mainMenu = { attrs, body ->
     out << g.render(template: '/scrumOS/navigation',
             model:[
-              importEnable:(grailsApplication.config.icescrum.enable.import || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
-              exportEnable:(grailsApplication.config.icescrum.enable.export || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
-              creationEnable:(grailsApplication.config.icescrum.enable.creation || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN))
+              importEnable:(grailsApplication.config.icescrum.project.enable.import || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              exportEnable:(grailsApplication.config.icescrum.project.enable.export || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              creationProjectEnable:(grailsApplication.config.icescrum.project.enable.creation || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              creationTeamEnable:(grailsApplication.config.icescrum.project.enable.creation || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN))
             ]
           )
   }

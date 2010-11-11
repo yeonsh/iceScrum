@@ -25,12 +25,12 @@
     <is:fieldInput for="productpkey" label="is.product.pkey">
       <is:input id="productpkey" name="product.pkey" value="${product.pkey}"/>
     </is:fieldInput>
-    <is:fieldArea for="productdescription" label="is.product.description" optional="true" noborder="true">
+    <is:fieldArea for="productdescription" label="is.product.description" optional="true">
       <is:area rich="[preview:true,width:335]"
                id="productdescription"
                name="product.description"/>
     </is:fieldArea>
-    <is:fieldDatePicker for="productstartDate" label="is.dialog.wizard.project.startDate">
+    <is:fieldDatePicker noborder="${privateOption?'true':''}" for="productstartDate" label="is.dialog.wizard.project.startDate">
       <is:datePicker id="productstartDate" defaultDate="${product.startDate}" onSelect="
 
       var startDate = new Date(dateText);
@@ -47,7 +47,7 @@
 
       " name="product.startDate" mode="read-input" changeMonth="true" changeYear="true"/>
     </is:fieldDatePicker>
-    <is:fieldRadio for="product.preferences.hidden" label="is.product.preferences.project.hidden" noborder="true">
+    <is:fieldRadio rendered="${!privateOption}" for="product.preferences.hidden" label="is.product.preferences.project.hidden" noborder="true">
       <is:radio id="product.preferences.hidden" name="product.preferences.hidden" value="${product.preferences.hidden}"/>
     </is:fieldRadio>
   </is:fieldset>

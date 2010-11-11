@@ -38,7 +38,7 @@
     <is:accordion id="preferences" autoHeight="false">
 
       <is:accordionSection title="is.dialog.project.preferences.project.title">
-        <is:fieldRadio for="productpreferenceshidden" label="is.product.preferences.project.hidden">
+        <is:fieldRadio rendered="${!privateOption}" for="productpreferenceshidden" label="is.product.preferences.project.hidden">
           <is:radio id="productpreferenceshidden" name="productd.preferences.hidden" value="${product.preferences.hidden}"/>
         </is:fieldRadio>
         <is:fieldRadio for="productpreferencesnewTeams" label="is.product.preferences.project.newTeams">

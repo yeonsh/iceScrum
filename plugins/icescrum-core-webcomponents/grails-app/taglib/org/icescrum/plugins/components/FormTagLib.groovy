@@ -478,6 +478,9 @@ class FormTagLib {
   }
 
   def fieldRadio = {attrs, body ->
+    if (!UtilsWebComponents.rendered(attrs)) {
+      return
+    }
     attrs."class" = attrs."class"?attrs."class"+' field-input clearfix':'field-input clearfix'
     if (attrs.remove("noborder") == "true")
       attrs."class" += " field-noseparator"
