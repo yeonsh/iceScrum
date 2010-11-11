@@ -102,7 +102,6 @@ class ProductService {
       def p = Product.findByName(_product.name)
       p.productOwners.each {
         securityService.deleteProductOwnerPermissions(it, p)
-        it.save()
       }
       p.delete(flush: true)
     }
@@ -307,7 +306,7 @@ class ProductService {
   }
 
   @Transactional(readOnly = true)
-  Product unMarshallProduct(NodeChild product, ProgressSupport progress = null, User user = null) {
+  Product unMarshallProduct(NodeChild product, ProgressSupport progress = null) {
     try {
       def p = new Product(
               name: product.name.text(),
@@ -332,16 +331,13 @@ class ProductService {
               displayRecurrentTasks: product.preferences.displayRecurrentTasks.text().toBoolean()
       )
 
-      if (user) {
-        Product pExist = (Product) Product.findByPkey(p.pkey)
-        if (pExist && pExist.productOwners*.id.contains(user.id)) {
-          p.erasableByUser = true
-        }
+      Product pExist = (Product) Product.findByPkey(p.pkey)
+      if (pExist && securityService.productOwner(pExist,springSecurityService.authentication)) {
+        p.erasableByUser = true
       }
 
       product.teams.team.eachWithIndex { it, index ->
-
-        def t = teamService.unMarshallTeam(it, progress)
+        def t = teamService.unMarshallTeam(it, p, progress)
         p.addToTeams(t)
         progress?.updateProgress((product.teams.team.size() * (index + 1) / 100).toInteger(), g.message(code: 'is.parse', args: [g.message(code: 'is.team')]))
       }
@@ -396,7 +392,7 @@ class ProductService {
   }
 
   @Transactional(readOnly = true)
-  def parseXML(File x,ProgressSupport progress = null, User user = null) {
+  def parseXML(File x,ProgressSupport progress = null) {
     def prod = new XmlSlurper().parse(x)
 
     progress?.updateProgress(0, g.message(code: 'is.parse', args: [g.message(code: 'is.product')]))
@@ -409,7 +405,7 @@ class ProductService {
     progress?.updateProgress(5, g.message(code: 'is.parse', args: [g.message(code: 'is.product')]))
     def Product p
     try {
-      p = this.unMarshallProduct(prod, progress, user)
+      p = this.unMarshallProduct(prod, progress)
     } catch (RuntimeException e) {
       e.printStackTrace()
       progress?.progressError(g.message(code: 'is.parse.error', args: [g.message(code: 'is.product')]))

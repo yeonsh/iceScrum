@@ -113,8 +113,9 @@ class Product extends TimeBox {
 
   def getAllUsers(){
     def users = []
-    this.teams.each{
-      users.addAll(it.members)
+    this.teams?.each{
+      if(it.members)
+        users.addAll(it.members)
     }
     if (this.productOwners)
       users.addAll(this.productOwners)
@@ -131,15 +132,16 @@ class Product extends TimeBox {
   }
 
   def aclUtilService
-  def getProductOwners(){
+  def getProductOwners = {->
     //Only used when product is being imported
-    if (this.productOwners){
+    if (this.id == null) {
       return this.productOwners
-    }else {
+    }
+    else {
       def acl = aclUtilService.readAcl(this.getClass(), this.id)
       def productOwnersList = User.withCriteria {
-        or{
-          acl.entries.findAll{it.permission in SecurityService.productOwnerPermissions}*.sid.each{sid ->
+        or {
+          acl.entries.findAll {it.permission in SecurityService.productOwnerPermissions}*.sid.each {sid ->
             eq('username', sid.principal)
           }
         }

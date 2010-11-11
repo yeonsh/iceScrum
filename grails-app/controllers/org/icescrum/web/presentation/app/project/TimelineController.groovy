@@ -159,6 +159,7 @@ class TimelineController {
     render ([dateTimeFormat:"iso8601",events:list] as JSON)
   }
 
+  @Secured('productOwner() or scrumMaster()')
   def add = {
     def currentProduct = Product.get(params.product)
     def previousRelease = currentProduct.releases.max {s1, s2 -> s1.orderNumber <=> s2.orderNumber}
@@ -217,9 +218,11 @@ class TimelineController {
       push "${params.product}-releasePlan"
 
     } catch (IllegalStateException ise) {
+      ise.printStackTrace()
       render(status: 400, contentType:'application/json', text: [notice: [text: message(code: ise.getMessage())]] as JSON)
 
     } catch (RuntimeException re) {
+      re.printStackTrace()
       render(status: 400, contentType:'application/json', text: [notice: [text: renderErrors(bean:release)]] as JSON)
     }
   }
@@ -258,7 +261,7 @@ class TimelineController {
     release.startDate = new Date().parse(message(code:'is.date.format.short'), params.startDate)
     release.endDate = new Date().parse(message(code:'is.date.format.short'), params.endDate)
 
-    if (release.startDate == new Date().parse(message(code:'is.date.format.short'), currentProduct.startDate.toString()) && currentProduct.releases?.size() == 0)
+    if (release.startDate == new Date().parse('yyyy-MM-dd', currentProduct.startDate.toString()) && currentProduct.releases?.size() == 0)
       release.startDate =  currentProduct.startDate
 
     try {

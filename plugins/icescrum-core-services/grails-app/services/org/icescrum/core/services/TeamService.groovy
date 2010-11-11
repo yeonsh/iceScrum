@@ -159,17 +159,6 @@ class TeamService {
     if (!team)
       throw new IllegalStateException('is.team.error.not.exist')
 
-    def usersAlreadyExists = team.members.findAll{m -> m.id == null && User.findByUsernameAndEmail(m.username,m.email) != null}
-    for(User userTodelete in usersAlreadyExists){
-      def user = User.findByUsernameAndEmail(userTodelete.username,userTodelete.email)
-      team.addToMembers(user)
-      team.removeFromMembers(userTodelete)
-      if (team.scrumMasters.contains(userTodelete)){
-        team.scrumMasters.add(user)
-        team.scrumMasters.remove(userTodelete)
-      }
-    }
-
     if (!team.save()) {
       throw new RuntimeException('is.team.error.not.saved')
     }
@@ -224,7 +213,7 @@ class TeamService {
 
 
   @Transactional(readOnly = true)
-  def unMarshallTeam(NodeChild team, ProgressSupport progress = null) {
+  def unMarshallTeam(NodeChild team, Product p = null, ProgressSupport progress = null) {
     try {
       def existingTeam = true
       def t = new Team(
@@ -241,11 +230,18 @@ class TeamService {
 
       def userService = (UserService) ApplicationHolder.application.mainContext.getBean('userService');
       team.members.user.eachWithIndex {user, index ->
-        User u = userService.unMarshallUser(user, t)
+        User u = userService.unMarshallUser(user)
         if (!u.id) {
           existingTeam = false
         }
-        t.addToMembers(u)
+        if (p){
+          def uu =(User) p.getAllUsers().find{ def id = it.idFromImport?:it.id
+                                   id == u.idFromImport
+                                 }?:null
+          uu ? t.addToMembers(uu) : t.addToMembers(u)
+        }else{
+          t.addToMembers(u)
+        }
         progress?.updateProgress((team.members.user.size() * (index + 1) / 100).toInteger(), g.message(code: 'is.parse', args: [g.message(code: 'is.user')]))
       }
       def scrumMastersList = []

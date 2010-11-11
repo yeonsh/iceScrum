@@ -22,7 +22,6 @@ import org.springframework.security.access.prepost.PreAuthorize
 import groovy.util.slurpersupport.NodeChild
 
 import org.icescrum.core.domain.preferences.UserPreferences
-import org.icescrum.core.domain.Team
 
 import org.springframework.transaction.annotation.Transactional
 
@@ -161,7 +160,7 @@ class UserService {
   }
 
   @Transactional(readOnly = true)
-  def unMarshallUser(NodeChild user,Team team = null){
+  def unMarshallUser(NodeChild user){
     try {
       def u = User.findByUsernameAndEmail(user.username.text(),user.email.text())
       if (!u){
@@ -188,10 +187,7 @@ class UserService {
       }else{
         u.idFromImport = user.@id.text().toInteger()
       }
-      if (team){
-        team.addToMembers(u)
-      }
-      return u  
+      return u
     }catch(Exception e){
       e.printStackTrace()
       throw new RuntimeException(e)

@@ -16,10 +16,10 @@
   - along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
   --}%
 
-<g:set var="productOwner" value="${sec.access([expression:'productOwner()'], {true})}"/>
+<g:set var="poOrsm" value="${sec.access([expression:'productOwner() or scrumMaster()'], {true})}"/>
 
 <is:iconButton
-        rendered="${productOwner}"
+        rendered="${poOrsm}"
         action="add"
         shortcut="[key:'ctrl+n',scope:id]"
         update="window-content-${id}"
@@ -30,7 +30,7 @@
   <g:message code="is.ui.timeline.toolbar.new"/>
 </is:iconButton>
 
-<is:separator rendered="${productOwner}"/>
+<is:separator rendered="${poOrsm}"/>
 
 <is:panelButton alt="Charts" id="menu-chart" arrow="true" icon="graph" text="${message(code:'is.ui.toolbar.charts')}">
   <ul>

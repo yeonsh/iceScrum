@@ -49,7 +49,7 @@ class ReleaseService {
   def g = new org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib()
   
 
-  @PreAuthorize('productOwner(#product) or scrumMaster(#product)')
+  @PreAuthorize('productOwner(#product) or scrumMaster()')
   void saveRelease(Release release, Product product) {
     release.parentProduct = product
 
@@ -84,7 +84,7 @@ class ReleaseService {
     product.endDate = release.endDate
   }
 
-  @PreAuthorize('productOwner(#pb) or scrumMaster(#pb)')
+  @PreAuthorize('productOwner(#pb) or scrumMaster()')
   void updateRelease(Release _release, Product pb, Date startDate = null, Date endDate = null) {
 
     if (!startDate) {
@@ -227,7 +227,7 @@ class ReleaseService {
     }
   }
 
-  @PreAuthorize('productOwner(#pb) or scrumMaster(#pb)')
+  @PreAuthorize('productOwner(#pb) or scrumMaster()')
   void activeRelease(Release _rel, Product pb) {
     def relActivated = false
     def lastRelClose = 0
@@ -250,7 +250,7 @@ class ReleaseService {
       throw new RuntimeException()
   }
 
-  @PreAuthorize('productOwner(#pb) or scrumMaster(#pb)')
+  @PreAuthorize('productOwner(#pb) or scrumMaster()')
   void closeRelease(Release _rel, Product pb) {
     if (_rel.sprints.size() == 0 || _rel.sprints.any { it.state != Sprint.STATE_DONE })
       throw new IllegalStateException('is.release.error.sprint.not.done')
@@ -271,7 +271,7 @@ class ReleaseService {
       throw new RuntimeException()
   }
 
-  @PreAuthorize('productOwner(#p) or scrumMaster(#p)')
+  @PreAuthorize('productOwner(#p) or scrumMaster()')
   void deleteRelease(Release re, Product p) {
     if (re.state == Release.STATE_INPROGRESS || re.state == Release.STATE_DONE)
       throw new IllegalStateException("is.release.error.not.deleted")

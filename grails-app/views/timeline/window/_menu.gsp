@@ -17,6 +17,7 @@
   --}%
 
 <%@ page import="org.icescrum.core.domain.Release" %>
+<g:set var="poOrsm" value="${sec.access([expression:'productOwner() or scrumMaster()'], {true})}"/>
 
 <is:menuItem first="true">
   <is:link id="${release.id}"
@@ -27,7 +28,7 @@
           disabled="true"/>
 </is:menuItem>
 
-<is:menuItem rendered="${release.state == Release.STATE_WAIT && !activeRelease}" renderedOnAccess="productOwner() or scrumMaster()">
+<is:menuItem rendered="${poOrsm && (release.state == Release.STATE_WAIT && !activeRelease)}">
   <is:link id="${release.id}"
           action="activate"
           update="window-content-${id}"
@@ -37,7 +38,7 @@
           remote="true"/>
 </is:menuItem>
 
-<is:menuItem rendered="${release.state == Release.STATE_INPROGRESS && isClosable}" renderedOnAccess="productOwner() or scrumMaster()">
+<is:menuItem rendered="${poOrsm && (release.state == Release.STATE_INPROGRESS && isClosable)}">
   <is:link id="${release.id}"
           action="close"
           update="window-content-${id}"
@@ -47,7 +48,7 @@
           remote="true"/>
 </is:menuItem>
 
-<is:menuItem rendered="${release.state != org.icescrum.core.domain.Release.STATE_DONE}" renderedOnAccess="productOwner() or scrumMaster()">
+<is:menuItem rendered="${poOrsm && release.state != org.icescrum.core.domain.Release.STATE_DONE}">
   <is:link id="${release.id}"
           action="edit"
           update="window-content-${id}"
@@ -55,7 +56,7 @@
           value="${message(code:'is.ui.timeline.menu.update')}"
           remote="true"/>
 </is:menuItem>
-<is:menuItem rendered="${release.state == Release.STATE_WAIT}" renderedOnAccess="productOwner() or scrumMaster()">
+<is:menuItem rendered="${poOrsm && release.state == Release.STATE_WAIT}">
   <is:link id="${release.id}"
           action="delete"
           remote="true"

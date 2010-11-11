@@ -362,7 +362,7 @@ class ProjectController {
       }
       if (uploadedProject) {
         session.progress = new ProgressSupport()
-        session.tmpP = productService.parseXML(uploadedProject, session.progress, user)
+        session.tmpP = productService.parseXML(uploadedProject, session.progress)
       }
     }
     else if (params.status) {

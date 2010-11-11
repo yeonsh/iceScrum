@@ -264,7 +264,7 @@ class MembersController {
       flash.notice = [text: message(code: 'is.team.saved'), type: 'notice']
       redirect action: 'browse', params: [team: params.team]
     } catch (e) {
-      render(status: 400, contentType: 'application/json', text: [notice: [text: renderErrors(bean: team)]] as JSON)
+      render(status: 400, contentType: 'application/json', text: [notice: [text: renderErrors(bean: product)]] as JSON)
     }
   }
 
