@@ -34,7 +34,7 @@
     line5 = ${inprogress};
     line6 = ${done};
 
-    $.jqplot('productCumulativeflow', [line6,line5,line4,line3,line2,line1], {
+    plot1 = $.jqplot('productCumulativeflow', [line6,line5,line4,line3,line2,line1], {
         legend:{
           show:true,
           placement:'outside',
@@ -94,6 +94,9 @@
         highlighter: {
           sizeAdjust: 7.5
         }
+    });
+    $('#productCumulativeflow').bind('resize.jqplot', function(event, ui) {
+        plot1.replot();
     });
   </jq:jquery>
   </div>

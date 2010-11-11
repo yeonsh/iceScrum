@@ -30,7 +30,7 @@
     line1 = ${remainingHours};
     line2 = ${idealHours};
 
-    $.jqplot('sprintBurndownHours', [line1,line2], {
+    plot1 = $.jqplot('sprintBurndownHours', [line1,line2], {
         legend:{
           show:true,
           placement:'outside',
@@ -77,6 +77,9 @@
           show: true,
           zoom: true
         }
+    });
+     $('#sprintBurndownHours').bind('resize.jqplot', function(event, ui) {
+        plot1.replot();
     });
   </jq:jquery>
 </is:chartView>

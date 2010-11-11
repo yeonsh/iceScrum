@@ -27,7 +27,7 @@
 <jq:jquery>
   $.jqplot.config.enablePlugins = true;      
   line1 = ${values};
-  $.jqplot('productParkinglot', [line1], {
+  plot1 = $.jqplot('productParkinglot', [line1], {
       fontFamily:'Arial',
       legend:{
         show:true,
@@ -75,6 +75,9 @@
           }
       }
   });
+  $('#productParkinglot').bind('resize.jqplot', function(event, ui) {
+        plot1.replot();
+    });
 </jq:jquery>
 </is:chartView>
 <is:buttonBar>

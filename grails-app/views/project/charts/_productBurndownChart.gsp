@@ -77,7 +77,10 @@
                 tickOptions:{formatString:'%d'}
             }
         },
-    }); 
+    });
+    $('#productBurnDown').bind('resize.jqplot', function(event, ui) {
+        plot1.replot();
+    });
   </jq:jquery>
 </is:chartView>
 <is:buttonBar>

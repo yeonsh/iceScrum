@@ -30,7 +30,7 @@
     line1 = ${capacity};
     line2 = ${velocity};
 
-    $.jqplot('productVelocityCapacity', [line1,line2], {
+    plot1 = $.jqplot('productVelocityCapacity', [line1,line2], {
         legend:{
           show:true,
           placement:'outside',
@@ -79,6 +79,9 @@
           show: true,
           zoom: true
         }
+    });
+    $('#productVelocityCapacity').bind('resize.jqplot', function(event, ui) {
+        plot1.replot();
     });
   </jq:jquery>
 </is:chartView>

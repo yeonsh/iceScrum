@@ -30,7 +30,7 @@
     line1 = ${tasks};
     line2 = ${tasksDone};
 
-    $.jqplot('sprintBurnupTasks', [line1,line2], {
+    plot1 = $.jqplot('sprintBurnupTasks', [line1,line2], {
         legend:{
           show:true,
           placement:'outside',
@@ -79,6 +79,9 @@
           show: true,
           zoom: true
         }
+    });
+    $('#sprintBurnupTasks').bind('resize.jqplot', function(event, ui) {
+        plot1.replot();
     });
   </jq:jquery>
 </is:chartView>
