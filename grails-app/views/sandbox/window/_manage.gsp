@@ -20,7 +20,7 @@
 - Vincent Barrier (vincent.barrier@icescrum.com)
 - Damien vitrac (damien@oocube.com)
 - Manuarii Stein (manuarii.stein@icescrum.com)
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <g:setProvider library="jquery"/>
 <g:form action="save" method="post" name="${id}-form" class="box-form box-form-250 box-form-200-legend" tabindex="1">

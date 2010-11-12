@@ -17,7 +17,7 @@
 -
 - Authors:
 -
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <form id="teamForm" name="teamForm" method="post" class='box-form box-form-250 box-form-200-legend'>
 <is:fieldset title="is.dialog.createTeam.general.title">

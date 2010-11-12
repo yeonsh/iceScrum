@@ -18,7 +18,7 @@
  * Authors:
  *
  * Vincent Barrier (vincent.barrier@icescrum.com)
- * Stephane Maldini (manuarii.stein@icescrum.com)
+ * Stephane Maldini (stephane.maldini@icescrum.com)
  */
 
 icescrum.theme = 'is'

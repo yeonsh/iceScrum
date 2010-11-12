@@ -17,7 +17,7 @@
 -
 - Authors:
 -
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <ul>
   <li>${message(code:"is.team")}:

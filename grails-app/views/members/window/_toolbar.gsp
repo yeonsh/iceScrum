@@ -16,7 +16,7 @@
 - along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
 -
 - Authors:
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <sec:access expression="scrumMaster() or productOwner()">
 

@@ -17,7 +17,7 @@
 -
 - Authors:
 -
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <form id="form-team-join" name="form-team-join" method="post" >
 <is:browser detailsLabel="is.ui.autocompletechoose.teams.details"

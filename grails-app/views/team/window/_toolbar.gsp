@@ -19,7 +19,7 @@
 -
 - Vincent Barrier (vincent.barrier@icescrum.com)
 - Manuarii Stein (manuarii.stein@icescrum.com)
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <is:iconButton onClick="window.print();return false;" disabled="true" icon="print" alt="${message(code:'is.ui.toolbar.alt.print')}">
  <g:message code="is.ui.toolbar.print"/>

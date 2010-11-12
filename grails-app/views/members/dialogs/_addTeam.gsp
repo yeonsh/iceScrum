@@ -17,7 +17,7 @@
 -
 - Authors:
 -
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <form id="form-addTeam" name="form-addTeam" method="post" class='box-form box-form-250 box-form-200-legend'>
   <is:autoCompleteChoose elementLabel="is.ui.autocompletechoose.teams" controller="team" action="findTeams" minLength="0" name="is.team.teams" resultId="teamid"/>

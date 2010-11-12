@@ -19,7 +19,7 @@
 -
 - Vincent Barrier (vincent.barrier@icescrum.com)
 - Damien vitrac (damien@oocube.com)
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <div class="dashboard">
   <div class="colset-2 clearfix">

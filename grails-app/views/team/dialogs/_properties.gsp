@@ -17,7 +17,7 @@
 -
 - Authors:
 -
-- Stephane Maldini (manuarii.stein@icescrum.com)
+- Stephane Maldini (stephane.maldini@icescrum.com)
 --}%
 <form id="form-project" name="form-project" method="post" class='box-form box-form-250 box-form-200-legend'>
   <input type="hidden" name="teamd.id" value="${params.team}">
