@@ -36,6 +36,7 @@ import org.icescrum.core.domain.User
 
 import org.icescrum.core.support.ProgressSupport
 import org.icescrum.core.support.XMLConverterSupport
+import org.icescrum.core.domain.Story
 
 /**
  * ProductService is a transactional class, that manage operations about
@@ -375,7 +376,10 @@ class ProductService {
         progress?.updateProgress((product.stories.story.size() * (index + 1) / 100).toInteger(), g.message(code: 'is.parse', args: [g.message(code: 'is.story')]))
       }
 
-
+      def stories = p.stories.findAll{it.state == Story.STATE_ACCEPTED || it.state == Story.STATE_ESTIMATED}.sort({ a, b -> a.rank <=> b.rank } as Comparator)
+      stories.eachWithIndex {it,index ->
+        it.rank = index + 1
+      }
 
       def releaseService = (ReleaseService) ApplicationHolder.application.mainContext.getBean('releaseService');
       product.releases.release.eachWithIndex { it, index ->

@@ -115,7 +115,9 @@ class UserService {
       currentMenu = _u.preferences.menuHidden
       if(!currentMenu.containsKey(id)){
         currentMenu.put(id,(currentMenu.size()+1).toString())
-        this.changeMenuOrder (_u,id,_u.preferences.menu.size().toString(),false)
+        if (_u.preferences.menu.containsKey(id)){
+          this.changeMenuOrder (_u,id,_u.preferences.menuHidden.size().toString(),true)
+        }
         _u.preferences.menu.remove(id)
       }
     }
@@ -123,7 +125,9 @@ class UserService {
       currentMenu = _u.preferences.menu
       if(!currentMenu.containsKey(id)){
         currentMenu.put(id,(currentMenu.size()+1).toString())
-        this.changeMenuOrder (_u,id,_u.preferences.menuHidden.size().toString(),true)
+        if (_u.preferences.menuHidden.containsKey(id)){
+          this.changeMenuOrder (_u,id,_u.preferences.menuHidden.size().toString(),true)
+        }
         _u.preferences.menuHidden.remove(id)
       }
     }

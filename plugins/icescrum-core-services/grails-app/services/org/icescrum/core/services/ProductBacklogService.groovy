@@ -351,6 +351,17 @@ class ProductBacklogService {
 
   @PreAuthorize('productOwner(#p) or scrumMaster(#p)')
   boolean changeRank(Product product, Story movedItem, int rank) {
+
+    //For re-init corrupted rank
+    if (movedItem.rank <= 0){
+      def stories = product.stories.findAll{it.state == Story.STATE_ACCEPTED || it.state == Story.STATE_ESTIMATED}.sort({ a, b -> a.rank <=> b.rank } as Comparator)
+      stories.eachWithIndex {it,index ->
+        it.rank = index + 1
+        it.save()
+      }
+    }
+
+
     if (movedItem.rank != rank) {
       if (movedItem.rank > rank) {
         Story.findAllAcceptedOrEstimated(product.id).list(order: 'asc', sort: 'rank').each {it ->

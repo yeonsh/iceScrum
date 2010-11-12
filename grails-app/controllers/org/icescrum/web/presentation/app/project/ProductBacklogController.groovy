@@ -129,10 +129,7 @@ class ProductBacklogController {
 
     try {
       if (params.story.rank && story.rank != params.int('story.rank')) {
-        if (!productBacklogService.changeRank(product, story, params.int('story.rank'))) {
-          msg = message(code: 'is.error')
-          successRank = false
-        }
+        productBacklogService.changeRank(product, story, params.int('story.rank'))
       }
 
       if(params.story.effort && !params.story.effort.isNumber())

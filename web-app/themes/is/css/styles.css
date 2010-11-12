@@ -91,9 +91,10 @@ li#li-roles{
 }
 
 #team-details img, #project-details img {
-    position: absolute;
-    left: 213px;
-    top: 1px;
+    left:211px;
+    padding:2px;
+    position:absolute;
+    top:1px;
 }
 
 .rich-content {

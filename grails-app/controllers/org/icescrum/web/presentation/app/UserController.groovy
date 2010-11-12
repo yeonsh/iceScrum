@@ -309,4 +309,21 @@ class UserController {
     }
     render(status:200, contentType:'application/json', text:[text:message(code:'is.dialog.retrieve.success', args:[user.email])] as JSON)
   }
+
+  @Secured('isAuthenticated()')
+  def changeMenuOrder = {
+    if (!params.idmoved && !params.position)
+      return render(status: 400, contentType:'application/json', text: [notice: [text: message(code: 'is.user.preferences.error.menuBar')]] as JSON)
+
+    def currentUser = User.get(springSecurityService.principal.id)
+    def id = params.idmoved.split("_")[1]
+    def position = params.position
+    try {
+      userService.changeMenuOrder(currentUser, id, position, params.boolean('hidden')?:false)
+      render(status: 200)
+    } catch (RuntimeException e) {
+      e.printStackTrace()
+      render(status: 400, contentType:'application/json', text: [notice: [text: message(code: 'is.user.preferences.error.menuBar')]] as JSON)
+    }
+  }
 }
