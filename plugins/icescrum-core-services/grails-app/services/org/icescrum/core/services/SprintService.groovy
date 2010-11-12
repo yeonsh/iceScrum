@@ -256,6 +256,14 @@ class SprintService {
       it.inProgressDate = new Date()
     }
 
+    //retrieve last done definition if no done definition in the current sprint
+    if (sprint.orderNumber != 1 && !sprint.doneDefinition){
+      def previousSprint = Sprint.findByOrderNumberAndParentRelease(sprint.orderNumber - 1,sprint.parentRelease)
+      if (previousSprint.doneDefinition){
+        sprint.doneDefinition = previousSprint.doneDefinition
+      }
+    }
+
     if(!sprint.save()){
       throw new RuntimeException()
     }
