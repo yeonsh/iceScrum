@@ -32,15 +32,15 @@ icescrum.enable.login.retrieve = true
 /*
 Project administration section
  */
-icescrum.project.enable.import = false
-icescrum.project.enable.export = false
-icescrum.project.enable.creation = false
+icescrum.project.enable.import = true
+icescrum.project.enable.export = true
+icescrum.project.enable.creation = true
 icescrum.project.disable.private = false
 
 /*
 Team administration section
  */
-icescrum.team.enable.creation = false
+icescrum.team.enable.creation = true
 
 /*
   Images section
