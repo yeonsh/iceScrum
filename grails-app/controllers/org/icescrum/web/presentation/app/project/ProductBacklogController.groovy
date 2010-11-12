@@ -115,7 +115,7 @@ class ProductBacklogController {
     }
 
     if (params.boolean('loadrich')){
-      render(status: 200, text: story.notes)
+      render(status: 200, text: story.notes?:'')
       return
     }
 
