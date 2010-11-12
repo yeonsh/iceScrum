@@ -1,25 +1,31 @@
+%{--
+- Copyright (c) 2010 iceScrum Technologies.
+-
+- This file is part of iceScrum.
+-
+- iceScrum is free software: you can redistribute it and/or modify
+- it under the terms of the GNU Affero General Public License as published by
+- the Free Software Foundation, either version 3 of the License.
+-
+- iceScrum is distributed in the hope that it will be useful,
+- but WITHOUT ANY WARRANTY; without even the implied warranty of
+- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- GNU General Public License for more details.
+-
+- You should have received a copy of the GNU Affero General Public License
+- along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+-
+- Authors:
+-
+- Vincent Barrier (vincent.barrier@icescrum.com)
+- Damien vitrac (damien@oocube.com)
+- Stephane Maldini (manuarii.stein@icescrum.com)
+--}%
 <div class="dashboard">
   <div class="colset-2 clearfix">
     <div class="col1">
       <div class="panel-box">
-        <h3 class="panel-box-title">%{--
-  - Copyright (c) 2010 iceScrum Technologies.
-  -
-  - This file is part of iceScrum.
-  -
-  - iceScrum is free software: you can redistribute it and/or modify
-  - it under the terms of the GNU Affero General Public License as published by
-  - the Free Software Foundation, either version 3 of the License.
-  -
-  - iceScrum is distributed in the hope that it will be useful,
-  - but WITHOUT ANY WARRANTY; without even the implied warranty of
-  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  - GNU General Public License for more details.
-  -
-  - You should have received a copy of the GNU Affero General Public License
-  - along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
-  --}%
-
+        <h3 class="panel-box-title">
 <g:message code="is.team.description"/></h3>
         <div class="panel-box-content">
           <g:if test="${team.description}">

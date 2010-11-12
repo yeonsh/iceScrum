@@ -1,4 +1,4 @@
- /*
+/*
  * Copyright (c) 2010 iceScrum Technologies.
  *
  * This file is part of iceScrum.
@@ -14,6 +14,7 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+ *
  */
 
 (function($) {

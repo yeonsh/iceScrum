@@ -14,7 +14,14 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authors:
+ *
+ * Vincent Barrier (vincent.barrier@icescrum.com)
+ * Stephane Maldini (manuarii.stein@icescrum.com)
+ * Manuarii Stein (manuarii.stein@icescrum.com)
  */
+
 import org.apache.log4j.DailyRollingFileAppender
 import org.apache.log4j.PatternLayout
 
