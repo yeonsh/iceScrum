@@ -92,11 +92,6 @@ class Product extends TimeBox {
     return result
   }
 
-  //void setProductKey(String key){
-    //productKey = new ProductKey()
-    //productKey.id = key
-  //}
-
   @Override
   boolean equals(obj) {
     if (this.is(obj))

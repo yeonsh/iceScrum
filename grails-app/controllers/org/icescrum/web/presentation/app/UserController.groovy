@@ -139,14 +139,11 @@ class UserController {
         scale = false
       }
     }
-
     def forceRefresh = false
     if (params.user.preferences.language != currentUser.preferences.language) {
       forceRefresh = true
     }
-
     currentUser.properties = params.user
-
     try {
       userService.updateUser(currentUser, pwd, avatar?.canonicalPath, scale)
     } catch (IllegalStateException ise) {
