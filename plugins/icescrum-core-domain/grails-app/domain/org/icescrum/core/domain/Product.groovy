@@ -139,9 +139,9 @@ class Product extends TimeBox {
   }
 
   def aclUtilService
-  def getProductOwners = {->
+  def getProductOwners() {
     //Only used when product is being imported
-    if (this.id == null) {
+    if (this.productOwners) {
       return this.productOwners
     }
     else {

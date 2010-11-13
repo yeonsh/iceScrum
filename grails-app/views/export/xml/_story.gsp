@@ -18,8 +18,7 @@
 - Authors:
 -
 - Vincent Barrier (vincent.barrier@icescrum.com)
---}%
-<is:objectAsXML object ="${object}" node="story" indentLevel="${indentLevel}" root="${root}">
+--}%<is:objectAsXML object ="${object}" node="story" indentLevel="${indentLevel}" root="${root}">
   <is:propertyAsXML name="['name','state','suggestedDate','acceptedDate','estimatedDate','plannedDate','inProgressDate','doneDate','effort','value','rank','creationDate','type','executionFrequency']"/>
   <is:propertyAsXML name="['textAs','textICan','textTo','notes','description']" cdata="true"/>
   <is:propertyAsXML object="creator"/>

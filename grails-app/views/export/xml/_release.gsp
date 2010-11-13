@@ -18,8 +18,7 @@
 - Authors:
 -
 - Vincent Barrier (vincent.barrier@icescrum.com)
---}%
-<is:objectAsXML object ="${object}" node="release" indentLevel="${indentLevel}" root="${root}">
+--}%<is:objectAsXML object ="${object}" node="release" indentLevel="${indentLevel}" root="${root}">
   <is:propertyAsXML name="['name','state','releaseVelocity','endDate','startDate','orderNumber']"/>
   <is:propertyAsXML name="['vision','description','goal']" cdata="true"/>
   <is:listAsXML
