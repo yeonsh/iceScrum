@@ -14,7 +14,13 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authors:
+ *
+ * Vincent Barrier (vincent.barrier@icescrum.com)
+ * Stéphane Maldini (stephane.maldini@icescrum.com)
  */
+
 
 package org.icescrum.core.test
 

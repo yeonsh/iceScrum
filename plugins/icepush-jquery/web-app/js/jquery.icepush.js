@@ -16,7 +16,7 @@
  * Technologies Canada, Corp. Portions created by ICEsoft are Copyright (C)
  * 2004-2009 ICEsoft Technologies Canada, Corp. All Rights Reserved.
  *
- * Contributor(s): _____________________.
+ * Contributor(s): Vincent Barrier.
  *
 */
 

@@ -14,7 +14,12 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authors:
+ *
+ * Vincent Barrier (vincent.barrier@icescrum.com)
  */
+
 
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"

@@ -14,11 +14,12 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authors:
+ *
+ * Vincent Barrier (vincent.barrier@icescrum.com)
  */
-import org.icescrum.core.security.AuthorityManager
-import org.icescrum.core.support.ApplicationSupport
-import grails.util.Environment
-import org.icescrum.core.test.DummyPopulator
+
 
 class IcescrumCoreServicesGrailsPlugin {
     // the plugin version
