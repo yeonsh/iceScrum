@@ -51,7 +51,7 @@ class TableTagLib {
     pageScope.rowHeaders.eachWithIndex { col, index ->
       col."class" = col."class" ?: ""
       if (index == 0)
-        out << '<th '+(col.width?' style=\'width:'+col.width+'\'':'') +' class="' + col."class" + ' first"><div class=\"table-cell\">' << is.nbps(null, col.name) << '</div></th>'
+        out << '<th '+(col.width?' style=\'width:'+col.width+'\'':'') +' class="' + col."class" + ' first"><div class=\"table-cell\">' << is.nbps(null, col.name) << col.body() << '</div></th>'
       else if (index == (maxCols - 1))
         out << '<th '+(col.width?' style=\'width:'+col.width+'\'':'') +' class="' + col."class" + ' last"><div class=\"table-cell\">' << is.nbps(null, col.name) << '</div></th>'
       else
@@ -197,7 +197,8 @@ class TableTagLib {
             name: attrs.name,
             key: attrs.key,
             width:attrs.width?:null,
-            'class': attrs."class"
+            'class': attrs."class",
+            body: body ?: {->}
     ]
 
     pageScope.rowHeaders << options

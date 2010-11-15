@@ -329,6 +329,11 @@
     position: absolute;
 }
 
+.table th.table-cell-checkbox.first .table-cell {
+    padding:0 0 0 2px;
+    text-align:left;
+}
+
 .table td.table-cell-checkbox .table-cell {
     padding: 3px 6px 5px 6px;
     width: 15px;

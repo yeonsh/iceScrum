@@ -27,7 +27,9 @@
   <is:table id="feature-table"
           editable="[controller:id,action:'update',params:[product:params.product],onExitCell:'submit']">
 
-    <is:tableHeader width="4%" class="table-cell-checkbox" name="" />
+    <is:tableHeader width="3%" class="table-cell-checkbox" name="">
+      <g:checkBox/>
+    </is:tableHeader>
     <is:tableHeader width="10%" name="${message(code:'is.actor.name')}"/>
     <is:tableHeader width="20%" name="${message(code:'is.backlogelement.description')}"/>
     <is:tableHeader width="16%" name="${message(code:'is.actor.it.level')}"/>

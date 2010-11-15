@@ -64,6 +64,14 @@
                     }
                 });
             });
+
+            $('th.table-cell-checkbox input').click(function(){
+                if($(this).is(':checked')){
+                    $(this).parent().parent().parent().parent().parent().find('td.table-cell-checkbox input').attr('checked','checked');
+                }else{
+                    $(this).parent().parent().parent().parent().parent().find('td.table-cell-checkbox input').removeAttr('checked');
+                }
+            });
 			return this;
 		}
 	});
