@@ -1101,15 +1101,17 @@ class SprintBacklogController {
     } else if(params.get) {
       session.progress = new ProgressSupport()
       session.progress.updateProgress(99,message(code:'is.report.processing'))
+      def fileName = currentProduct.name.replaceAll("[^a-zA-Z\\s]", "").replaceAll(" ", "")+'-'+(chart ?: 'sprintBacklog')+'-'+(g.formatDate(value:new Date(),formatName:'is.date.file'))
+
       try {
       chain(controller: 'jasper',
               action: 'index',
               model: [data: values],
               params: [
                       _format:params.format,
-                      _name: message(code:'is.ui.sprintBacklog'),
                       _file: chart ?: 'sprintBacklog',
                       'labels.projectName':currentProduct.name,
+                      _name: fileName,
                       SUBREPORT_DIR: grailsApplication.config.jasper.dir.reports + './subreports/'
               ]
       )

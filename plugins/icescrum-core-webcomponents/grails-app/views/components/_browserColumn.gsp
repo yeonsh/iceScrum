@@ -42,6 +42,6 @@
 </jq:jquery>
 
 <ul class="bar-pagination pagination clearfix">
-  <g:if test="${offset >= max}"><li class="pagination-previous"><is:link remote="true" history="false" params="[offset:Math.min(offset-max,0) ,term:term]" update="${name}-column" controller="${controllerName}" action="${actionName}"><g:message code="is.ui.autocompletechoose.prev"/></is:link></li></g:if>
+  <g:if test="${offset >= max}"><li class="pagination-previous"><is:link remote="true" history="false" params="[offset:Math.max(offset-max,0) ,term:term]" update="${name}-column" controller="${controllerName}" action="${actionName}"><g:message code="is.ui.autocompletechoose.prev"/></is:link></li></g:if>
   <g:if test="${offset < total-max}"><li class="pagination-next"><is:link remote="true" history="false" params="[offset:Math.min(offset+max,total) ,term:term]" update="${name}-column" controller="${controllerName}" action="${actionName}"><g:message code="is.ui.autocompletechoose.next"/></is:link></li></g:if>
 </ul>

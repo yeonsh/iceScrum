@@ -528,12 +528,16 @@ $.widget("ui.selectmenu", {
 		
 		if(this.newelement.is('.'+this.widgetBaseClass+'-popup')){
 			menuTop+=scrolledAmt; 
-			this.list.css('top', menuTop); 
-		}	
-		else { 
-			menuTop += this.newelement.height();
-			this.list.css('top', menuTop); 
 		}
+		else { 
+			if(menuTop + this.list.height() > $(window).height()){
+                menuTop = menuTop - this.list.height();
+            }
+            else{
+                menuTop += this.newelement.height();
+            }
+		}
+        this.list.css('top', menuTop);
 	}
 });
 

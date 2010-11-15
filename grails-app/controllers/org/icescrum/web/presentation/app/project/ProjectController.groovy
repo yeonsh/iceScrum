@@ -657,6 +657,7 @@ class ProjectController {
     } else if (params.get) {
       session.progress = new ProgressSupport()
       session.progress.updateProgress(99, message(code: 'is.report.processing'))
+      def fileName = currentProduct.name.replaceAll("[^a-zA-Z\\s]", "").replaceAll(" ", "")+'-'+(chart?:'timeline')+'-'+(g.formatDate(value:new Date(),formatName:'is.date.file'))
       try {
         chain(controller: 'jasper',
                 action: 'index',
@@ -666,8 +667,9 @@ class ProjectController {
                         _format: params.format,
                         _name: message(code: 'is.ui.project'),
                         _file: chart ?: 'timeline',
+                        _name: fileName,
                         'labels.projectName': currentProduct.name,
-                        SUBREPORT_DIR: grailsApplication.config.jasper.dir.reports + './subreports/'
+                        SUBREPORT_DIR: grailsApplication.config.jasper.dir.reports + File.separator + 'subreports' + File.separator
                 ]
         )
         session.progress?.completeProgress(message(code: 'is.report.complete'))

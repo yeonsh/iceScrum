@@ -84,7 +84,7 @@
 				<textElement>
 					<font size="20" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.timeline}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -125,7 +125,7 @@
 					<subreportParameterExpression><![CDATA[true]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="_name">
-					<subreportParameterExpression><![CDATA[$P{_name}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$R{is.report.timeline}]]></subreportParameterExpression>
 				</subreportParameter>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{productCumulativeFlowChart})]]></dataSourceExpression>
 				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "productCumulativeFlowChart.jasper"]]></subreportExpression>
@@ -141,7 +141,7 @@
 					<subreportParameterExpression><![CDATA[true]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="_name">
-					<subreportParameterExpression><![CDATA[$P{_name}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$R{is.report.timeline}]]></subreportParameterExpression>
 				</subreportParameter>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{productBurnupChart})]]></dataSourceExpression>
 				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "productBurnupChart.jasper"]]></subreportExpression>
@@ -155,7 +155,7 @@
 					<subreportParameterExpression><![CDATA[true]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="_name">
-					<subreportParameterExpression><![CDATA[$P{_name}]]></subreportParameterExpression>
+					<subreportParameterExpression><![CDATA[$R{is.report.timeline}]]></subreportParameterExpression>
 				</subreportParameter>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{productBurndownChart})]]></dataSourceExpression>
 				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "productBurndownChart.jasper"]]></subreportExpression>

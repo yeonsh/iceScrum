@@ -48,7 +48,7 @@
         <is:fieldRadio for="productpreferencesnewTeams" label="is.product.preferences.project.newTeams">
           <is:radio id="productpreferencesnewTeams" name="productd.preferences.newTeams" value="${product.preferences.newTeams}"/>
         </is:fieldRadio>
-        <is:fieldRadio for="productpreferenceslockPo" label="is.product.preferences.project.lockPo" noborder="true">
+        <is:fieldRadio for="productpreferenceslockPo" label="is.product.preferences.project.lockPo">
           <is:radio id="productpreferenceslockPo" name="productd.preferences.lockPo" value="${product.preferences.lockPo}"/>
         </is:fieldRadio>
       </is:accordionSection>
@@ -57,13 +57,14 @@
         <is:fieldSelect for="product.planningPokerGameType" label="is.product.preferences.planification.estimationSuite">
           <is:select from="${estimationSuitSelect.values().asList()}" keys="${estimationSuitSelect.keySet().asList()}" width="240" maxHeight="100" styleSelect="dropdown" name="productd.planningPokerGameType" value="${product.planningPokerGameType}"/>
         </is:fieldSelect>
-
         <is:fieldInput for="productpreferencesestimatedSprintsDuration" label="is.product.preferences.planification.estimatedSprintsDuration">
           <is:input id="productpreferencesestimatedSprintsDuration" typed="[type:'numeric']" name="productd.preferences.estimatedSprintsDuration" value="${product.preferences.estimatedSprintsDuration}"/>
         </is:fieldInput>
-
         <is:fieldRadio for="productpreferencesnoEstimation" label="is.product.preferences.planification.noEstimation">
           <is:radio id="productpreferencesnoEstimation" name="productd.preferences.noEstimation" value="${product.preferences.noEstimation}"/>
+        </is:fieldRadio>
+        <is:fieldRadio for="productpreferenceshideweekend" label="is.product.preferences.project.hideWeekend" noborder="true">
+          <is:radio id="productpreferenceshideweekend" name="productd.preferences.hideWeekend" value="${product.preferences.hideWeekend}"/>
         </is:fieldRadio>
       </is:accordionSection>
 

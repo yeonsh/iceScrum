@@ -33,6 +33,7 @@ class ProductPreferences {
     boolean newTeams = false
     boolean lockPo = true
     boolean hidden = false
+    boolean hideWeekend = false
     String url
 
     //Planification

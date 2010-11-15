@@ -46,7 +46,7 @@
                 <div class="news-item news-${entry.code}">
                   <p><is:scrumLink controller="user" action='profile' id="${entry.poster.username}">${entry.poster.firstName} ${entry.poster.lastName}</is:scrumLink>
                   <g:message code="is.fluxiable.${entry.code}"/>
-                  <g:message code="is.${entry.code.startsWith('task.') ? 'task' : 'story'}"/>
+                  <g:message code="is.${entry.code.startsWith('task') ? 'task' : 'story'}"/>
                     <strong>${entry.cachedLabel.encodeAsHTML()}</strong></p>
                   <p><g:formatDate date="${entry.dateCreated}" formatName="is.date.format.short.time"/></p>
                 </div>
@@ -95,7 +95,7 @@
               <div class="news-item news-${a.code}">
                 <p><is:scrumLink controller="members" action='profile' id="${a.posterId}">${a.poster.firstName} ${a.poster.lastName}</is:scrumLink>
                 <g:message code="is.fluxiable.${a.code}"/>
-                <g:message code="is.${a.code.startsWith('task.') ? 'task' : 'story'}"/>
+                <g:message code="is.${a.code.startsWith('task') ? 'task' : 'story'}"/>
                   <strong>${a.cachedLabel.encodeAsHTML()}</strong></p>
                 <p><g:formatDate date="${a.dateCreated}" formatName="is.date.format.short.time"/></p>
               </div>

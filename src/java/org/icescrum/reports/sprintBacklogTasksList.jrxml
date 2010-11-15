@@ -86,7 +86,7 @@
 				<textElement>
 					<font size="20" isBold="true"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$P{_name}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{is.report.sprintBacklog}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
