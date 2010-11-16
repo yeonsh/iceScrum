@@ -341,6 +341,8 @@ class Story extends BacklogElement implements Cloneable {
             "OR (a.type='product' " +
             "and p.id=a.activityRef " +
             "and p.id=s.backlog.id)) " +
+            "and a.activity.posterId in "+
+            "(SELECT DISTINCT u2.id FROM org.icescrum.core.domain.User as u2 INNER JOIN u2.teams as t WHERE t.id = :t)" +
             "ORDER BY a.activity.dateCreated DESC", [t: currentTeamInstance.id], [max: 15])
   }
 
