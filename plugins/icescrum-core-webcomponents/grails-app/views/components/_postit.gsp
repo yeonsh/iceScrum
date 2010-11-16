@@ -31,11 +31,11 @@ ${className} ${styleClass} postit-${type}" id="postit-${type}-${id}" elemId="${m
     </g:if>
 
     <g:if test="${attachment}">
-      <span class="postit-attachment" title="${message(code:'is.postit.attachment', args:[attachment])}"></span>
+      <span class="postit-attachment" title="${message(code:'is.postit.attachment', args:[attachment,attachment > 1 ? 's' : ''])}"></span>
     </g:if>
 
     <g:if test="${comment}">
-      <span class="postit-comment" title="${message(code:'is.postit.comment.count', args:[comment])}"></span>
+      <span class="postit-comment" title="${message(code:'is.postit.comment.count', args:[comment,comment > 1?'s':''])}"></span>
     </g:if>
 
     %{-- Title --}%

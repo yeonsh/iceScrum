@@ -76,7 +76,7 @@
       </is:postit>
       <g:if test="${feature.totalAttachments}">
         <div>
-          <strong><g:message code="is.postit.attachment" args="[feature.totalAttachments]"/> :</strong>
+          <strong>${message(code:'is.postit.attachment', args:[feature.totalAttachments, feature.totalAttachments > 1 ? 's' : '' ])} :</strong>
           <is:attachedFiles bean="${feature}" width="120" deletable="${false}" action="download" controller="feature" params="[product:params.product]" size="20"/>
         </div>
       </g:if>

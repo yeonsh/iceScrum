@@ -76,7 +76,7 @@
       </is:postit>
       <g:if test="${task.totalAttachments}">
         <div>
-          <strong><g:message code="is.postit.attachment" args="[task.totalAttachments]"/> :</strong>
+          <strong>${message(code:'is.postit.attachment', args:[task.totalAttachments, task.totalAttachments > 1 ? 's' : '' ])} :</strong>
           <is:attachedFiles bean="${task}" width="120" deletable="${false}" action="download" params="[product:params.product]" controller="sprintBacklog" size="20"/>
         </div>
       </g:if>

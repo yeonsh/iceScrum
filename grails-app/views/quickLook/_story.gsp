@@ -109,13 +109,13 @@
                     id="${story.id}"
                     params="['comment':'true']"
                     onclick="\$('#dialog').dialog('close');">
-              ${message(code:'is.postit.comment.count', args:[story.comments.size()])}
+              ${message(code:'is.postit.comment.count', args:[story.comments.size() , story.comments.size() > 1 ? 's' : '' ])}
             </is:scrumLink>
           </strong>
       </g:if>
       <g:if test="${story.totalAttachments}">
         <div>
-          <strong><g:message code="is.postit.attachment" args="[story.totalAttachments]"/> :</strong>
+          <strong>${message(code:'is.postit.attachment', args:[story.totalAttachments, story.totalAttachments > 1 ? 's' : '' ])} :</strong>
           <is:attachedFiles bean="${story}" width="120" deletable="${false}" params="[product:params.product]" action="download" controller="${(story.state > org.icescrum.core.domain.Story.STATE_SUGGESTED)?'productBacklog':'sandbox'}" size="20"/>
         </div>
       </g:if>
