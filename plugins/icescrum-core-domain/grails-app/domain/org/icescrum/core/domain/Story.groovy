@@ -285,6 +285,9 @@ class Story extends BacklogElement implements Cloneable {
           }
         }
       }
+      if (u?.preferences?.hideDoneState){
+        ne 'state', Story.STATE_DONE
+      }
     }
 
     filterByFeature { p, f, r = null ->

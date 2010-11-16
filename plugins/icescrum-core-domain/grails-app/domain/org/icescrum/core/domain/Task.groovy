@@ -111,6 +111,9 @@ class Task extends BacklogElement implements Serializable {
         if (u.preferences.filterTask == 'freeTasks'){
           isNull('responsible')
         }
+        if (u.preferences.hideDoneState){
+          ne 'state', Task.STATE_DONE
+        }
       }
       eq 'type', Task.TYPE_URGENT
     }
@@ -134,6 +137,9 @@ class Task extends BacklogElement implements Serializable {
         }
         if (u.preferences.filterTask == 'freeTasks'){
           isNull('responsible')
+        }
+        if (u.preferences.hideDoneState){
+          ne 'state', Task.STATE_DONE
         }
       }
       eq 'type', Task.TYPE_RECURRENT

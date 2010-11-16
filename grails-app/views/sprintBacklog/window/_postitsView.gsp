@@ -239,7 +239,13 @@
                                       update:"window-content-${id}",
                                       onFailure: "\$(ui.sender).sortable(\"cancel\");",
                                       params: "\"product=${params.product}&task.id=\"+ui.item.find(\".postit-id\").text()+\"&story.id=${story.id}&position=\"+(\$(this).find(\".postit-rect\").index(ui.item)+1)")]'>
-        <g:each in="${story.tasks?.sort{it.rank}?.findAll{ it.state == column.key}}" var="task">
+        <g:each in="${story.tasks?.sort{it.rank}?.findAll{
+          if (hideDoneState){
+            it.state == column.key && it.state != Task.STATE_DONE
+          }else{
+            it.state == column.key
+          }
+        }}" var="task">
 
         %{-- Task postit --}%
           <is:postit title="${task.name}"

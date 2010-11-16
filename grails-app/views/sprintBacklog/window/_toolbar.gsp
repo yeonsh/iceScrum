@@ -98,6 +98,22 @@
     </ul>
   </is:panelButton>
 
+  <is:separatorSmall/>
+
+  <is:iconButton
+          rendered="${sprint.state == Sprint.STATE_INPROGRESS}"
+          action="changeHideDoneState"
+          shortcut="[key:'ctrl+shift+h',scope:id]"
+          controller="${id}"
+          onSuccess="\$('#window-toolbar').icescrum('toolbar').reload('${id}');"
+          history="false"
+          id="${params.id}"
+          update="window-content-${id}"
+          alt="${hideDoneState?message(code: 'is.ui.sprintBacklog.toolbar.alt.showDoneState'):message(code: 'is.ui.sprintBacklog.toolbar.alt.hideDoneState')}"
+          title="${hideDoneState?message(code: 'is.ui.sprintBacklog.toolbar.alt.showDoneState'):message(code: 'is.ui.sprintBacklog.toolbar.alt.hideDoneState')}">
+    ${hideDoneState?message(code: 'is.ui.sprintBacklog.toolbar.showDoneState'):message(code: 'is.ui.sprintBacklog.toolbar.hideDoneState')}
+  </is:iconButton>
+
   <is:separator/>
 
 %{--Activate button--}%

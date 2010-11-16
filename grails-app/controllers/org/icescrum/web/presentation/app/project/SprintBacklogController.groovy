@@ -112,11 +112,15 @@ class SprintBacklogController {
       activable = (nextSprint == sprint.orderNumber)
 
     }
+
+    def user = User.load(springSecurityService.principal.id)
+
     render(template: 'window/toolbar',
             model: [id: id,
                     currentView: session.currentView,
                     activable:activable,
-                    currentFilter:User.load(springSecurityService.principal.id).preferences.filterTask,
+                    hideDoneState:user.preferences.hideDoneState,
+                    currentFilter:user.preferences.filterTask,
                     sprint: sprint ?: null])
   }
 
@@ -165,6 +169,7 @@ class SprintBacklogController {
                     recurrentTasks:recurrentTasks,
                     urgentTasks:urgentTasks,
                     columns: columns,
+                    hideDoneState:user.preferences.hideDoneState,
                     previousSprintExist:(sprint.orderNumber > 1)?:false,
                     nextSprintExist:Sprint.findByParentReleaseAndOrderNumber(sprint.parentRelease,sprint.orderNumber + 1)?:false,
                     displayUrgentTasks: sprint.parentRelease.parentProduct.preferences.displayUrgentTasks,
@@ -962,6 +967,22 @@ class SprintBacklogController {
     }
     def user = User.load(springSecurityService.principal.id)
     user.preferences.filterTask = params.filter
+    userService.updateUser(user)
+    redirect(action: 'index', params: [product: params.product, id: params.id])
+    render(status:200,text:'')
+  }
+
+  def changeHideDoneState = {
+    if (!params.id) {
+      def msg = message(code: 'is.sprint.error.not.exist')
+      render(status: 400, contentType: 'application/json', text: [notice: [text: msg]] as JSON)
+      return
+    }
+    def user = User.load(springSecurityService.principal.id)
+    if (user.preferences.hideDoneState)
+      user.preferences.hideDoneState = false
+    else
+      user.preferences.hideDoneState = true
     userService.updateUser(user)
     redirect(action: 'index', params: [product: params.product, id: params.id])
     render(status:200,text:'')
