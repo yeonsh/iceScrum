@@ -58,6 +58,7 @@ class Team {
   }
 
   static mapping = {
+    cache true
     preferences lazy: true
     table 'icescrum2_team'
   }
