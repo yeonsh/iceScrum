@@ -59,6 +59,17 @@ class Release extends TimeBox implements Cloneable {
   }
 
   static namedQueries = {
+    findCurrentOrNextRelease {p ->
+      parentProduct{
+        eq 'id',p
+      }
+      or {
+        eq 'state', Release.STATE_INPROGRESS
+        eq 'state', Release.STATE_WAIT
+      }
+      order("orderNumber", "asc")
+      maxResults(1)
+    }
   }
 
   int hashCode() {

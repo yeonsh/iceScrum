@@ -627,7 +627,9 @@ class ProductBacklogService {
         }
 
         if (!story.creator?.@id?.isEmpty() && p){
-          def u = (User)p.getAllUsers().find{ def id = it.idFromImport?:it.id
+          def u = null
+          if (story.creator.@id.text().isNumber())
+            u = (User)p.getAllUsers().find{ def id = it.idFromImport?:it.id
                                                id == story.creator.@id.text().toInteger()
                                              }?:null
           if (u)

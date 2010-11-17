@@ -30,7 +30,7 @@
   <is:iconButton
           action="add"
           icon="create"
-          rendered="${inTeam && sprint.state != org.icescrum.core.domain.Sprint.STATE_DONE}"
+          rendered="${inTeam && sprint.state != Sprint.STATE_DONE}"
           id="${sprint.id}"
           controller="${id}"
           shortcut="[key:'ctrl+n',scope:id]"
@@ -40,7 +40,7 @@
     ${message(code: 'is.ui.sprintBacklog.toolbar.new')}
   </is:iconButton>
 
-  <is:separatorSmall rendered="${inTeam && sprint.state != org.icescrum.core.domain.Sprint.STATE_DONE}"/>
+  <is:separatorSmall rendered="${inTeam && sprint.state != Sprint.STATE_DONE}"/>
 
 %{--Delete button--}%
   <is:iconButton
@@ -56,7 +56,7 @@
     ${message(code: 'is.ui.sprintBacklog.toolbar.delete')}
   </is:iconButton>
 
-  <is:separator rendered="${inTeam && sprint.state != org.icescrum.core.domain.Sprint.STATE_DONE}"/>
+  <is:separator rendered="${inTeam && sprint.state != Sprint.STATE_DONE}"/>
 
 %{--Filter--}%
   <is:panelButton alt="Filter" id="menu-filter-task" arrow="true" icon="filter" text="${message(code:'is.ui.sprintBacklog.toolbar.filter.'+currentFilter)}">
@@ -98,7 +98,7 @@
     </ul>
   </is:panelButton>
 
-  <is:separatorSmall/>
+  <is:separatorSmall rendered="${sprint.state == Sprint.STATE_INPROGRESS}"/>
 
   <is:iconButton
           rendered="${sprint.state == Sprint.STATE_INPROGRESS}"
@@ -130,11 +130,11 @@
     ${message(code: 'is.ui.sprintBacklog.toolbar.activate')}
   </is:iconButton>
 
-  <is:separator rendered="${poOrSm && sprint.state == org.icescrum.core.domain.Sprint.STATE_WAIT && activable}"/>
+  <is:separator rendered="${poOrSm && sprint.state == Sprint.STATE_WAIT && activable}"/>
 
 %{--Close button--}%
   <is:iconButton
-          rendered="${poOrSm && sprint.state == org.icescrum.core.domain.Sprint.STATE_INPROGRESS}"
+          rendered="${poOrSm && sprint.state == Sprint.STATE_INPROGRESS}"
           action="close"
           shortcut="[key:'ctrl+shift+c',scope:id]"
           controller="${id}"
@@ -147,7 +147,7 @@
     ${message(code: 'is.ui.sprintBacklog.toolbar.close')}
   </is:iconButton>
 
-  <is:separator rendered="${poOrSm && sprint.state == org.icescrum.core.domain.Sprint.STATE_INPROGRESS}"/>
+  <is:separator rendered="${poOrSm && sprint.state == Sprint.STATE_INPROGRESS}"/>
 
 %{-- doneDefinition --}%
   <is:iconButton

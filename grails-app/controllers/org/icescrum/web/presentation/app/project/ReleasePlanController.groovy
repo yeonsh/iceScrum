@@ -74,7 +74,7 @@ class ReleasePlanController {
     def release = null
     def releases = null
     if (!params.id){
-       release = Product.get(params.product).releases.find {it.state == Release.STATE_INPROGRESS || it.state == Release.STATE_WAIT}
+       release = Release.findCurrentOrNextRelease(params.long('product')).list()[0]
        if (release){
         params.id = release.id
        }
@@ -88,7 +88,7 @@ class ReleasePlanController {
   def toolbar = {
     def release = null
     if (!params.id){
-       release = Product.get(params.product).releases.find {it.state == Release.STATE_INPROGRESS || it.state == Release.STATE_WAIT}
+       release = Release.findCurrentOrNextRelease(params.long('product')).list()[0]
        if (release){
         params.id = release.id
        }
@@ -99,7 +99,7 @@ class ReleasePlanController {
   def index = {
     def release = null
     if (!params.id){
-       release = Product.get(params.product).releases.find {it.state == Release.STATE_INPROGRESS || it.state == Release.STATE_WAIT}
+       release = Release.findCurrentOrNextRelease(params.long('product')).list()[0]
        if (release){
         params.id = release.id
        }else{
