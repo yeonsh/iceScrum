@@ -41,7 +41,8 @@ grails.plugin.location.'attachmentable' =  'plugins/attachmentable'
 grails.plugin.location.'icepush-jquery' =  'plugins/icepush-jquery'
 
 coverage {
-  exclusions = ["org/grails/**","**/*BuildConfig*","org/icescrum/web/presentation/**"]
+  enabledByDefault = false
+  xml = true
 }
 
 grails.project.dependency.resolution = {
