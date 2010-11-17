@@ -336,7 +336,8 @@ class ProductService {
               limitUrgentTasks: product.preferences.limitUrgentTasks.text().toInteger(),
               estimatedSprintsDuration: product.preferences.estimatedSprintsDuration.text().toInteger(),
               displayUrgentTasks: product.preferences.displayUrgentTasks.text().toBoolean(),
-              displayRecurrentTasks: product.preferences.displayRecurrentTasks.text().toBoolean()
+              displayRecurrentTasks: product.preferences.displayRecurrentTasks.text().toBoolean(),
+              hideWeekend: product.preferences.hideWeekend.text()?.toBoolean()?:false
       )
 
       Product pExist = (Product) Product.findByPkey(p.pkey)
