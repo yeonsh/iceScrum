@@ -184,7 +184,6 @@ class TooltipTagLib {
     }.join(',')
 
     tooltipCode += "});"
-    println tooltipCode
     out << jq.jquery(null, tooltipCode)
   }
 }
