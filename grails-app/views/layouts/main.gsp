@@ -40,6 +40,7 @@
   </sec:ifLoggedIn>
   <r:layoutResources />
   <icep:bridge/>
+  <is:loadJSContext/>
   <g:layoutHead/>
 </head>
 <body class="icescrum">
@@ -54,7 +55,6 @@
     <g:layoutBody/>
   </is:desktop>
 </div>
-<is:loadJSContext/>
 <is:shortcut key="ctrl+shift+n" callback="${is.remoteDialogFunction(action:'openWizard',controller:'project',title:'is.dialog.wizard',resizable:'false',width:'760',height:'460',draggable:'false')}"/>
 <is:spinner
         on401="document.location='${createLink(controller:'login')}?ref=${params.product?'p/'+product.pkey:params.team?'t/'+params.team:''}'+document.location.hash.replace('#','@');"
