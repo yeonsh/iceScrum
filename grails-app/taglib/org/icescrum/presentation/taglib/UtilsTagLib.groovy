@@ -55,6 +55,7 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
     }
     def locale = attrs.locale ? attrs.locale.replace('_', '-') : RCU.getLocale(request).toString().replace('_', '-')
     def jsCode = """\$.icescrum.init({
+                          grailsServer:"${grailsApplication.config.grails.serverURL}",
                           baseUrl: "${createLink(controller: controllerSpace)}",
                           baseUrlProduct: "${createLink(controller: controllerSpace, params: p)}${p ? '/' : ''}",
                           ${opts}

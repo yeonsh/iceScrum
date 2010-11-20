@@ -21,11 +21,6 @@
 --}%
 
 <g:setProvider library="jquery"/>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.canvasTextRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.canvasAxisTickRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.categoryAxisRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.barRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.pointLabels.min.js')}" type="text/javascript"></script>
 <is:chartView>
   <div id="productBurnDown" class="chart-container">
   </div>
@@ -38,8 +33,11 @@
         stackSeries: true,
         legend:{
           show:true,
-          placement:'outside',
-          location:'ne',
+          renderer: $.jqplot.EnhancedLegendRenderer,
+          location:'se',
+          rendererOptions:{
+               numberColumns:3,
+          },
           fontSize: '11px',
           background:'#FFFFFF',
           fontFamily:'Arial'
@@ -87,13 +85,15 @@
     });
   </jq:jquery>
 </is:chartView>
-<is:buttonBar>
-  <is:button
-          elementId="close"
-          type="link"
-          button="button-s button-s-black"
-          update="window-content-${id}"
-          remote="true"
-          url="[controller:id,action:'dashboard',params:[product:params.product]]"
-          value="${message(code: 'is.button.close')}"/>
-</is:buttonBar>
+<g:if test="${withButtonBar}">
+  <is:buttonBar>
+    <is:button
+            elementId="close"
+            type="link"
+            button="button-s button-s-black"
+            update="window-content-${id}"
+            remote="true"
+            url="[controller:id,action:'dashboard',params:[product:params.product]]"
+            value="${message(code: 'is.button.close')}"/>
+  </is:buttonBar>
+</g:if>

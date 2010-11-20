@@ -55,6 +55,14 @@ modules = {
     dependsOn 'jquery'
     resource url: [dir: "js/jquery", file: 'jqplot/css/jquery.jqplot.min.css'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
     resource url: [dir: "js/jquery", file: 'jqplot/jquery.jqplot.min.js'], disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.barRenderer.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.categoryAxisRenderer.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.canvasTextRenderer.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.enhancedLegendRenderer.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.pointLabels.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.cursor.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
+    resource url: [dir: 'js/jquery', file: 'jqplot/plugins/jqplot.highlighter.min.js'], nominify: true, disposition: 'head',bundle:'jquery-plugins'
     resource url: [dir: "js/jquery", file: 'excanvas.min.js'], wrapper: { s -> "<!--[if IE]>$s<![endif]-->" }, disposition: 'head',bundle:'jquery-plugins'
   }
   'eventline' {

@@ -20,12 +20,6 @@
 - Vincent Barrier (vincent.barrier@icescrum.com)
 --}%
 <g:setProvider library="jquery"/>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.canvasTextRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.canvasAxisTickRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.categoryAxisRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.cursor.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.highlighter.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.pointLabels.min.js')}" type="text/javascript"></script>
 <is:chartView>
   <div id="productCumulativeflow" class="chart-container">
   <jq:jquery>
@@ -40,8 +34,11 @@
     plot1 = $.jqplot('productCumulativeflow', [line6,line5,line4,line3,line2,line1], {
         legend:{
           show:true,
-          placement:'outside',
-          location:'ne',
+          renderer: $.jqplot.EnhancedLegendRenderer,
+          location:'se',
+          rendererOptions:{
+               numberColumns:3,
+          },
           fontSize: '11px',
           background:'#FFFFFF',
           fontFamily:'Arial'
@@ -104,13 +101,15 @@
   </jq:jquery>
   </div>
 </is:chartView>
-<is:buttonBar>
-  <is:button
-          elementId="close"
-          type="link"
-          button="button-s button-s-black"
-          update="window-content-${id}"
-          remote="true"
-          url="[controller:id,action:'dashboard',params:[product:params.product]]"
-          value="${message(code: 'is.button.close')}"/>
-</is:buttonBar>
+<g:if test="${withButtonBar}">
+  <is:buttonBar>
+    <is:button
+            elementId="close"
+            type="link"
+            button="button-s button-s-black"
+            update="window-content-${id}"
+            remote="true"
+            url="[controller:id,action:'dashboard',params:[product:params.product]]"
+            value="${message(code: 'is.button.close')}"/>
+  </is:buttonBar>
+</g:if>

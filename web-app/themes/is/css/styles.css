@@ -169,6 +169,7 @@ li#li-roles{
     border-width: 1px;
     border-top-width:0;
     padding: 4px 0 6px;
+    z-index:1;
 }
 
 .window-fullscreen #button-bar {
@@ -1581,7 +1582,17 @@ li#li-roles{
 ////////////////////////////////////////////////////////////////////////////////
 */
 
-.panel-box-content .view-chart {
+#panel-chart-container .view-chart {
+    bottom:0;
+    left:0;
+    position:relative;
+    right:0;
+    top:0;
+    padding:5px;
+}
+
+.loading-chart {
+    height:50px;
 }
 
 .view-chart {
@@ -1591,6 +1602,11 @@ li#li-roles{
     left: 10px;
     right: 10px;
     bottom: 10px;
+}
+
+.error-loading-chart {
+    text-align:center;
+    padding:10px;
 }
 
 .view-chart .chart-container {
@@ -1643,7 +1659,7 @@ li#li-roles{
 ////////////////////////////////////////////////////////////////////////////////
 */
 
-.panel-box .button-rss {
+.panel-box .button-rss,.panel-box .button-setting {
     right: 2px;
     top: 2px;
 }
@@ -1652,11 +1668,12 @@ li#li-roles{
     position: relative;
 }
 
-.button-rss {
+.button-rss, .button-setting {
     position: absolute;
 }
 
-.button-rss .ico, .button-rss:hover .ico, .dropmenu-hover .button-rss .ico {
+.button-rss .ico, .button-rss:hover .ico, .dropmenu-hover .button-rss .ico,
+.button-setting .ico, .button-setting:hover .ico, .dropmenu-hover .button-setting .ico {
     width: 16px;
     height: 16px;
     display: block;

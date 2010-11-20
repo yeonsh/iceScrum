@@ -108,9 +108,7 @@ class ProductService {
 
     if (_product.erasableByUser && _product.name == name) {
       def p = Product.findByName(_product.name)
-      p.productOwners.each {
-        securityService.deleteProductOwnerPermissions(it, p)
-      }
+      securityService.unsecureDomain(p)
       p.delete(flush: true)
     }
 

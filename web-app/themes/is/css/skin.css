@@ -329,6 +329,10 @@ body {
     background-image: url(../images/icons/rss.png);
 }
 
+.button-setting .ico, .button-setting:hover .ico, .dropmenu-hover .button-setting .ico {
+    background-image:url(../images/application/gear.gif);
+}
+
 #spinner-app .spinner-loading {
     background-image: url(../images/application/spinner.png);
 }
@@ -606,4 +610,10 @@ body, #main .box .box-title .start, #main .box .box-title .end,
 
 #window-title-bar-content-timeline .ui-selectmenu-icon,#window-title-bar-content-releasePlan .ui-selectmenu-icon,#window-title-bar-content-sprintBacklog .ui-selectmenu-icon {
 	background-image: url(../images/ui/ui-icons_ffffff_256x240.png);
+}
+
+.loading-chart {
+    background-image:url(../images/application/loading.gif);
+    background-position:center;
+    background-repeat:no-repeat;
 }

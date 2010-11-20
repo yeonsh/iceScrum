@@ -25,6 +25,19 @@
 <div class="dashboard">
   <div class="colset-2 clearfix">
     <div class="col1">
+      <is:panel id="panel-chart">
+        <is:panelTitle>
+          <is:link class="button-setting" disabled="true" onClick="">
+            <span class='ico'></span>
+          </is:link>
+          <g:message code="is.ui.project.chart.title"/>
+        </is:panelTitle>
+          <div id="panel-chart-container" class="panel-box-content">
+           <jq:jquery>
+              jQuery.icescrum.displayChart('${controllerName}/productBurnupChart','#panel-chart-container');
+            </jq:jquery>
+          </div>
+      </is:panel>
       <is:panel id="panel-description">
         <is:panelTitle><g:message code="is.ui.project.description.title"/></is:panelTitle>
           <div class="panel-box-content">
@@ -103,7 +116,12 @@
 
     <div class="col2">
       <is:panel id="panel-activity">
-        <is:panelTitle><g:link class="button-rss" action="feed" params="[product:product.pkey,lang:lang]"><span class='ico'></span></g:link><g:message code="is.ui.project.activity.title"/></is:panelTitle>
+        <is:panelTitle>
+          <g:link class="button-rss" action="feed" params="[product:product.pkey,lang:lang]">
+            <span class='ico'></span>
+          </g:link>
+          <g:message code="is.ui.project.activity.title"/>
+        </is:panelTitle>
         <g:if test="${activities.size() > 0}">
           <ul class="list-news">
             <g:each in="${activities}" var="a" status="i">

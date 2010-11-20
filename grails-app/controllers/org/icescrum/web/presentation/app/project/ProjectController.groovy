@@ -270,6 +270,7 @@ class ProjectController {
     if (values.size() > 0) {
       render(template: 'charts/productCumulativeFlowChart', model: [
               id: id,
+              withButtonBar:(params.withButtonBar != null)?params.withButtonBar:true,
               suggested: values.suggested as JSON,
               accepted: values.accepted as JSON,
               estimated: values.estimated as JSON,
@@ -289,6 +290,7 @@ class ProjectController {
     if (values.size() > 0) {
       render(template: 'charts/productVelocityCapacityChart', model: [
               id: id,
+              withButtonBar:(params.withButtonBar != null)?params.withButtonBar:true,
               capacity: values.capacity as JSON,
               velocity: values.velocity as JSON,
               labels: values.label as JSON])
@@ -304,6 +306,7 @@ class ProjectController {
     if (values.size() > 0) {
       render(template: 'charts/productBurnupChart', model: [
               id: id,
+              withButtonBar:(params.withButtonBar != null)?params.boolean('withButtonBar'):true,
               all: values.all as JSON,
               done: values.done as JSON,
               labels: values.label as JSON])
@@ -319,6 +322,7 @@ class ProjectController {
     if (values.size() > 0) {
       render(template: 'charts/productBurndownChart', model: [
               id: id,
+              withButtonBar:(params.withButtonBar != null)?params.boolean('withButtonBar'):true,
               userstories: values.userstories as JSON,
               technicalstories: values.technicalstories as JSON,
               defectstories: values.defectstories as JSON,
@@ -335,6 +339,7 @@ class ProjectController {
     if (values.size() > 0) {
       render(template: 'charts/productVelocityChart', model: [
               id: id,
+              withButtonBar:(params.withButtonBar != null)?params.boolean('withButtonBar'):true,
               userstories: values.userstories as JSON,
               technicalstories: values.technicalstories as JSON,
               defectstories: values.defectstories as JSON,
@@ -358,7 +363,11 @@ class ProjectController {
       indexF++
     }
     if (valueToDisplay.size() > 0)
-      render(template: '../feature/charts/productParkinglot', model: [id: id, values: valueToDisplay as JSON, featuresNames: values.label as JSON])
+      render(template: '../feature/charts/productParkinglot', model: [
+                id: id,
+                withButtonBar:(params.withButtonBar != null)?params.boolean('withButtonBar'):true,
+                values: valueToDisplay as JSON,
+                featuresNames: values.label as JSON])
     else {
       def msg = message(code: 'is.chart.error.no.values')
       render(status: 400, contentType: 'application/json', text: [notice: [text: msg]] as JSON)

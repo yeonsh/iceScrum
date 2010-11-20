@@ -20,11 +20,6 @@
 - Vincent Barrier (vincent.barrier@icescrum.com)
 --}%
 <g:setProvider library="jquery"/>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.canvasTextRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.canvasAxisTickRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.categoryAxisRenderer.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.cursor.min.js')}" type="text/javascript"></script>
-<script src="${resource(dir:'js/jquery/jqplot/plugins', file:'jqplot.pointLabels.min.js')}" type="text/javascript"></script>
 <is:chartView>
   <div id="sprintBurnupStories" class="chart-container">
   </div>
@@ -36,8 +31,11 @@
     plot1 = $.jqplot('sprintBurnupStories', [line1,line2], {
         legend:{
           show:true,
-          placement:'outside',
-          location:'ne',
+          renderer: $.jqplot.EnhancedLegendRenderer,
+          location:'se',
+          rendererOptions:{
+               numberColumns:2,
+          },
           fontSize: '11px',
           background:'#FFFFFF',
           fontFamily:'Arial'

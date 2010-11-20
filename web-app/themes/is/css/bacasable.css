@@ -70,8 +70,7 @@ body, html {
 }
 
 .chart-container {
-    height:80%;
-    width:80%;
+    height:90%;
 }
 
 .ui-draggable {
@@ -406,4 +405,14 @@ comment-button-wrapper .button-s {
 
 #import-form .field-area label {
     height:60px;
+}
+
+table.jqplot-table-legend {
+    margin-bottom:-100px;
+    margin-top:40px;
+    margin-right:0px;
+}
+
+td.jqplot-table-legend {
+    padding-right:2px;
 }

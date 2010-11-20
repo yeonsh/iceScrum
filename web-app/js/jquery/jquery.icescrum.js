@@ -49,6 +49,7 @@ $(document).ready(function($) {
         defaults:{
             baseUrlProduct:null,
             baseUrl:null,
+            grailsServer:null,
             urlOpenWidget:null,
             urlCloseWindow:null,
             urlOpenWindow:null,
@@ -573,6 +574,30 @@ $(document).ready(function($) {
                 var contentWindow = jQuery('div .window-content');
                 contentWindow.scrollTop(contentWindow.outerHeight());
             }
+        },
+
+        displayChart:function(url,container){
+            jQuery.ajax({
+                type:'GET',
+                global:false,
+                url:$.icescrum.o.baseUrlProduct + url,
+                data:'withButtonBar=false',
+                beforeSend:function(){
+                    $(container).addClass('loading-chart');
+                },
+                success:function(data, textStatus) {
+                    $(container)
+                            .removeClass('loading-chart')
+                            .html(data);
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    var data = $.parseJSON(XMLHttpRequest.responseText);
+                    $(container)
+                            .removeClass('loading-chart')
+                            .addClass('error-loading-chart')
+                            .html(data.notice.text);
+                }
+            });
         },
 
         toolbar:function(target, params) {
