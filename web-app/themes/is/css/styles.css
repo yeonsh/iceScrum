@@ -25,7 +25,6 @@
  */
 
 #application, #navigation, #footer {
-	min-width: 960px;
     height: 100%;
 }
 
@@ -128,7 +127,6 @@ li#li-roles{
 #main {
     right: 3px;
     left: 269px;
-    min-width: 690px;
 }
 
 #main .box, #main #main-content {

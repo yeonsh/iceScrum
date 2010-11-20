@@ -308,6 +308,7 @@ class ScrumTagLib {
     else if (isRendered && !isEnabled) {
       attrs.remove('controller')
       attrs.remove('action')
+      attrs.remove('params')
       def elementId = attrs.remove('elementId')
       out << "<a href='${attrs.href ?: 'javascript:;'}'"
       attrs.remove('href');
