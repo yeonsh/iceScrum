@@ -36,7 +36,7 @@
           renderer: $.jqplot.EnhancedLegendRenderer,
           location:'se',
           rendererOptions:{
-               numberColumns:3,
+               numberColumns:3
           },
           fontSize: '11px',
           background:'#FFFFFF',
@@ -60,7 +60,8 @@
         series: [
           {label: '${message(code:'is.chart.productBurnDown.series.userstories.name')}',color: '#0099CC'},
           {label: '${message(code:'is.chart.productBurnDown.series.technicalstories.name')}',color: '#FF9933'},
-          {label: '${message(code:'is.chart.productBurnDown.series.defectstories.name')}',color: '#CC3300'}],
+          {label: '${message(code:'is.chart.productBurnDown.series.defectstories.name')}',color: '#CC3300'}
+        ],
         axes: {
             xaxis: {
               ticks:${labels},
@@ -78,7 +79,7 @@
                 label:'${message(code:'is.chart.productBurnDown.yaxis.label')}',
                 tickOptions:{formatString:'%d'}
             }
-        },
+        }
     });
     $('#productBurnDown').bind('resize.jqplot', function(event, ui) {
         plot1.replot();

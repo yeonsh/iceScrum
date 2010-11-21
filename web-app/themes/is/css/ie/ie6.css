@@ -14,6 +14,11 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with iceScrum.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Authors:
+ *
+ * Damien Vitrac (damien@oocube.com)
+ *
  */
 
 .button-n .content, .button-s .content {
@@ -372,4 +377,14 @@ span.ui-checkbox, span.ui-radio {
 
 .postit-ipsum {
    
+}
+
+#panel-chart-container .view-chart {
+    height:300px;
+}
+
+#panel-chart-container .view-chart table.jqplot-table-legend {
+    margin-bottom:-68px;
+    margin-top:40px;
+    margin-right:0;
 }

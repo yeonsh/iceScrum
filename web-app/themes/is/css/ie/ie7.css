@@ -174,3 +174,13 @@ top: expression(document.body.clientHeight-37);
     position: absolute;
     right: 8px;
 }
+
+#panel-chart-container .view-chart {
+    height:300px;
+}
+
+#panel-chart-container .view-chart table.jqplot-table-legend {
+    margin-bottom:-68px;
+    margin-top:40px;
+    margin-right:0;
+}

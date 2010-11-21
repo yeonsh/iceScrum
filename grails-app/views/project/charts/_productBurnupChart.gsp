@@ -35,7 +35,7 @@
           renderer: $.jqplot.EnhancedLegendRenderer,
           location:'se',
           rendererOptions:{
-               numberColumns:2,
+               numberColumns:2
           },
           fontSize: '11px',
           background:'#FFFFFF',
@@ -62,7 +62,7 @@
             xaxis:{
               ticks:${labels},
               label:'${message(code:'is.chart.productBurnUp.xaxis.label')}',
-              renderer: $.jqplot.CategoryAxisRenderer,              
+              renderer: $.jqplot.CategoryAxisRenderer,
               rendererOptions:{tickRenderer:$.jqplot.CanvasAxisTickRenderer},
               tickOptions:{
                   fontSize:'11px',

@@ -33,7 +33,7 @@
         renderer: $.jqplot.EnhancedLegendRenderer,
         location:'se',
         rendererOptions:{
-             numberColumns:1,
+             numberColumns:1
         },
         fontSize: '11px',
         background:'#FFFFFF',

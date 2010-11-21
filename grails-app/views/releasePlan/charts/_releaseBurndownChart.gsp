@@ -35,7 +35,7 @@
           renderer: $.jqplot.EnhancedLegendRenderer,
           location:'se',
           rendererOptions:{
-               numberColumns:3,
+               numberColumns:3
           },
           fontSize: '11px',
           background:'#FFFFFF',
@@ -77,7 +77,7 @@
                 label:'${message(code:'is.chart.releaseBurnDown.yaxis.label')}',
                 tickOptions:{formatString:'%d'}
             }
-        },
+        }
     });
     $('#releaseBurnDown').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
