@@ -122,5 +122,7 @@
           event.stopPropagation();
         }
     }).disableSelection();
+    $.icescrum.checkMenuBar();
+    $(window).bind('resize',function(){$.icescrum.checkMenuBar();}).trigger('resize');
     </jq:jquery>
 </sec:ifLoggedIn>

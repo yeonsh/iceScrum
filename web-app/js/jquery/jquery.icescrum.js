@@ -86,8 +86,6 @@ $(document).ready(function($) {
             if(url != ''){
                 $.icescrum.openWindow(url);
             }
-            this.checkMenuBar();
-            $(window).bind('resize',function(){$.icescrum.checkMenuBar();}).trigger('resize');
         },
 
         addHistory:function(hash){
