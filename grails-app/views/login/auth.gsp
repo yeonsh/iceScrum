@@ -35,15 +35,17 @@
 
     <g:formRemote url="${[uri:postUrl]}" id="loginForm" name="loginForm" method="post" class="box-form box-form-small-legend box-content box-form-160" onSuccess="document.location='${params.ref?params.ref.replace('@','#'):''}'">
 
-      <is:fieldInformation nobordertop="true">
-        <g:message code="is.welcome"/>
-        <span class="retrieve-link">
+      <is:fieldInformation nobordertop="true" div="true">
+        <div class="welcome">
+          <g:message code="is.welcome"/>
+        </div>
+        <div class="retrieve-link">
           <g:if test="activeLostPassword">
             <g:link controller="user" action="retrieve">
               <g:message code="is.dialog.login.lostPassword"/>
             </g:link>
           </g:if>
-        </span>
+        </div>
       </is:fieldInformation>
 
       <is:fieldInput for="username" label="is.user.username">

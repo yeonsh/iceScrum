@@ -594,7 +594,7 @@ class FormTagLib {
     attrs."class" = attrs."class"?attrs."class"+' field-information':"field-information"
     if (attrs.remove("nobordertop") == "true")
       attrs."class" += " field-information-nobordertop"
-    out << "<p class=\"${attrs."class"}\">${body()}</p>"
+    out << "<${attrs.div?'div':'p'} class=\"${attrs."class"}\">${body()}</${attrs.div?'div':'p'}>"
   }
 
   def buttonBarItem = {attrs, body ->

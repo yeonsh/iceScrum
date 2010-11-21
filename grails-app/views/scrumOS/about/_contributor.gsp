@@ -32,7 +32,7 @@
 <div class="list">
   <g:each status="i" var="contributor" in="${contributors.contributor}">
     <div class="member-mini unselectable">
-      <img class="ico" src="${(contributor.image != '')?resource(dir: 'infos', file: 'images/'+contributor.image):resource(dir: is.currentThemeImage(), file: 'avatar.png')}" />
+      <img class="ico" src="${(contributor.image != '')?resource(dir: 'infos', file: 'images/'+contributor.image):resource(dir: is.currentThemeImage(), file: 'avatars/avatar.png')}" />
       <p><strong>${contributor.firstName} ${contributor.lastName}</strong></p>
       <g:if test="${contributor.to != ''}">
         <p><g:message code="is.dialog.about.contributors.contributor.off"/> ${contributor.from} - ${contributor.to}</p>

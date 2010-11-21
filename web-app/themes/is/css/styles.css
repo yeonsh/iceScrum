@@ -1705,7 +1705,7 @@ li#li-roles{
 
 .member-mini,.member {
     cursor:pointer;
-    margin:5px;
+    margin:3px;
     float:left;
 }
 
@@ -1713,7 +1713,7 @@ li#li-roles{
     height:32px;
     padding-left:4px;
     padding-top:4px;
-    width:169px;
+    width:165px;
 }
 
 .members-medium {
@@ -1896,13 +1896,23 @@ li#li-roles{
     float:right;
 }
 
+#loginForm .field-information {
+    width:318px;
+    float:left;
+    clear:both;
+}
+
+.welcome {
+    float:left;
+}
+
 .selector-avatars {
     float:left;
 }
 
 .selector-avatars span {
     float:left;
-    margin: 5px;
+    margin:3px;
     padding:3px;
 }
 
