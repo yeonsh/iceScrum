@@ -90,8 +90,9 @@
 
 .roles{
    float:right;
-    width:170px;
+   width:170px;
 }
+
 li#li-roles{
   padding-right:42px;
 }
@@ -1814,7 +1815,7 @@ li#li-roles{
     background-image:url("../images/ui/ui-icons_ffffff_256x240.png");
     background-position:-64px -16px;
     height:100%;
-    width:12px;
+    width:17px;
     display:block;
     left:8px;
     top:1px;

@@ -21,7 +21,6 @@
 --}%
 <li>
 <is:select
-          container="#window-title-bar-content-${id}"
           width="200"
           rendered="${releasesName.size() > 0}"
           maxHeight="100"

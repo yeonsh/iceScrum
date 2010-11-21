@@ -28,7 +28,7 @@
           editable="[controller:id,action:'update',params:[product:params.product],onExitCell:'submit']">
 
     <is:tableHeader width="3%" class="table-cell-checkbox" name="">
-      <g:checkBox/>
+      <g:checkBox name="checkbox-header"/>
     </is:tableHeader>
     <is:tableHeader width="10%" name="${message(code:'is.actor.name')}"/>
     <is:tableHeader width="20%" name="${message(code:'is.backlogelement.description')}"/>

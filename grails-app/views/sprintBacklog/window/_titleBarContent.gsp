@@ -22,7 +22,6 @@
 %{-- Sprints lists --}%
 <li>
   <is:select
-          container="#window-title-bar-content-${id}"
           width="160"
           rendered="${sprintsName.size() > 0}"
           maxHeight="100"

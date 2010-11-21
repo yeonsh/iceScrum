@@ -26,7 +26,7 @@
           editable="[controller:id,action:'update',params:[product:params.product],onExitCell:'submit']">
 
     <is:tableHeader width="3%" class="table-cell-checkbox" name="">
-      <g:checkBox/>
+      <g:checkBox name="checkbox-header"/>
     </is:tableHeader>
     <is:tableHeader width="3%" name="" />
     <is:tableHeader width="4%" name="${message(code:'is.story.rank')}"/>

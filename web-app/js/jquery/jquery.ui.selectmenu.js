@@ -129,7 +129,7 @@ $.widget("ui.selectmenu", {
 		this.list = $('<ul class="' + self.widgetBaseClass + '-menu ui-widget ui-widget-content'+cornerClass+'" aria-hidden="true" role="listbox" aria-labelledby="'+this.ids[0]+'" id="'+this.ids[1]+'"></ul>').appendTo(this.container);
 		
 		//serialize selectmenu element options	
-		var selectOptionData = [];
+        var selectOptionData = [];
 		this.element
 			.find('option')
 			.each(function(){
@@ -147,68 +147,70 @@ $.widget("ui.selectmenu", {
 		
 		//write li's
 		for(var i in selectOptionData){
-			var thisLi = $('<li role="presentation"><a href="#" tabindex="-1" role="option" aria-selected="false">'+ selectOptionData[i].text +'</a></li>')
-				.data('index',i)
-				.addClass(selectOptionData[i].classes)
-				.data('optionClasses', selectOptionData[i].classes|| '')
-				.mouseup(function(event){
-						if(self._safemouseup){
-							var changed = $(this).data('index') != self._selectedIndex();
-							self.value($(this).data('index'));
-							self.select(event);
-							if(changed){ self.change(event); }
-							self.close(event,true);
-						}
-					return false;
-				})
-				.click(function(){
-					return false;
-				})
-				.bind('mouseover focus', function(){ 
-					self._selectedOptionLi().addClass(activeClass); 
-					self._focusedOptionLi().removeClass(self.widgetBaseClass+'-item-focus ui-state-hover');
-					$(this).removeClass('ui-state-active').addClass(self.widgetBaseClass + '-item-focus ui-state-hover');
-				})
-				.bind('mouseout blur', function(){ 
-					if($(this).is( self._selectedOptionLi() )){ $(this).addClass(activeClass); }
-					$(this).removeClass(self.widgetBaseClass + '-item-focus ui-state-hover');
-				});
-				
-			//optgroup or not...
-			if(selectOptionData[i].parentOptGroup){
-				var optGroupName = self.widgetBaseClass + '-group-' + selectOptionData[i].parentOptGroup;
-				if(this.list.find('li.' + optGroupName).size()){
-					this.list.find('li.' + optGroupName + ':last ul').append(thisLi);
-				}
-				else{
-					$('<li role="presentation" class="'+self.widgetBaseClass+'-group '+optGroupName+'"><span class="'+self.widgetBaseClass+'-group-label">'+selectOptionData[i].parentOptGroup+'</span><ul></ul></li>')
-						.appendTo(this.list)
-						.find('ul')
-						.append(thisLi);
-				}
-			}
-			else{
-				thisLi.appendTo(this.list);
-			}
-			
-			//this allows for using the scrollbar in an overflowed list
-			this.list.bind('mousedown mouseup', function(){return false;});
-			
-			//append icon if option is specified
-			if(o.icons){
-				for(var j in o.icons){
-					if(thisLi.is(o.icons[j].find)){
-						thisLi
-							.data('optionClasses', selectOptionData[i].classes + ' ' + self.widgetBaseClass + '-hasIcon')
-							.addClass(self.widgetBaseClass + '-hasIcon');
-						var iconClass = o.icons[j].icon || "";
-						
-						thisLi
-							.find('a:eq(0)')
-							.prepend('<span class="'+self.widgetBaseClass+'-item-icon ui-icon '+iconClass + '"></span>');
-					}
-				}
-			}
+            if (!$.isFunction(selectOptionData[i])){
+                var thisLi = $('<li role="presentation"><a href="#" tabindex="-1" role="option" aria-selected="false">'+ selectOptionData[i].text +'</a></li>')
+                    .data('index',i)
+                    .addClass(selectOptionData[i].classes)
+                    .data('optionClasses', selectOptionData[i].classes|| '')
+                    .mouseup(function(event){
+                            if(self._safemouseup){
+                                var changed = $(this).data('index') != self._selectedIndex();
+                                self.value($(this).data('index'));
+                                self.select(event);
+                                if(changed){ self.change(event); }
+                                self.close(event,true);
+                            }
+                        return false;
+                    })
+                    .click(function(){
+                        return false;
+                    })
+                    .bind('mouseover focus', function(){
+                        self._selectedOptionLi().addClass(activeClass);
+                        self._focusedOptionLi().removeClass(self.widgetBaseClass+'-item-focus ui-state-hover');
+                        $(this).removeClass('ui-state-active').addClass(self.widgetBaseClass + '-item-focus ui-state-hover');
+                    })
+                    .bind('mouseout blur', function(){
+                        if($(this).is( self._selectedOptionLi() )){ $(this).addClass(activeClass); }
+                        $(this).removeClass(self.widgetBaseClass + '-item-focus ui-state-hover');
+                    });
+
+                //optgroup or not...
+                if(selectOptionData[i].parentOptGroup){
+                    var optGroupName = self.widgetBaseClass + '-group-' + selectOptionData[i].parentOptGroup;
+                    if(this.list.find('li.' + optGroupName).size()){
+                        this.list.find('li.' + optGroupName + ':last ul').append(thisLi);
+                    }
+                    else{
+                        $('<li role="presentation" class="'+self.widgetBaseClass+'-group '+optGroupName+'"><span class="'+self.widgetBaseClass+'-group-label">'+selectOptionData[i].parentOptGroup+'</span><ul></ul></li>')
+                            .appendTo(this.list)
+                            .find('ul')
+                            .append(thisLi);
+                    }
+                }
+                else{
+                    thisLi.appendTo(this.list);
+                }
+
+                //this allows for using the scrollbar in an overflowed list
+                this.list.bind('mousedown mouseup', function(){return false;});
+
+                //append icon if option is specified
+                if(o.icons){
+                    for(var j in o.icons){
+                        if(thisLi.is(o.icons[j].find)){
+                            thisLi
+                                .data('optionClasses', selectOptionData[i].classes + ' ' + self.widgetBaseClass + '-hasIcon')
+                                .addClass(self.widgetBaseClass + '-hasIcon');
+                            var iconClass = o.icons[j].icon || "";
+
+                            thisLi
+                                .find('a:eq(0)')
+                                .prepend('<span class="'+self.widgetBaseClass+'-item-icon ui-icon '+iconClass + '"></span>');
+                        }
+                    }
+                }
+            }
 		}	
 		
 		//add corners to top and bottom menu items
