@@ -47,7 +47,7 @@ icescrum.project.disable.private=false
 /*
 Team administration section
  */
-icescrum.team.enable.creation=true
+icescrum.team.enable.creation = true
 
 /*
   Images section
