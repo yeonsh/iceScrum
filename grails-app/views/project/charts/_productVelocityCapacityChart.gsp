@@ -84,7 +84,9 @@
     });
     $('#productVelocityCapacity').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+        $('#productVelocityCapacity').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#productVelocityCapacity').find('.jqplot-table-legend').css('bottom','-12px');
   </jq:jquery>
 </is:chartView>
 <g:if test="${withButtonBar}">

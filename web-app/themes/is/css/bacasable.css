@@ -408,9 +408,7 @@ comment-button-wrapper .button-s {
 }
 
 table.jqplot-table-legend {
-    margin-bottom:-100px;
-    margin-top:40px;
-    margin-right:0px;
+    padding-top:10px;
 }
 
 td.jqplot-table-legend {

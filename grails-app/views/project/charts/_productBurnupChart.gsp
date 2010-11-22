@@ -82,7 +82,9 @@
     });
     $('#productBurnup').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+        $('#productBurnup').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#productBurnup').find('.jqplot-table-legend').css('bottom','-12px');
   </jq:jquery>
 </is:chartView>
 <g:if test="${withButtonBar}">

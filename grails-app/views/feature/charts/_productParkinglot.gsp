@@ -79,7 +79,9 @@
   });
   $('#productParkinglot').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+      $('#productParkinglot').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#productParkinglot').find('.jqplot-table-legend').css('bottom','-12px');
 </jq:jquery>
 </is:chartView>
 <g:if test="${withButtonBar}">

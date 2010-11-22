@@ -81,7 +81,9 @@
     });
      $('#sprintBurndownHours').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+        $('#sprintBurndownHours').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#sprintBurndownHours').find('.jqplot-table-legend').css('bottom','-12px');
   </jq:jquery>
 </is:chartView>
 <is:buttonBar>

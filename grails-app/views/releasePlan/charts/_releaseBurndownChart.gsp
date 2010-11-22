@@ -81,7 +81,9 @@
     });
     $('#releaseBurnDown').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+        $('#releaseBurnDown').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#releaseBurnDown').find('.jqplot-table-legend').css('bottom','-12px');
   </jq:jquery>
 </is:chartView>
 <is:buttonBar>

@@ -97,7 +97,9 @@
     });
     $('#productCumulativeflow').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+        $('#productCumulativeflow').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#productCumulativeflow').find('.jqplot-table-legend').css('bottom','-12px');
   </jq:jquery>
   </div>
 </is:chartView>

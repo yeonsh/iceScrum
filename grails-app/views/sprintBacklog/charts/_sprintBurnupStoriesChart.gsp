@@ -83,7 +83,9 @@
     });
     $('#sprintBurnupStories').bind('resize.jqplot', function(event, ui) {
         plot1.replot();
+        $('#sprintBurnupStories').find('.jqplot-table-legend').css('bottom','-12px');
     });
+    $('#sprintBurnupStories').find('.jqplot-table-legend').css('bottom','-12px');
   </jq:jquery>
 </is:chartView>
 <is:buttonBar>
