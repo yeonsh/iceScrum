@@ -28,26 +28,26 @@ import org.apache.log4j.PatternLayout
 /*
  Public URL
 */
-grails.serverURL = "http://localhost:8080/${appName}"
+grails.serverURL = "http://192.168.0.10:8080/${appName}"
 
 /*
 Administration section
  */
-icescrum.enable.registration = true
-icescrum.enable.login.retrieve = true
+icescrum.enable.registration=true
+icescrum.enable.login.retrieve=true
 
 /*
 Project administration section
  */
-icescrum.project.enable.import = true
-icescrum.project.enable.export = true
-icescrum.project.enable.creation = true
-icescrum.project.disable.private = false
+icescrum.project.enable.import=true
+icescrum.project.enable.export=true
+icescrum.project.enable.creation=true
+icescrum.project.disable.private=false
 
 /*
 Team administration section
  */
-icescrum.team.enable.creation = true
+icescrum.team.enable.creation=true
 
 /*
   Images section
@@ -83,7 +83,7 @@ grails.mail.default.from="webmaster@icescrum.org"
 /*
   Push section
  */
-icepush.disabled = false
+icepush.disabled=false
 
 /*
  Attachmentable section

@@ -28,8 +28,9 @@ import org.icescrum.components.UtilsWebComponents
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
   import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
   import org.icescrum.core.domain.security.Authority
+import org.icescrum.core.support.ApplicationSupport
 
-  class UtilsTagLib {
+class UtilsTagLib {
 
   static namespace = 'is'
 
@@ -132,10 +133,10 @@ import org.springframework.web.servlet.support.RequestContextUtils as RCU
   def mainMenu = { attrs, body ->
     out << g.render(template: '/scrumOS/navigation',
             model:[
-              importEnable:(grailsApplication.config.icescrum.project.enable.import || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
-              exportEnable:(grailsApplication.config.icescrum.project.enable.export || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
-              creationProjectEnable:(grailsApplication.config.icescrum.project.enable.creation || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
-              creationTeamEnable:(grailsApplication.config.icescrum.project.enable.creation || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN))
+              importEnable:(ApplicationSupport.booleanValue(grailsApplication.config.icescrum.project.enable.import) || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              exportEnable:(ApplicationSupport.booleanValue(grailsApplication.config.icescrum.project.enable.export) || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              creationProjectEnable:(ApplicationSupport.booleanValue(grailsApplication.config.icescrum.project.enable.creation) || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN)),
+              creationTeamEnable:(ApplicationSupport.booleanValue(grailsApplication.config.icescrum.project.enable.creation) || SpringSecurityUtils.ifAnyGranted(Authority.ROLE_ADMIN))
             ]
           )
   }

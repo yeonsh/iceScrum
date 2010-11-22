@@ -34,6 +34,7 @@ import org.springframework.security.web.authentication.AbstractAuthenticationPro
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
 import org.icescrum.core.domain.User
+import org.icescrum.core.support.ApplicationSupport
 
 class LoginController {
 
@@ -81,7 +82,7 @@ class LoginController {
         RCU.getLocaleResolver(request).setLocale(request, response, new Locale(locale))
 		String view = 'auth'
 		String postUrl = "${config.apf.filterProcessesUrl}"
-		render view: view, model: [postUrl: postUrl, rememberMeParameter: config.rememberMe.parameter, activeLostPassword:grailsApplication.config.icescrum.enable.login.retrieve?:true, enableRegistration:grailsApplication.config.icescrum.enable.registration]
+		render view: view, model: [postUrl: postUrl, rememberMeParameter: config.rememberMe.parameter, activeLostPassword:ApplicationSupport.booleanValue(grailsApplication.config.icescrum.enable.login.retrieve), enableRegistration:ApplicationSupport.booleanValue(grailsApplication.config.icescrum.enable.registration)]
 	}
 
 	/**

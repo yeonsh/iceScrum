@@ -34,6 +34,7 @@ import org.icescrum.core.domain.Product
 import org.springframework.web.servlet.support.RequestContextUtils as RCU
 import org.springframework.mail.MailException
 import org.icescrum.core.domain.security.Authority
+import org.icescrum.core.support.ApplicationSupport
 
 class UserController {
 
@@ -48,7 +49,7 @@ class UserController {
   static window = [title: 'is.user', toolbar: false, init: 'profile']
 
   def register = {
-    if (!grailsApplication.config.icescrum.enable.registration){
+    if (!ApplicationSupport.booleanValue(grailsApplication.config.icescrum.enable.registration)){
         render(status:403)
         return
     }
@@ -66,7 +67,7 @@ class UserController {
 
 
   def save = {
-    if (!grailsApplication.config.icescrum.enable.registration){
+    if (!ApplicationSupport.booleanValue(grailsApplication.config.icescrum.enable.registration)){
         render(status:403)
         return
     }
@@ -261,7 +262,7 @@ class UserController {
   }
 
   def retrieve = {
-    def activated = grailsApplication.config.icescrum.enable.login.retrieve?:true
+    def activated = ApplicationSupport.booleanValue(grailsApplication.config.icescrum.enable.login.retrieve)
     if (!activated){
       render(status: 400, contentType:'application/json', text: [notice: [text: message(code:'is.login.retrieve.not.activated')]] as JSON)
     }
