@@ -28,7 +28,7 @@ import org.apache.log4j.PatternLayout
 /*
  Public URL
 */
-grails.serverURL = "http://192.168.0.10:8080/${appName}"
+grails.serverURL = "http://localhost:8080/${appName}"
 
 /*
 Administration section
